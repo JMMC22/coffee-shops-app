@@ -15,6 +15,17 @@
 		B5990B512BB6DE290047C552 /* CoffeeShopsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B502BB6DE290047C552 /* CoffeeShopsAppUITests.swift */; };
 		B5990B532BB6DE290047C552 /* CoffeeShopsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B522BB6DE290047C552 /* CoffeeShopsAppUITestsLaunchTests.swift */; };
 		B5990B622BB6DF850047C552 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B612BB6DF850047C552 /* Colors.swift */; };
+		B5990B6D2BB6E2940047C552 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5990B642BB6E2940047C552 /* Inter-Thin.ttf */; };
+		B5990B6E2BB6E2940047C552 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5990B652BB6E2940047C552 /* Inter-Black.ttf */; };
+		B5990B6F2BB6E2940047C552 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5990B662BB6E2940047C552 /* Inter-SemiBold.ttf */; };
+		B5990B702BB6E2940047C552 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5990B672BB6E2940047C552 /* Inter-Light.ttf */; };
+		B5990B712BB6E2940047C552 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5990B682BB6E2940047C552 /* Inter-Regular.ttf */; };
+		B5990B722BB6E2940047C552 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5990B692BB6E2940047C552 /* Inter-ExtraLight.ttf */; };
+		B5990B732BB6E2940047C552 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5990B6A2BB6E2940047C552 /* Inter-Medium.ttf */; };
+		B5990B742BB6E2940047C552 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5990B6B2BB6E2940047C552 /* Inter-Bold.ttf */; };
+		B5990B752BB6E2940047C552 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5990B6C2BB6E2940047C552 /* Inter-ExtraBold.ttf */; };
+		B5990B772BB6E2AA0047C552 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B762BB6E2AA0047C552 /* Fonts.swift */; };
+		B5990B792BB6E2C60047C552 /* CSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B782BB6E2C60047C552 /* CSFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +58,18 @@
 		B5990B502BB6DE290047C552 /* CoffeeShopsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopsAppUITests.swift; sourceTree = "<group>"; };
 		B5990B522BB6DE290047C552 /* CoffeeShopsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B5990B612BB6DF850047C552 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B5990B642BB6E2940047C552 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		B5990B652BB6E2940047C552 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		B5990B662BB6E2940047C552 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		B5990B672BB6E2940047C552 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		B5990B682BB6E2940047C552 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		B5990B692BB6E2940047C552 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		B5990B6A2BB6E2940047C552 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		B5990B6B2BB6E2940047C552 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		B5990B6C2BB6E2940047C552 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		B5990B762BB6E2AA0047C552 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		B5990B782BB6E2C60047C552 /* CSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFont.swift; sourceTree = "<group>"; };
+		B5990B7A2BB6E3460047C552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +120,7 @@
 		B5990B332BB6DE270047C552 /* CoffeeShopsApp */ = {
 			isa = PBXGroup;
 			children = (
+				B5990B7A2BB6E3460047C552 /* Info.plist */,
 				B5990B3A2BB6DE280047C552 /* CoffeeShopsApp.entitlements */,
 				B5990B342BB6DE270047C552 /* CoffeeShopsAppApp.swift */,
 				B5990B362BB6DE270047C552 /* ContentView.swift */,
@@ -144,8 +168,27 @@
 			isa = PBXGroup;
 			children = (
 				B5990B612BB6DF850047C552 /* Colors.swift */,
+				B5990B782BB6E2C60047C552 /* CSFont.swift */,
+				B5990B762BB6E2AA0047C552 /* Fonts.swift */,
+				B5990B632BB6E2670047C552 /* Fonts */,
 			);
 			path = "Design System";
+			sourceTree = "<group>";
+		};
+		B5990B632BB6E2670047C552 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B5990B652BB6E2940047C552 /* Inter-Black.ttf */,
+				B5990B6B2BB6E2940047C552 /* Inter-Bold.ttf */,
+				B5990B6C2BB6E2940047C552 /* Inter-ExtraBold.ttf */,
+				B5990B692BB6E2940047C552 /* Inter-ExtraLight.ttf */,
+				B5990B672BB6E2940047C552 /* Inter-Light.ttf */,
+				B5990B6A2BB6E2940047C552 /* Inter-Medium.ttf */,
+				B5990B682BB6E2940047C552 /* Inter-Regular.ttf */,
+				B5990B662BB6E2940047C552 /* Inter-SemiBold.ttf */,
+				B5990B642BB6E2940047C552 /* Inter-Thin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +296,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5990B3D2BB6DE280047C552 /* Preview Assets.xcassets in Resources */,
+				B5990B752BB6E2940047C552 /* Inter-ExtraBold.ttf in Resources */,
 				B5990B392BB6DE280047C552 /* Assets.xcassets in Resources */,
+				B5990B6D2BB6E2940047C552 /* Inter-Thin.ttf in Resources */,
+				B5990B722BB6E2940047C552 /* Inter-ExtraLight.ttf in Resources */,
+				B5990B6F2BB6E2940047C552 /* Inter-SemiBold.ttf in Resources */,
+				B5990B702BB6E2940047C552 /* Inter-Light.ttf in Resources */,
+				B5990B742BB6E2940047C552 /* Inter-Bold.ttf in Resources */,
+				B5990B6E2BB6E2940047C552 /* Inter-Black.ttf in Resources */,
+				B5990B712BB6E2940047C552 /* Inter-Regular.ttf in Resources */,
+				B5990B732BB6E2940047C552 /* Inter-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +330,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5990B772BB6E2AA0047C552 /* Fonts.swift in Sources */,
 				B5990B372BB6DE270047C552 /* ContentView.swift in Sources */,
+				B5990B792BB6E2C60047C552 /* CSFont.swift in Sources */,
 				B5990B622BB6DF850047C552 /* Colors.swift in Sources */,
 				B5990B352BB6DE270047C552 /* CoffeeShopsAppApp.swift in Sources */,
 			);
@@ -444,6 +498,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoffeeShopsApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -482,6 +537,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoffeeShopsApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
