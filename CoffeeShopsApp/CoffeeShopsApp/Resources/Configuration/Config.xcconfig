@@ -1,0 +1,13 @@
+//
+//  Config.xcconfig
+//  CoffeeShopsApp
+//
+//  Created by José María Márquez Crespo on 30/3/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// MARK: Google Places
+GOOGLE_PLACES_HOST = maps.googleapis.com
+GOOGLE_PLACES_KEY = AIzaSyA0vGHAobAMl-O_LJ4VHgwtf_FkN_QXBuY
