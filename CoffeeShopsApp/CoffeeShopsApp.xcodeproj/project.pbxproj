@@ -29,6 +29,10 @@
 		B5990B7D2BB6EB1C0047C552 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B5990B7C2BB6EB1C0047C552 /* Localizable.xcstrings */; };
 		B5990B802BB84AEC0047C552 /* EnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B7F2BB84AEC0047C552 /* EnvironmentConfiguration.swift */; };
 		B5990B822BB84B0A0047C552 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B5990B812BB84B0A0047C552 /* Config.xcconfig */; };
+		B5990B862BB84DBE0047C552 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B852BB84DBE0047C552 /* Endpoint.swift */; };
+		B5990B892BB84DD10047C552 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B882BB84DD10047C552 /* HTTPClient.swift */; };
+		B5990B8B2BB84DE20047C552 /* HTTPMethodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B8A2BB84DE20047C552 /* HTTPMethodType.swift */; };
+		B5990B8D2BB84DF10047C552 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B8C2BB84DF10047C552 /* RequestError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,10 @@
 		B5990B7C2BB6EB1C0047C552 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		B5990B7F2BB84AEC0047C552 /* EnvironmentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentConfiguration.swift; sourceTree = "<group>"; };
 		B5990B812BB84B0A0047C552 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		B5990B852BB84DBE0047C552 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		B5990B882BB84DD10047C552 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		B5990B8A2BB84DE20047C552 /* HTTPMethodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodType.swift; sourceTree = "<group>"; };
+		B5990B8C2BB84DF10047C552 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,7 @@
 				B5990B7A2BB6E3460047C552 /* Info.plist */,
 				B5990B342BB6DE270047C552 /* CoffeeShopsAppApp.swift */,
 				B5990B362BB6DE270047C552 /* ContentView.swift */,
+				B5990B832BB84DA40047C552 /* Infrastructure */,
 				B5990B5F2BB6DF5D0047C552 /* Presentation */,
 				B5990B3B2BB6DE280047C552 /* Preview Content */,
 				B5990B7B2BB6EB090047C552 /* Resources */,
@@ -214,6 +223,25 @@
 				B5990B812BB84B0A0047C552 /* Config.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		B5990B832BB84DA40047C552 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				B5990B842BB84DAE0047C552 /* Network */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		B5990B842BB84DAE0047C552 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B5990B852BB84DBE0047C552 /* Endpoint.swift */,
+				B5990B882BB84DD10047C552 /* HTTPClient.swift */,
+				B5990B8A2BB84DE20047C552 /* HTTPMethodType.swift */,
+				B5990B8C2BB84DF10047C552 /* RequestError.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,9 +386,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5990B862BB84DBE0047C552 /* Endpoint.swift in Sources */,
 				B5990B772BB6E2AA0047C552 /* Fonts.swift in Sources */,
+				B5990B892BB84DD10047C552 /* HTTPClient.swift in Sources */,
+				B5990B8B2BB84DE20047C552 /* HTTPMethodType.swift in Sources */,
 				B5990B372BB6DE270047C552 /* ContentView.swift in Sources */,
 				B5990B802BB84AEC0047C552 /* EnvironmentConfiguration.swift in Sources */,
+				B5990B8D2BB84DF10047C552 /* RequestError.swift in Sources */,
 				B5990B792BB6E2C60047C552 /* CSFont.swift in Sources */,
 				B5990B622BB6DF850047C552 /* Colors.swift in Sources */,
 				B5990B352BB6DE270047C552 /* CoffeeShopsAppApp.swift in Sources */,
