@@ -27,6 +27,8 @@
 		B5990B772BB6E2AA0047C552 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B762BB6E2AA0047C552 /* Fonts.swift */; };
 		B5990B792BB6E2C60047C552 /* CSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B782BB6E2C60047C552 /* CSFont.swift */; };
 		B5990B7D2BB6EB1C0047C552 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B5990B7C2BB6EB1C0047C552 /* Localizable.xcstrings */; };
+		B5990B802BB84AEC0047C552 /* EnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B7F2BB84AEC0047C552 /* EnvironmentConfiguration.swift */; };
+		B5990B822BB84B0A0047C552 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B5990B812BB84B0A0047C552 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		B5990B782BB6E2C60047C552 /* CSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFont.swift; sourceTree = "<group>"; };
 		B5990B7A2BB6E3460047C552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B5990B7C2BB6EB1C0047C552 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		B5990B7F2BB84AEC0047C552 /* EnvironmentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentConfiguration.swift; sourceTree = "<group>"; };
+		B5990B812BB84B0A0047C552 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,8 +202,18 @@
 			children = (
 				B5990B382BB6DE280047C552 /* Assets.xcassets */,
 				B5990B7C2BB6EB1C0047C552 /* Localizable.xcstrings */,
+				B5990B7E2BB84AB70047C552 /* Configuration */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B5990B7E2BB84AB70047C552 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				B5990B7F2BB84AEC0047C552 /* EnvironmentConfiguration.swift */,
+				B5990B812BB84B0A0047C552 /* Config.xcconfig */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +326,7 @@
 				B5990B7D2BB6EB1C0047C552 /* Localizable.xcstrings in Resources */,
 				B5990B392BB6DE280047C552 /* Assets.xcassets in Resources */,
 				B5990B6D2BB6E2940047C552 /* Inter-Thin.ttf in Resources */,
+				B5990B822BB84B0A0047C552 /* Config.xcconfig in Resources */,
 				B5990B722BB6E2940047C552 /* Inter-ExtraLight.ttf in Resources */,
 				B5990B6F2BB6E2940047C552 /* Inter-SemiBold.ttf in Resources */,
 				B5990B702BB6E2940047C552 /* Inter-Light.ttf in Resources */,
@@ -345,6 +360,7 @@
 			files = (
 				B5990B772BB6E2AA0047C552 /* Fonts.swift in Sources */,
 				B5990B372BB6DE270047C552 /* ContentView.swift in Sources */,
+				B5990B802BB84AEC0047C552 /* EnvironmentConfiguration.swift in Sources */,
 				B5990B792BB6E2C60047C552 /* CSFont.swift in Sources */,
 				B5990B622BB6DF850047C552 /* Colors.swift in Sources */,
 				B5990B352BB6DE270047C552 /* CoffeeShopsAppApp.swift in Sources */,
