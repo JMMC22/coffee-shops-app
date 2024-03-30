@@ -50,7 +50,7 @@ extension AppCoordinator {
     func build(page: AppCoordinator.Page) -> some View {
         switch page {
         case .home:
-            Text("HOME")
+            HomeFactory.create()
         case .coffeShopDetails(let coffeeShop):
             Text("Details")
         case .favouritesCoffeeShops:
