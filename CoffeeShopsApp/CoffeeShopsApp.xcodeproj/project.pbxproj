@@ -45,6 +45,8 @@
 		B5990BA62BB850040047C552 /* PlacePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BA52BB850040047C552 /* PlacePhoto.swift */; };
 		B5990BA82BB850110047C552 /* PlacesNearbySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BA72BB850110047C552 /* PlacesNearbySearch.swift */; };
 		B5990BAB2BB850630047C552 /* GooglePlacesRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BAA2BB850630047C552 /* GooglePlacesRemoteDatasource.swift */; };
+		B5990BAE2BB850B70047C552 /* GooglePlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BAD2BB850B70047C552 /* GooglePlacesRepository.swift */; };
+		B5990BB12BB850D80047C552 /* DefaultGooglePlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BB02BB850D80047C552 /* DefaultGooglePlacesRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,8 @@
 		B5990BA52BB850040047C552 /* PlacePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePhoto.swift; sourceTree = "<group>"; };
 		B5990BA72BB850110047C552 /* PlacesNearbySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesNearbySearch.swift; sourceTree = "<group>"; };
 		B5990BAA2BB850630047C552 /* GooglePlacesRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesRemoteDatasource.swift; sourceTree = "<group>"; };
+		B5990BAD2BB850B70047C552 /* GooglePlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesRepository.swift; sourceTree = "<group>"; };
+		B5990BB02BB850D80047C552 /* DefaultGooglePlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGooglePlacesRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				B5990B8F2BB84F1A0047C552 /* Network */,
+				B5990BAF2BB850C40047C552 /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -281,9 +286,9 @@
 		B5990B8F2BB84F1A0047C552 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B5990B902BB84F250047C552 /* GooglePlacesAPIEndpoints.swift */,
 				B5990BA92BB850520047C552 /* Datasources */,
 				B5990B922BB84F510047C552 /* DTOs */,
-				B5990B902BB84F250047C552 /* GooglePlacesAPIEndpoints.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				B5990BA02BB84FD60047C552 /* Entities */,
+				B5990BAC2BB850A60047C552 /* Repositories */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -326,6 +332,22 @@
 				B5990BAA2BB850630047C552 /* GooglePlacesRemoteDatasource.swift */,
 			);
 			path = Datasources;
+			sourceTree = "<group>";
+		};
+		B5990BAC2BB850A60047C552 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				B5990BAD2BB850B70047C552 /* GooglePlacesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		B5990BAF2BB850C40047C552 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				B5990BB02BB850D80047C552 /* DefaultGooglePlacesRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,11 +502,13 @@
 				B5990B912BB84F250047C552 /* GooglePlacesAPIEndpoints.swift in Sources */,
 				B5990B982BB84F940047C552 /* PlaceLocationDTO.swift in Sources */,
 				B5990B8B2BB84DE20047C552 /* HTTPMethodType.swift in Sources */,
+				B5990BAE2BB850B70047C552 /* GooglePlacesRepository.swift in Sources */,
 				B5990B942BB84F5C0047C552 /* PlaceDTO.swift in Sources */,
 				B5990B372BB6DE270047C552 /* ContentView.swift in Sources */,
 				B5990B9E2BB84FBF0047C552 /* PlacesNearbySearchDTO.swift in Sources */,
 				B5990B802BB84AEC0047C552 /* EnvironmentConfiguration.swift in Sources */,
 				B5990B962BB84F6D0047C552 /* PlaceGeometryDTO.swift in Sources */,
+				B5990BB12BB850D80047C552 /* DefaultGooglePlacesRepository.swift in Sources */,
 				B5990B8D2BB84DF10047C552 /* RequestError.swift in Sources */,
 				B5990BA42BB84FF50047C552 /* PlaceLocation.swift in Sources */,
 				B5990BAB2BB850630047C552 /* GooglePlacesRemoteDatasource.swift in Sources */,
