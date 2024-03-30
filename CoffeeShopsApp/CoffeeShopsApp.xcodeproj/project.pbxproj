@@ -34,6 +34,16 @@
 		B5990B8B2BB84DE20047C552 /* HTTPMethodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B8A2BB84DE20047C552 /* HTTPMethodType.swift */; };
 		B5990B8D2BB84DF10047C552 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B8C2BB84DF10047C552 /* RequestError.swift */; };
 		B5990B912BB84F250047C552 /* GooglePlacesAPIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B902BB84F250047C552 /* GooglePlacesAPIEndpoints.swift */; };
+		B5990B942BB84F5C0047C552 /* PlaceDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B932BB84F5C0047C552 /* PlaceDTO.swift */; };
+		B5990B962BB84F6D0047C552 /* PlaceGeometryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B952BB84F6D0047C552 /* PlaceGeometryDTO.swift */; };
+		B5990B982BB84F940047C552 /* PlaceLocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B972BB84F940047C552 /* PlaceLocationDTO.swift */; };
+		B5990B9A2BB84FA20047C552 /* PlaceOpeningHoursDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B992BB84FA20047C552 /* PlaceOpeningHoursDTO.swift */; };
+		B5990B9C2BB84FB10047C552 /* PlacePhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B9B2BB84FB10047C552 /* PlacePhotoDTO.swift */; };
+		B5990B9E2BB84FBF0047C552 /* PlacesNearbySearchDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B9D2BB84FBF0047C552 /* PlacesNearbySearchDTO.swift */; };
+		B5990BA22BB84FE70047C552 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BA12BB84FE70047C552 /* Place.swift */; };
+		B5990BA42BB84FF50047C552 /* PlaceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BA32BB84FF50047C552 /* PlaceLocation.swift */; };
+		B5990BA62BB850040047C552 /* PlacePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BA52BB850040047C552 /* PlacePhoto.swift */; };
+		B5990BA82BB850110047C552 /* PlacesNearbySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BA72BB850110047C552 /* PlacesNearbySearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +96,16 @@
 		B5990B8A2BB84DE20047C552 /* HTTPMethodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodType.swift; sourceTree = "<group>"; };
 		B5990B8C2BB84DF10047C552 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		B5990B902BB84F250047C552 /* GooglePlacesAPIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesAPIEndpoints.swift; sourceTree = "<group>"; };
+		B5990B932BB84F5C0047C552 /* PlaceDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDTO.swift; sourceTree = "<group>"; };
+		B5990B952BB84F6D0047C552 /* PlaceGeometryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceGeometryDTO.swift; sourceTree = "<group>"; };
+		B5990B972BB84F940047C552 /* PlaceLocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLocationDTO.swift; sourceTree = "<group>"; };
+		B5990B992BB84FA20047C552 /* PlaceOpeningHoursDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOpeningHoursDTO.swift; sourceTree = "<group>"; };
+		B5990B9B2BB84FB10047C552 /* PlacePhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePhotoDTO.swift; sourceTree = "<group>"; };
+		B5990B9D2BB84FBF0047C552 /* PlacesNearbySearchDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesNearbySearchDTO.swift; sourceTree = "<group>"; };
+		B5990BA12BB84FE70047C552 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		B5990BA32BB84FF50047C552 /* PlaceLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLocation.swift; sourceTree = "<group>"; };
+		B5990BA52BB850040047C552 /* PlacePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePhoto.swift; sourceTree = "<group>"; };
+		B5990BA72BB850110047C552 /* PlacesNearbySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesNearbySearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +161,7 @@
 				B5990B342BB6DE270047C552 /* CoffeeShopsAppApp.swift */,
 				B5990B362BB6DE270047C552 /* ContentView.swift */,
 				B5990B8E2BB84F100047C552 /* Data */,
+				B5990B9F2BB84FCA0047C552 /* Domain */,
 				B5990B832BB84DA40047C552 /* Infrastructure */,
 				B5990B5F2BB6DF5D0047C552 /* Presentation */,
 				B5990B3B2BB6DE280047C552 /* Preview Content */,
@@ -258,9 +279,42 @@
 		B5990B8F2BB84F1A0047C552 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B5990B922BB84F510047C552 /* DTOs */,
 				B5990B902BB84F250047C552 /* GooglePlacesAPIEndpoints.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		B5990B922BB84F510047C552 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				B5990B932BB84F5C0047C552 /* PlaceDTO.swift */,
+				B5990B952BB84F6D0047C552 /* PlaceGeometryDTO.swift */,
+				B5990B972BB84F940047C552 /* PlaceLocationDTO.swift */,
+				B5990B992BB84FA20047C552 /* PlaceOpeningHoursDTO.swift */,
+				B5990B9B2BB84FB10047C552 /* PlacePhotoDTO.swift */,
+				B5990B9D2BB84FBF0047C552 /* PlacesNearbySearchDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		B5990B9F2BB84FCA0047C552 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B5990BA02BB84FD60047C552 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B5990BA02BB84FD60047C552 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B5990BA12BB84FE70047C552 /* Place.swift */,
+				B5990BA32BB84FF50047C552 /* PlaceLocation.swift */,
+				B5990BA52BB850040047C552 /* PlacePhoto.swift */,
+				B5990BA72BB850110047C552 /* PlacesNearbySearch.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,13 +461,23 @@
 			files = (
 				B5990B862BB84DBE0047C552 /* Endpoint.swift in Sources */,
 				B5990B772BB6E2AA0047C552 /* Fonts.swift in Sources */,
+				B5990BA62BB850040047C552 /* PlacePhoto.swift in Sources */,
 				B5990B892BB84DD10047C552 /* HTTPClient.swift in Sources */,
+				B5990B9A2BB84FA20047C552 /* PlaceOpeningHoursDTO.swift in Sources */,
+				B5990B9C2BB84FB10047C552 /* PlacePhotoDTO.swift in Sources */,
+				B5990BA82BB850110047C552 /* PlacesNearbySearch.swift in Sources */,
 				B5990B912BB84F250047C552 /* GooglePlacesAPIEndpoints.swift in Sources */,
+				B5990B982BB84F940047C552 /* PlaceLocationDTO.swift in Sources */,
 				B5990B8B2BB84DE20047C552 /* HTTPMethodType.swift in Sources */,
+				B5990B942BB84F5C0047C552 /* PlaceDTO.swift in Sources */,
 				B5990B372BB6DE270047C552 /* ContentView.swift in Sources */,
+				B5990B9E2BB84FBF0047C552 /* PlacesNearbySearchDTO.swift in Sources */,
 				B5990B802BB84AEC0047C552 /* EnvironmentConfiguration.swift in Sources */,
+				B5990B962BB84F6D0047C552 /* PlaceGeometryDTO.swift in Sources */,
 				B5990B8D2BB84DF10047C552 /* RequestError.swift in Sources */,
+				B5990BA42BB84FF50047C552 /* PlaceLocation.swift in Sources */,
 				B5990B792BB6E2C60047C552 /* CSFont.swift in Sources */,
+				B5990BA22BB84FE70047C552 /* Place.swift in Sources */,
 				B5990B622BB6DF850047C552 /* Colors.swift in Sources */,
 				B5990B352BB6DE270047C552 /* CoffeeShopsAppApp.swift in Sources */,
 			);
