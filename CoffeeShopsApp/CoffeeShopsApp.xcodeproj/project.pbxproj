@@ -44,6 +44,7 @@
 		B5990BA42BB84FF50047C552 /* PlaceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BA32BB84FF50047C552 /* PlaceLocation.swift */; };
 		B5990BA62BB850040047C552 /* PlacePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BA52BB850040047C552 /* PlacePhoto.swift */; };
 		B5990BA82BB850110047C552 /* PlacesNearbySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BA72BB850110047C552 /* PlacesNearbySearch.swift */; };
+		B5990BAB2BB850630047C552 /* GooglePlacesRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BAA2BB850630047C552 /* GooglePlacesRemoteDatasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		B5990BA32BB84FF50047C552 /* PlaceLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLocation.swift; sourceTree = "<group>"; };
 		B5990BA52BB850040047C552 /* PlacePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePhoto.swift; sourceTree = "<group>"; };
 		B5990BA72BB850110047C552 /* PlacesNearbySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesNearbySearch.swift; sourceTree = "<group>"; };
+		B5990BAA2BB850630047C552 /* GooglePlacesRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesRemoteDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 		B5990B8F2BB84F1A0047C552 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B5990BA92BB850520047C552 /* Datasources */,
 				B5990B922BB84F510047C552 /* DTOs */,
 				B5990B902BB84F250047C552 /* GooglePlacesAPIEndpoints.swift */,
 			);
@@ -315,6 +318,14 @@
 				B5990BA72BB850110047C552 /* PlacesNearbySearch.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		B5990BA92BB850520047C552 /* Datasources */ = {
+			isa = PBXGroup;
+			children = (
+				B5990BAA2BB850630047C552 /* GooglePlacesRemoteDatasource.swift */,
+			);
+			path = Datasources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,6 +487,7 @@
 				B5990B962BB84F6D0047C552 /* PlaceGeometryDTO.swift in Sources */,
 				B5990B8D2BB84DF10047C552 /* RequestError.swift in Sources */,
 				B5990BA42BB84FF50047C552 /* PlaceLocation.swift in Sources */,
+				B5990BAB2BB850630047C552 /* GooglePlacesRemoteDatasource.swift in Sources */,
 				B5990B792BB6E2C60047C552 /* CSFont.swift in Sources */,
 				B5990BA22BB84FE70047C552 /* Place.swift in Sources */,
 				B5990B622BB6DF850047C552 /* Colors.swift in Sources */,
