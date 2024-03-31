@@ -18,13 +18,25 @@ struct HomeMapView: View {
     }
 
     var body: some View {
-        Map {
-            ForEach(viewModel.nearbyCoffeeShops) { location in
-                Annotation(location.name, coordinate: location.coordinate) {
-                    markerIcon()
-                        .onTapGesture { viewModel.navigateToPlaceDetails(location) }
+        ZStack(alignment: .topTrailing) {
+            Map {
+                ForEach(viewModel.nearbyCoffeeShops) { location in
+                    Annotation(location.name, coordinate: location.coordinate) {
+                        markerIcon()
+                            .onTapGesture { viewModel.navigateToPlaceDetails(location) }
+                    }
                 }
             }
+
+            Button { viewModel.navigateToFavourites() } label: {
+                Image("favourite-heart")
+                    .resizable()
+                    .frame(width: 18, height: 18)
+                    .padding(12)
+                    .background(Color.coffee)
+                    .clipShape(Circle())
+            }
+            .padding(16)
         }
     }
 
