@@ -40,11 +40,12 @@ struct HomeContainerView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            VStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: 0) {
                 HomeMapView(viewModel: viewModel)
                 HomeListView(coffeeShops: viewModel.nearbyCoffeeShops)
-                    .frame(height: geometry.size.height / 3)
+                    .frame(width: geometry.size.width, height: geometry.size.height / 3)
             }
+            .frame(maxWidth: .infinity)
         }
     }
 }

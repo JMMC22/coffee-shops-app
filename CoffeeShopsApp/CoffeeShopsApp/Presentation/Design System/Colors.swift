@@ -23,4 +23,8 @@ extension Color {
     static let customCoffee = Color("coffee")
     static let customGolden = Color("golden")
     static let customOliveGreen = Color("olive-green")
+
+    // MARK: Status
+    static let customGreenOpen = Color("green-open")
+    static let customRedClosed = Color("red-closed")
 }

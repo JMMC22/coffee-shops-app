@@ -17,12 +17,14 @@ struct HomeListView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 12) {
                 ForEach(coffeeShops) { place in
                     CoffeeShopItemListView(place: place)
                 }
             }
             .frame(maxWidth: .infinity)
+            .padding(16)
         }
+        .scrollIndicators(.hidden)
     }
 }
