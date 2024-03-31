@@ -54,6 +54,7 @@
 		B5990BBF2BB8523D0047C552 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BBE2BB8523D0047C552 /* HomeViewModel.swift */; };
 		B5990BC22BB853030047C552 /* HomeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BC12BB853030047C552 /* HomeMapView.swift */; };
 		B5990BC52BB853570047C552 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BC42BB853570047C552 /* HomeFactory.swift */; };
+		B5990BC72BB9743F0047C552 /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BC62BB9743F0047C552 /* HomeListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		B5990BBE2BB8523D0047C552 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B5990BC12BB853030047C552 /* HomeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapView.swift; sourceTree = "<group>"; };
 		B5990BC42BB853570047C552 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
+		B5990BC62BB9743F0047C552 /* HomeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				B5990BC12BB853030047C552 /* HomeMapView.swift */,
+				B5990BC62BB9743F0047C552 /* HomeListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				B5990B912BB84F250047C552 /* GooglePlacesAPIEndpoints.swift in Sources */,
 				B5990B982BB84F940047C552 /* PlaceLocationDTO.swift in Sources */,
 				B5990BB42BB8515A0047C552 /* GetNearbyCoffeeShops.swift in Sources */,
+				B5990BC72BB9743F0047C552 /* HomeListView.swift in Sources */,
 				B5990B8B2BB84DE20047C552 /* HTTPMethodType.swift in Sources */,
 				B5990BAE2BB850B70047C552 /* GooglePlacesRepository.swift in Sources */,
 				B5990BBF2BB8523D0047C552 /* HomeViewModel.swift in Sources */,
