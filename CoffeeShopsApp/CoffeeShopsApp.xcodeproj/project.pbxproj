@@ -55,6 +55,7 @@
 		B5990BC22BB853030047C552 /* HomeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BC12BB853030047C552 /* HomeMapView.swift */; };
 		B5990BC52BB853570047C552 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BC42BB853570047C552 /* HomeFactory.swift */; };
 		B5990BC72BB9743F0047C552 /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BC62BB9743F0047C552 /* HomeListView.swift */; };
+		B5990BCC2BB975BD0047C552 /* CoffeeShopItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BCB2BB975BD0047C552 /* CoffeeShopItemListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		B5990BC12BB853030047C552 /* HomeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapView.swift; sourceTree = "<group>"; };
 		B5990BC42BB853570047C552 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		B5990BC62BB9743F0047C552 /* HomeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
+		B5990BCB2BB975BD0047C552 /* CoffeeShopItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopItemListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,8 +410,8 @@
 		B5990BC02BB852F50047C552 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B5990BC12BB853030047C552 /* HomeMapView.swift */,
-				B5990BC62BB9743F0047C552 /* HomeListView.swift */,
+				B5990BC82BB9757A0047C552 /* HomeList */,
+				B5990BCA2BB975870047C552 /* HomeMap */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -420,6 +422,31 @@
 				B5990BC42BB853570047C552 /* HomeFactory.swift */,
 			);
 			path = "Composition Root";
+			sourceTree = "<group>";
+		};
+		B5990BC82BB9757A0047C552 /* HomeList */ = {
+			isa = PBXGroup;
+			children = (
+				B5990BC62BB9743F0047C552 /* HomeListView.swift */,
+				B5990BC92BB975820047C552 /* Views */,
+			);
+			path = HomeList;
+			sourceTree = "<group>";
+		};
+		B5990BC92BB975820047C552 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5990BCB2BB975BD0047C552 /* CoffeeShopItemListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5990BCA2BB975870047C552 /* HomeMap */ = {
+			isa = PBXGroup;
+			children = (
+				B5990BC12BB853030047C552 /* HomeMapView.swift */,
+			);
+			path = HomeMap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -568,6 +595,7 @@
 				B5990BBD2BB852280047C552 /* HomeView.swift in Sources */,
 				B5990B772BB6E2AA0047C552 /* Fonts.swift in Sources */,
 				B5990BB92BB851CC0047C552 /* AppCoordinatorView.swift in Sources */,
+				B5990BCC2BB975BD0047C552 /* CoffeeShopItemListView.swift in Sources */,
 				B5990BB72BB851AB0047C552 /* AppCoordinator.swift in Sources */,
 				B5990BA62BB850040047C552 /* PlacePhoto.swift in Sources */,
 				B5990B892BB84DD10047C552 /* HTTPClient.swift in Sources */,
