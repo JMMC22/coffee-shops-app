@@ -21,7 +21,7 @@ struct HomeListView: View {
                 ForEach(viewModel.nearbyCoffeeShops) { place in
                     CoffeeShopItemListView(place: place)
                         .onTapGesture {
-                            viewModel.navigateToPlaceDetails(place)
+                            viewModel.navigateToPlaceDetails(id: place.id)
                         }
                 }
             }

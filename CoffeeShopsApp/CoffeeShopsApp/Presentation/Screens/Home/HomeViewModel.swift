@@ -77,8 +77,8 @@ extension HomeViewModel {
 
 extension HomeViewModel {
 
-    func navigateToPlaceDetails(_ place: Place) {
-        nextPage = .coffeShopDetails(place)
+    func navigateToPlaceDetails(id: String) {
+        nextPage = .coffeShopDetails(id: id)
     }
 
     func navigateToFavourites() {
