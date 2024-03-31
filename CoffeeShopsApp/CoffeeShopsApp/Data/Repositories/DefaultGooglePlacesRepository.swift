@@ -28,4 +28,15 @@ extension DefaultGooglePlacesRepository: GooglePlacesRepository {
             return .failure(error)
         }
     }
+
+    func getPlaceDetails(id: String) async -> Result<Place, RequestError> {
+        let result = await googlePlacesRemoteDatasource.getPlaceDetails(id: id)
+        switch result {
+        case .success(let response):
+            guard let place = response.toDomain() else { return .failure(.decode) }
+            return .success(place)
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
 }
