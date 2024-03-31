@@ -39,6 +39,12 @@ struct HomeContainerView: View {
     }
 
     var body: some View {
-        HomeMapView(viewModel: viewModel)
+        GeometryReader { geometry in
+            VStack(spacing: 0) {
+                HomeMapView(viewModel: viewModel)
+                HomeListView()
+                    .frame(height: geometry.size.height / 3)
+            }
+        }
     }
 }
