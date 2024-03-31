@@ -42,7 +42,7 @@ struct HomeContainerView: View {
         GeometryReader { geometry in
             VStack(spacing: 0) {
                 HomeMapView(viewModel: viewModel)
-                HomeListView()
+                HomeListView(coffeeShops: viewModel.nearbyCoffeeShops)
                     .frame(height: geometry.size.height / 3)
             }
         }
