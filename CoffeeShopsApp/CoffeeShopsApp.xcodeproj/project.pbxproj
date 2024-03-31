@@ -60,6 +60,7 @@
 		B5990BD22BB97FF40047C552 /* CoffeeShopDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD12BB97FF40047C552 /* CoffeeShopDetailsViewModel.swift */; };
 		B5990BD42BB980550047C552 /* CoffeeShopDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD32BB980550047C552 /* CoffeeShopDetailsFactory.swift */; };
 		B5990BD62BB9824D0047C552 /* PlaceDetailsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD52BB9824D0047C552 /* PlaceDetailsDTO.swift */; };
+		B5990BDA2BB984090047C552 /* GetCoffeeShopDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD92BB984090047C552 /* GetCoffeeShopDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		B5990BD12BB97FF40047C552 /* CoffeeShopDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopDetailsViewModel.swift; sourceTree = "<group>"; };
 		B5990BD32BB980550047C552 /* CoffeeShopDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopDetailsFactory.swift; sourceTree = "<group>"; };
 		B5990BD52BB9824D0047C552 /* PlaceDetailsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsDTO.swift; sourceTree = "<group>"; };
+		B5990BD92BB984090047C552 /* GetCoffeeShopDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoffeeShopDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				B5990BB32BB8515A0047C552 /* GetNearbyCoffeeShops.swift */,
+				B5990BD92BB984090047C552 /* GetCoffeeShopDetails.swift */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				B5990BC72BB9743F0047C552 /* HomeListView.swift in Sources */,
 				B5990B8B2BB84DE20047C552 /* HTTPMethodType.swift in Sources */,
 				B5990BAE2BB850B70047C552 /* GooglePlacesRepository.swift in Sources */,
+				B5990BDA2BB984090047C552 /* GetCoffeeShopDetails.swift in Sources */,
 				B5990BBF2BB8523D0047C552 /* HomeViewModel.swift in Sources */,
 				B5990BD22BB97FF40047C552 /* CoffeeShopDetailsViewModel.swift in Sources */,
 				B5990BC22BB853030047C552 /* HomeMapView.swift in Sources */,
