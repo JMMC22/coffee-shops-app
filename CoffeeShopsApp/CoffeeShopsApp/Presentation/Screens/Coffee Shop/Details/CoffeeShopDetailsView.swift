@@ -45,8 +45,16 @@ struct CoffeeShopDetailsContainerView: View {
     }
 
     private func image() -> some View {
-        AsyncImage(url: viewModel.imageURL)
-            .frame(height: 350)
+        AsyncImage(url: viewModel.imageURL) { image in
+            image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: 350)
+                .clipped()
+        } placeholder: {
+            ProgressView()
+        }
+        .frame(height: 350)
     }
 
     private func information() -> some View {
