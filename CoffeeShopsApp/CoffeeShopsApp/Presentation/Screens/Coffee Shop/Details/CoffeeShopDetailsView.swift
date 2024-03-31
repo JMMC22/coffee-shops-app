@@ -20,8 +20,11 @@ struct CoffeeShopDetailsView: View {
         ScrollView {
             CoffeeShopDetailsContainerView(viewModel: viewModel)
         }
-        // .navigationTitle(viewModel.name)
+        .navigationTitle(viewModel.name)
         .navigationBarTitleDisplayMode(.inline)
+        .task {
+            await viewModel.getCoffeeShopsDetails()
+        }
     }
 }
 
@@ -36,8 +39,8 @@ struct CoffeeShopDetailsContainerView: View {
     var body: some View {
         VStack {
             image()
-//            information()
-//            staticMap()
+            information()
+            staticMap()
         }
     }
 
@@ -47,18 +50,18 @@ struct CoffeeShopDetailsContainerView: View {
             .frame(height: 350)
     }
 
-//    private func information() -> some View {
-//        VStack {
-//            Text(viewModel.address)
-//                .CSFont(.inter(14, weight: .regular), color: .blackText)
-//            Text(viewModel.isOpenNow ? "Open Now" : "Closed")
-//                .CSFont(.inter(14, weight: .regular), color: viewModel.isOpenNow ? .greenOpen : .redClosed)
-//        }
-//    }
-//
-//    private func staticMap() -> some View {
-//        Map(coordinateRegion: $viewModel.coordinate)
-//            .disabled(true)
-//            .frame(height: 200)
-//    }
+    private func information() -> some View {
+        VStack {
+            Text(viewModel.address)
+                .CSFont(.inter(14, weight: .regular), color: .blackText)
+            Text(viewModel.isOpenNow ? "Open Now" : "Closed")
+                .CSFont(.inter(14, weight: .regular), color: viewModel.isOpenNow ? .greenOpen : .redClosed)
+        }
+    }
+
+    private func staticMap() -> some View {
+        Map(coordinateRegion: $viewModel.coordinate)
+            .disabled(true)
+            .frame(height: 200)
+    }
 }
