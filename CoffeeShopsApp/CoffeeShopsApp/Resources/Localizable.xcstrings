@@ -1,10 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Closed" : {
+
+    },
     "Details" : {
 
     },
     "Favourites Coffee Shops View" : {
+
+    },
+    "Open" : {
 
     }
   },
