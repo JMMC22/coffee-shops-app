@@ -1,7 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Hello, world!" : {
+    "Closed" : {
+
+    },
+    "Details" : {
+
+    },
+    "Favourites Coffee Shops View" : {
+
+    },
+    "Open" : {
 
     }
   },
