@@ -59,6 +59,7 @@
 		B5990BD02BB97FED0047C552 /* CoffeeShopDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BCF2BB97FED0047C552 /* CoffeeShopDetailsView.swift */; };
 		B5990BD22BB97FF40047C552 /* CoffeeShopDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD12BB97FF40047C552 /* CoffeeShopDetailsViewModel.swift */; };
 		B5990BD42BB980550047C552 /* CoffeeShopDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD32BB980550047C552 /* CoffeeShopDetailsFactory.swift */; };
+		B5990BD62BB9824D0047C552 /* PlaceDetailsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD52BB9824D0047C552 /* PlaceDetailsDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		B5990BCF2BB97FED0047C552 /* CoffeeShopDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopDetailsView.swift; sourceTree = "<group>"; };
 		B5990BD12BB97FF40047C552 /* CoffeeShopDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopDetailsViewModel.swift; sourceTree = "<group>"; };
 		B5990BD32BB980550047C552 /* CoffeeShopDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopDetailsFactory.swift; sourceTree = "<group>"; };
+		B5990BD52BB9824D0047C552 /* PlaceDetailsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +325,7 @@
 		B5990B922BB84F510047C552 /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
+				B5990BD52BB9824D0047C552 /* PlaceDetailsDTO.swift */,
 				B5990B932BB84F5C0047C552 /* PlaceDTO.swift */,
 				B5990B952BB84F6D0047C552 /* PlaceGeometryDTO.swift */,
 				B5990B972BB84F940047C552 /* PlaceLocationDTO.swift */,
@@ -650,6 +653,7 @@
 				B5990B792BB6E2C60047C552 /* CSFont.swift in Sources */,
 				B5990BA22BB84FE70047C552 /* Place.swift in Sources */,
 				B5990BC52BB853570047C552 /* HomeFactory.swift in Sources */,
+				B5990BD62BB9824D0047C552 /* PlaceDetailsDTO.swift in Sources */,
 				B5990B622BB6DF850047C552 /* Colors.swift in Sources */,
 				B5990B352BB6DE270047C552 /* CoffeeShopsAppApp.swift in Sources */,
 			);
