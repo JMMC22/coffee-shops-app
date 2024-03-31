@@ -80,4 +80,8 @@ extension HomeViewModel {
     func navigateToPlaceDetails(_ place: Place) {
         nextPage = .coffeShopDetails(place)
     }
+
+    func navigateToFavourites() {
+        nextPage = .favouritesCoffeeShops
+    }
 }
