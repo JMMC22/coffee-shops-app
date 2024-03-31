@@ -9,17 +9,20 @@ import SwiftUI
 
 struct HomeListView: View {
 
-    let coffeeShops: [Place]
-
-    init(coffeeShops: [Place]) {
-        self.coffeeShops = coffeeShops
+    @ObservedObject var viewModel: HomeViewModel
+    
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
     }
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
-                ForEach(coffeeShops) { place in
+                ForEach(viewModel.nearbyCoffeeShops) { place in
                     CoffeeShopItemListView(place: place)
+                        .onTapGesture {
+                            viewModel.navigateToPlaceDetails(place)
+                        }
                 }
             }
             .frame(maxWidth: .infinity)

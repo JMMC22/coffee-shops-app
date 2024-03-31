@@ -42,8 +42,8 @@ struct HomeContainerView: View {
         GeometryReader { geometry in
             VStack(alignment: .leading, spacing: 0) {
                 HomeMapView(viewModel: viewModel)
-                HomeListView(coffeeShops: viewModel.nearbyCoffeeShops)
-                    .frame(width: geometry.size.width, height: geometry.size.height / 3)
+                HomeListView(viewModel: viewModel)
+                    .frame(height: geometry.size.height / 3)
             }
             .frame(maxWidth: .infinity)
         }
