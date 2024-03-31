@@ -52,7 +52,7 @@ extension AppCoordinator {
         case .home:
             HomeFactory.create()
         case .coffeShopDetails(let coffeeShop):
-            Text("Details")
+            CoffeeShopDetailsFactory.create(coffeeShop)
         case .favouritesCoffeeShops:
             Text("Favourites Coffee Shops View")
         }
