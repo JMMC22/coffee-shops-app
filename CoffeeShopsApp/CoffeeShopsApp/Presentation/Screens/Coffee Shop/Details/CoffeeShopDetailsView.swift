@@ -45,8 +45,7 @@ struct CoffeeShopDetailsContainerView: View {
     }
 
     private func image() -> some View {
-        Rectangle()
-            .fill(.darkGrayText)
+        AsyncImage(url: viewModel.imageURL)
             .frame(height: 350)
     }
 
