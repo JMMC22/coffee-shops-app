@@ -22,11 +22,17 @@ class HomeFactory {
     }
 
     private static func createRepository() -> GooglePlacesRepository {
-        return DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: createDatasource())
+        return DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: createDatasource(),
+                                             googlePlacesUserDefaultsDatasource: createPersistanceDatasource())
     }
 
     private static func createDatasource() -> GooglePlacesRemoteDatasource {
         let client = NetworkManager()
         return DefaultGooglePlacesRemoteDatasource(httpClient: client)
+    }
+
+    private static func createPersistanceDatasource() -> GooglePlacesUserDefaultsDatasource {
+        let client = UserDefaultManager.shared
+        return DefaultGooglePlacesUserDefaultsDatasource(userDefaultsManager: client)
     }
 }
