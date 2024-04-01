@@ -61,6 +61,9 @@
 		B5990BD42BB980550047C552 /* CoffeeShopDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD32BB980550047C552 /* CoffeeShopDetailsFactory.swift */; };
 		B5990BD62BB9824D0047C552 /* PlaceDetailsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD52BB9824D0047C552 /* PlaceDetailsDTO.swift */; };
 		B5990BDA2BB984090047C552 /* GetCoffeeShopDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD92BB984090047C552 /* GetCoffeeShopDetails.swift */; };
+		B5B406F12BBAA5E400ECE46C /* CoffeeShopFavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406F02BBAA5E400ECE46C /* CoffeeShopFavouritesView.swift */; };
+		B5B406F32BBAA5FC00ECE46C /* CoffeeShopFavouritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406F22BBAA5FC00ECE46C /* CoffeeShopFavouritesViewModel.swift */; };
+		B5B406F52BBAA64500ECE46C /* CoffeeShopFavouritesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406F42BBAA64500ECE46C /* CoffeeShopFavouritesFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +143,9 @@
 		B5990BD32BB980550047C552 /* CoffeeShopDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopDetailsFactory.swift; sourceTree = "<group>"; };
 		B5990BD52BB9824D0047C552 /* PlaceDetailsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsDTO.swift; sourceTree = "<group>"; };
 		B5990BD92BB984090047C552 /* GetCoffeeShopDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoffeeShopDetails.swift; sourceTree = "<group>"; };
+		B5B406F02BBAA5E400ECE46C /* CoffeeShopFavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopFavouritesView.swift; sourceTree = "<group>"; };
+		B5B406F22BBAA5FC00ECE46C /* CoffeeShopFavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopFavouritesViewModel.swift; sourceTree = "<group>"; };
+		B5B406F42BBAA64500ECE46C /* CoffeeShopFavouritesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopFavouritesFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,6 +440,7 @@
 			children = (
 				B5990BC42BB853570047C552 /* HomeFactory.swift */,
 				B5990BD32BB980550047C552 /* CoffeeShopDetailsFactory.swift */,
+				B5B406F42BBAA64500ECE46C /* CoffeeShopFavouritesFactory.swift */,
 			);
 			path = "Composition Root";
 			sourceTree = "<group>";
@@ -467,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				B5990BCE2BB97FE00047C552 /* Details */,
+				B5B406EF2BBAA5B700ECE46C /* Favourites */,
 			);
 			path = "Coffee Shop";
 			sourceTree = "<group>";
@@ -478,6 +486,15 @@
 				B5990BD12BB97FF40047C552 /* CoffeeShopDetailsViewModel.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		B5B406EF2BBAA5B700ECE46C /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				B5B406F02BBAA5E400ECE46C /* CoffeeShopFavouritesView.swift */,
+				B5B406F22BBAA5FC00ECE46C /* CoffeeShopFavouritesViewModel.swift */,
+			);
+			path = Favourites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -634,7 +651,9 @@
 				B5990B9C2BB84FB10047C552 /* PlacePhotoDTO.swift in Sources */,
 				B5990BA82BB850110047C552 /* PlacesNearbySearch.swift in Sources */,
 				B5990B912BB84F250047C552 /* GooglePlacesAPIEndpoints.swift in Sources */,
+				B5B406F32BBAA5FC00ECE46C /* CoffeeShopFavouritesViewModel.swift in Sources */,
 				B5990B982BB84F940047C552 /* PlaceLocationDTO.swift in Sources */,
+				B5B406F52BBAA64500ECE46C /* CoffeeShopFavouritesFactory.swift in Sources */,
 				B5990BB42BB8515A0047C552 /* GetNearbyCoffeeShops.swift in Sources */,
 				B5990BC72BB9743F0047C552 /* HomeListView.swift in Sources */,
 				B5990B8B2BB84DE20047C552 /* HTTPMethodType.swift in Sources */,
@@ -653,6 +672,7 @@
 				B5990B8D2BB84DF10047C552 /* RequestError.swift in Sources */,
 				B5990BA42BB84FF50047C552 /* PlaceLocation.swift in Sources */,
 				B5990BD42BB980550047C552 /* CoffeeShopDetailsFactory.swift in Sources */,
+				B5B406F12BBAA5E400ECE46C /* CoffeeShopFavouritesView.swift in Sources */,
 				B5990BAB2BB850630047C552 /* GooglePlacesRemoteDatasource.swift in Sources */,
 				B5990B792BB6E2C60047C552 /* CSFont.swift in Sources */,
 				B5990BA22BB84FE70047C552 /* Place.swift in Sources */,
