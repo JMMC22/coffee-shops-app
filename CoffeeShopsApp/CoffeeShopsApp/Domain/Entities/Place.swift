@@ -16,6 +16,7 @@ struct Place: Identifiable {
     let photos: [PlacePhoto]
     let address: String
     let url: URL?
+    let phoneNumber: String
 }
 
 extension Place: Equatable {

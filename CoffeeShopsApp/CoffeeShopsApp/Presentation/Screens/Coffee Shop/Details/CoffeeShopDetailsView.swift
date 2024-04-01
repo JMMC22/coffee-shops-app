@@ -28,21 +28,29 @@ struct CoffeeShopDetailsView: View {
             await viewModel.getCoffeeShopsDetails()
         }
         .overlay(openWebsiteButton(), alignment: .bottom)
+        .toolbar {
+            Button(action: { open(URL(string: "tel://\(viewModel.phoneNumber)")) }) {
+                Image(systemName: "phone.fill")
+            }
+        }
     }
 
     @ViewBuilder
     private func openWebsiteButton() -> some View {
-        if let coffeeURL = viewModel.coffeeURL {
-            Button(action: { openURL(coffeeURL) }) {
-                Text("Go to website")
-                    .CSFont(.inter(14, weight: .bold), color: .whiteCustom)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-            }
-            .foregroundStyle(.whiteCustom)
-            .background(.oliveGreen)
-            .buttonBorderShape(.capsule)
+        Button(action: { open(viewModel.coffeeURL) }) {
+            Text("Go to website")
+                .CSFont(.inter(14, weight: .bold), color: .whiteCustom)
+                .frame(maxWidth: .infinity)
+                .padding()
         }
+        .foregroundStyle(.whiteCustom)
+        .background(.oliveGreen)
+        .buttonBorderShape(.capsule)
+    }
+    
+    private func open(_ url: URL?) {
+        guard let url else { return }
+        openURL(url)
     }
 }
 
