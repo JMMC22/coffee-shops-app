@@ -66,6 +66,7 @@
 		B5B406F52BBAA64500ECE46C /* CoffeeShopFavouritesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406F42BBAA64500ECE46C /* CoffeeShopFavouritesFactory.swift */; };
 		B5B406F82BBAA88D00ECE46C /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406F72BBAA88D00ECE46C /* UserDefaultManager.swift */; };
 		B5B406FA2BBAA8AE00ECE46C /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406F92BBAA8AE00ECE46C /* UserDefaultsKey.swift */; };
+		B5B406FD2BBAA97E00ECE46C /* GooglePlacesUserDefaultsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406FC2BBAA97E00ECE46C /* GooglePlacesUserDefaultsDatasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		B5B406F42BBAA64500ECE46C /* CoffeeShopFavouritesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopFavouritesFactory.swift; sourceTree = "<group>"; };
 		B5B406F72BBAA88D00ECE46C /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		B5B406F92BBAA8AE00ECE46C /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		B5B406FC2BBAA97E00ECE46C /* GooglePlacesUserDefaultsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesUserDefaultsDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				B5990B8F2BB84F1A0047C552 /* Network */,
+				B5B406FB2BBAA95500ECE46C /* Persistence */,
 				B5990BAF2BB850C40047C552 /* Repositories */,
 			);
 			path = Data;
@@ -511,6 +514,14 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		B5B406FB2BBAA95500ECE46C /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				B5B406FC2BBAA97E00ECE46C /* GooglePlacesUserDefaultsDatasource.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -679,6 +690,7 @@
 				B5990BD22BB97FF40047C552 /* CoffeeShopDetailsViewModel.swift in Sources */,
 				B5990BC22BB853030047C552 /* HomeMapView.swift in Sources */,
 				B5990B942BB84F5C0047C552 /* PlaceDTO.swift in Sources */,
+				B5B406FD2BBAA97E00ECE46C /* GooglePlacesUserDefaultsDatasource.swift in Sources */,
 				B5990B372BB6DE270047C552 /* ContentView.swift in Sources */,
 				B5990B9E2BB84FBF0047C552 /* PlacesNearbySearchDTO.swift in Sources */,
 				B5990B802BB84AEC0047C552 /* EnvironmentConfiguration.swift in Sources */,
