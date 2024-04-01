@@ -15,6 +15,7 @@ struct Place: Identifiable {
     let isOpen: Bool
     let photos: [PlacePhoto]
     let address: String
+    let url: URL?
 }
 
 extension Place: Equatable {
