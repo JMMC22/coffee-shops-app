@@ -22,7 +22,7 @@ class UserDefaultManager: NSObject {
     }
 
     func set<T>(_ obj: T, for key: UserDefaultsKey) {
-        self.userDefaults?.set(object, forKey: key.value)
+        self.userDefaults?.set(obj, forKey: key.value)
         self.userDefaults?.synchronize()
     }
 

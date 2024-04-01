@@ -16,5 +16,4 @@ enum UserDefaultsKey: String, CaseIterable {
     var value : String {
         return self.rawValue
     }
-    
 }
