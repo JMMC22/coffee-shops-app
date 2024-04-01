@@ -12,6 +12,8 @@ struct CoffeeShopDetailsView: View {
 
     @StateObject private var viewModel: CoffeeShopDetailsViewModel
 
+    @Environment(\.openURL) private var openURL
+
     init(viewModel: CoffeeShopDetailsViewModel) {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
@@ -24,6 +26,22 @@ struct CoffeeShopDetailsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task {
             await viewModel.getCoffeeShopsDetails()
+        }
+        .overlay(openWebsiteButton(), alignment: .bottom)
+    }
+
+    @ViewBuilder
+    private func openWebsiteButton() -> some View {
+        if let coffeeURL = viewModel.coffeeURL {
+            Button(action: { openURL(coffeeURL) }) {
+                Text("Go to website")
+                    .CSFont(.inter(14, weight: .bold), color: .whiteCustom)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+            }
+            .foregroundStyle(.whiteCustom)
+            .background(.oliveGreen)
+            .buttonBorderShape(.capsule)
         }
     }
 }

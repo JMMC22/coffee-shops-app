@@ -18,6 +18,7 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     @Published var imageURL: URL?
 
     @Published var error: RequestError?
+    var coffeeURL: URL?
 
     private let getCoffeeShopDetails: GetCoffeeShopDetails
     private let id: String
@@ -48,6 +49,7 @@ extension CoffeeShopDetailsViewModel {
             self.isOpenNow = coffeeShop.isOpen
             self.coordinate = self.createCoordinateRegion(coffeeShop.coordinate)
             self.imageURL = coffeeShop.photos.first?.getPlacePhotoURL()
+            self.coffeeURL = coffeeShop.url
         }
     }
 
