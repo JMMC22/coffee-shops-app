@@ -23,7 +23,7 @@ struct HomeMapView: View {
                 ForEach(viewModel.nearbyCoffeeShops) { location in
                     Annotation(location.name, coordinate: location.coordinate) {
                         markerIcon()
-                            .onTapGesture { viewModel.navigateToPlaceDetails(location) }
+                            .onTapGesture { viewModel.navigateToPlaceDetails(id: location.id) }
                     }
                 }
             }

@@ -14,6 +14,8 @@ struct PlaceDTO: Decodable {
     let openingHours: PlaceOpeningHoursDTO?
     let photos: [PlacePhotoDTO]?
     let address: String?
+    let url: String?
+    let phoneNumber: String?
 
     enum CodingKeys: String, CodingKey {
         case id = "place_id"
@@ -22,6 +24,8 @@ struct PlaceDTO: Decodable {
         case openingHours = "opening_hours"
         case photos
         case address = "vicinity"
+        case url = "website"
+        case phoneNumber = "international_phone_number"
     }
 }
 
@@ -32,6 +36,8 @@ extension PlaceDTO {
               location: geometry?.location?.toDomain(),
               isOpen: openingHours?.isOpenNow ?? false,
               photos: photos?.compactMap({ $0.toDomain()}) ?? [],
-              address: address ?? "")
+              address: address ?? "",
+              url: URL(string: url ?? ""),
+              phoneNumber: phoneNumber?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
     }
 }
