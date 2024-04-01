@@ -9,6 +9,7 @@ import Foundation
 
 protocol GooglePlacesRemoteDatasource {
     func getNearbyPlaces(location: String, radius: String, keyword: String) async -> Result<PlacesNearbySearchDTO, RequestError>
+    func getPlaceDetails(id: String) async -> Result<PlaceDetailsDTO, RequestError>
 }
 
 class DefaultGooglePlacesRemoteDatasource {
@@ -37,4 +38,21 @@ extension DefaultGooglePlacesRemoteDatasource: GooglePlacesRemoteDatasource {
             return .failure(error)
         }
     }
+
+    func getPlaceDetails(id: String) async -> Result<PlaceDetailsDTO, RequestError> {
+        let endpoint = GooglePlacesAPIEndpoints.getPlaceDetails(id: id)
+        let result = await httpClient.request(endpoint: endpoint)
+
+        switch result {
+        case .success(let response):
+            guard let placeResponse = try? JSONDecoder().decode(PlaceDetailsDTO.self,
+                                                                       from: response) else {
+                return .failure(.decode)
+            }
+            return .success(placeResponse)
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
+    
 }
