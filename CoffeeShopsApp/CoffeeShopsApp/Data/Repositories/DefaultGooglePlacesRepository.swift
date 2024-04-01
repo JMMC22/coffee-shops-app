@@ -49,11 +49,12 @@ extension DefaultGooglePlacesRepository: GooglePlacesRepository {
 extension DefaultGooglePlacesRepository {
 
     func saveFavouriteCoffeShop(_ place: Place) -> Result<Place, RequestError> {
-        let result = googlePlacesUserDefaultsDatasource.saveFavouriteCoffeShop(place)
+        let dto = PlaceUDS(place: place)
+        let result = googlePlacesUserDefaultsDatasource.saveFavouriteCoffeShop(dto)
 
         switch result {
         case .success(let response):
-            return .success(response)
+            return .success(response.toDomain())
         case .failure(let error):
             return .failure(error)
         }
@@ -64,7 +65,7 @@ extension DefaultGooglePlacesRepository {
 
         switch result {
         case .success(let response):
-            return .success(response)
+            return .success(response.map({ $0.toDomain() }))
         case .failure(let error):
             return .failure(error)
         }

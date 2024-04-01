@@ -8,8 +8,8 @@
 import Foundation
 
 protocol GooglePlacesUserDefaultsDatasource {
-    func saveFavouriteCoffeShop(_ place: Place) -> Result<Place, RequestError>
-    func fetchFavouritesCoffeeShops() -> Result<[Place], RequestError>
+    func saveFavouriteCoffeShop(_ place: PlaceUDS) -> Result<PlaceUDS, RequestError>
+    func fetchFavouritesCoffeeShops() -> Result<[PlaceUDS], RequestError>
 }
 
 class DefaultGooglePlacesUserDefaultsDatasource {
@@ -23,25 +23,31 @@ class DefaultGooglePlacesUserDefaultsDatasource {
 
 extension DefaultGooglePlacesUserDefaultsDatasource: GooglePlacesUserDefaultsDatasource {
 
-    func saveFavouriteCoffeShop(_ place: Place) -> Result<Place, RequestError> {
-        let result = self.fetchFavouritesCoffeeShops()
-
-        switch result {
-        case .success(let list):
-            var favouritesList = list
-            favouritesList.append(place)
-            self.userDefaultsManager.set(favouritesList, for: .favouritesCoffeeShops)
-            return .success(place)
-        case .failure(let error):
-            return .failure(error)
+    func saveFavouriteCoffeShop(_ place: PlaceUDS) -> Result<PlaceUDS, RequestError> {
+        guard var favouritesList = try? fetchFavouritesCoffeeShops().get() else {
+            return .failure(.decode)
         }
+
+        favouritesList.append(place)
+
+        guard let encodedData = try? JSONEncoder().encode(favouritesList) else {
+            return .failure(.decode)
+        }
+
+        userDefaultsManager.set(encodedData, for: .favouritesCoffeeShops)
+        return .success(place)
     }
 
-    func fetchFavouritesCoffeeShops() -> Result<[Place], RequestError> {
-        if let result = userDefaultsManager.get(for: .favouritesCoffeeShops) as [Place]? {
-            return .success(result)
-        } else {
-            return .failure(.noResponse)
+    func fetchFavouritesCoffeeShops() -> Result<[PlaceUDS], RequestError> {
+        guard let encodedData = userDefaultsManager.object(for: .favouritesCoffeeShops) as? Data else {
+            return .success([])
+        }
+
+        do {
+            let favouritesList = try JSONDecoder().decode([PlaceUDS].self, from: encodedData)
+            return .success(favouritesList)
+        } catch {
+            return .failure(.decode)
         }
     }
 }

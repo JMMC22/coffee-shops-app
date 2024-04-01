@@ -65,6 +65,7 @@ struct CoffeeShopDetailsContainerView: View {
     var body: some View {
         VStack {
             image()
+            favourite()
             information()
             staticMap()
         }
@@ -89,6 +90,16 @@ struct CoffeeShopDetailsContainerView: View {
                 .CSFont(.inter(14, weight: .regular), color: .blackText)
             Text(viewModel.isOpenNow ? "Open Now" : "Closed")
                 .CSFont(.inter(14, weight: .regular), color: viewModel.isOpenNow ? .greenOpen : .redClosed)
+        }
+    }
+
+    private func favourite() -> some View {
+        HStack {
+            Spacer()
+            Button(action: viewModel.saveAsFavourite) {
+                Image(systemName: viewModel.isFavourite ? "heart.fill" : "heart")
+                    .frame(width: 25, height: 25)
+            }
         }
     }
 

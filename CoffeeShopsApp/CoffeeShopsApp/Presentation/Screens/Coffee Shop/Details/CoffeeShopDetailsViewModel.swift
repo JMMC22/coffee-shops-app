@@ -16,6 +16,7 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     @Published var isOpenNow: Bool = false
     @Published var coordinate: MKCoordinateRegion = .init()
     @Published var imageURL: URL?
+    @Published var isFavourite: Bool = false
 
     @Published var error: RequestError?
 
@@ -27,6 +28,7 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     private let saveFavouriteCoffeeShop: SaveFavouriteCoffeeShop
 
     private let id: String
+    private var coffeeShop: Place?
 
     init(_ id: String, getCoffeeShopDetails: GetCoffeeShopDetails, saveFavouriteCoffeeShop: SaveFavouriteCoffeeShop) {
         self.id = id
@@ -49,6 +51,7 @@ extension CoffeeShopDetailsViewModel {
     }
 
     private func getCoffeeShopsDetailsDidSuccess(_ coffeeShop: Place) {
+        self.coffeeShop = coffeeShop
         DispatchQueue.main.async {
             self.name = coffeeShop.name
             self.address = coffeeShop.address
@@ -64,6 +67,31 @@ extension CoffeeShopDetailsViewModel {
         DispatchQueue.main.async {
             self.error = error
         }
+    }
+}
+
+extension CoffeeShopDetailsViewModel {
+
+    func saveAsFavourite() {
+        guard let coffeeShop else { return }
+        let result = saveFavouriteCoffeeShop.execute(coffeeShop)
+
+        switch result {
+        case .success:
+            saveAsFavouriteDidSuccess()
+        case .failure(let error):
+            saveAsFavouriteDidFail(error)
+        }
+    }
+
+    private func saveAsFavouriteDidSuccess() {
+        DispatchQueue.main.async {
+            self.isFavourite = true
+        }
+    }
+
+    private func saveAsFavouriteDidFail(_ error: RequestError) {
+        print("||DEBUG|| saveAsFavouriteDidFail - error: \(error.localizedDescription)")
     }
 }
 
