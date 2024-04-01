@@ -24,11 +24,14 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     var phoneNumber: String = ""
 
     private let getCoffeeShopDetails: GetCoffeeShopDetails
+    private let saveFavouriteCoffeeShop: SaveFavouriteCoffeeShop
+
     private let id: String
 
-    init(_ id: String, getCoffeeShopDetails: GetCoffeeShopDetails) {
+    init(_ id: String, getCoffeeShopDetails: GetCoffeeShopDetails, saveFavouriteCoffeeShop: SaveFavouriteCoffeeShop) {
         self.id = id
         self.getCoffeeShopDetails = getCoffeeShopDetails
+        self.saveFavouriteCoffeeShop = saveFavouriteCoffeeShop
     }
 }
 
