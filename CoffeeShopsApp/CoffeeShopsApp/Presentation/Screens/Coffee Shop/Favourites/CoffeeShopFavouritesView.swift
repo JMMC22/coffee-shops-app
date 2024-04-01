@@ -17,5 +17,8 @@ struct CoffeeShopFavouritesView: View {
 
     var body: some View {
         Text("Favourite View")
+            .onAppear {
+                viewModel.fetchFavouritesCoffeeShops()
+            }
     }
 }
