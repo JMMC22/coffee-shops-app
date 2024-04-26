@@ -23,6 +23,7 @@ struct AppCoordinatorView: View {
                     coordinator.build(page: sheet)
                 }
         }
+        .tint(.customCoffee)
         .environmentObject(coordinator)
     }
 }
