@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B514EDE92BDA80950069FE08 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514EDE82BDA80950069FE08 /* SplashView.swift */; };
+		B514EDEC2BDA8EE40069FE08 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514EDEB2BDA8EE40069FE08 /* Wave.swift */; };
 		B5990B352BB6DE270047C552 /* CoffeeShopsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B342BB6DE270047C552 /* CoffeeShopsAppApp.swift */; };
 		B5990B372BB6DE270047C552 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B362BB6DE270047C552 /* ContentView.swift */; };
 		B5990B392BB6DE280047C552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5990B382BB6DE280047C552 /* Assets.xcassets */; };
@@ -81,6 +83,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B514EDE82BDA80950069FE08 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		B514EDEB2BDA8EE40069FE08 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
 		B5990B312BB6DE270047C552 /* CoffeeShopsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeShopsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5990B342BB6DE270047C552 /* CoffeeShopsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopsAppApp.swift; sourceTree = "<group>"; };
 		B5990B362BB6DE270047C552 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -167,6 +171,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B514EDE72BDA80880069FE08 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				B514EDE82BDA80950069FE08 /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		B514EDEA2BDA8ED20069FE08 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				B514EDEB2BDA8EE40069FE08 /* Wave.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
 		B5990B282BB6DE270047C552 = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +267,7 @@
 				B5990B782BB6E2C60047C552 /* CSFont.swift */,
 				B5990B762BB6E2AA0047C552 /* Fonts.swift */,
 				B5990B632BB6E2670047C552 /* Fonts */,
+				B514EDEA2BDA8ED20069FE08 /* Shapes */,
 			);
 			path = "Design System";
 			sourceTree = "<group>";
@@ -404,6 +425,7 @@
 		B5990BBA2BB8521C0047C552 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B514EDE72BDA80880069FE08 /* Splash */,
 				B5990BCD2BB97FD80047C552 /* Coffee Shop */,
 				B5990BBB2BB852200047C552 /* Home */,
 			);
@@ -630,6 +652,7 @@
 				B5990BB72BB851AB0047C552 /* AppCoordinator.swift in Sources */,
 				B5990BA62BB850040047C552 /* PlacePhoto.swift in Sources */,
 				B5990B892BB84DD10047C552 /* HTTPClient.swift in Sources */,
+				B514EDE92BDA80950069FE08 /* SplashView.swift in Sources */,
 				B5990B9A2BB84FA20047C552 /* PlaceOpeningHoursDTO.swift in Sources */,
 				B5990B9C2BB84FB10047C552 /* PlacePhotoDTO.swift in Sources */,
 				B5990BA82BB850110047C552 /* PlacesNearbySearch.swift in Sources */,
@@ -637,6 +660,7 @@
 				B5990B982BB84F940047C552 /* PlaceLocationDTO.swift in Sources */,
 				B5990BB42BB8515A0047C552 /* GetNearbyCoffeeShops.swift in Sources */,
 				B5990BC72BB9743F0047C552 /* HomeListView.swift in Sources */,
+				B514EDEC2BDA8EE40069FE08 /* Wave.swift in Sources */,
 				B5990B8B2BB84DE20047C552 /* HTTPMethodType.swift in Sources */,
 				B5990BAE2BB850B70047C552 /* GooglePlacesRepository.swift in Sources */,
 				B5990BDA2BB984090047C552 /* GetCoffeeShopDetails.swift in Sources */,
