@@ -22,17 +22,12 @@ struct CoffeeShopDetailsView: View {
         ScrollView {
             CoffeeShopDetailsContainerView(viewModel: viewModel)
         }
-        .navigationTitle(viewModel.name)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbarRole(.editor)
         .task {
             await viewModel.getCoffeeShopsDetails()
         }
         .overlay(openWebsiteButton(), alignment: .bottom)
-        .toolbar {
-            Button(action: { open(URL(string: "tel://\(viewModel.phoneNumber)")) }) {
-                Image(systemName: "phone.fill")
-            }
-        }
     }
 
     @ViewBuilder
@@ -89,6 +84,7 @@ struct CoffeeShopDetailsContainerView: View {
 
     private func information() -> some View {
         VStack(alignment: .leading, spacing: 16) {
+            name()
             isOpen()
             informationItem(icon: "location", title: "Address", value: viewModel.address)
             informationItem(icon: "clock", title: "Hour", value: "viewModel.hour")
@@ -125,6 +121,11 @@ struct CoffeeShopDetailsContainerView: View {
             .padding(6)
             .background(viewModel.isOpenNow ? .greenOpen : .redClosed)
             .clipShape(Capsule())
+    }
+
+    private func name() -> some View {
+        Text(viewModel.name)
+            .CSFont(.inter(28, weight: .bold), color: .blackText)
     }
 
     private func staticMap() -> some View {
