@@ -63,12 +63,12 @@ struct CoffeeShopDetailsContainerView: View {
     }
 
     var body: some View {
-        VStack {
+        VStack(spacing: 24) {
             image()
             information()
             staticMap()
         }
-        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 54, trailing: 16))
     }
 
     private func image() -> some View {
@@ -86,12 +86,43 @@ struct CoffeeShopDetailsContainerView: View {
     }
 
     private func information() -> some View {
-        VStack {
-            Text(viewModel.address)
-                .CSFont(.inter(14, weight: .regular), color: .blackText)
-            Text(viewModel.isOpenNow ? "Open Now" : "Closed")
-                .CSFont(.inter(14, weight: .regular), color: viewModel.isOpenNow ? .greenOpen : .redClosed)
+        VStack(alignment: .leading, spacing: 16) {
+            isOpen()
+            informationItem(icon: "location", title: "Address", value: viewModel.address)
+            informationItem(icon: "clock", title: "Hour", value: "viewModel.hour")
+            informationItem(icon: "network", title: "Website", value: viewModel.coffeeURL?.absoluteString ?? "")
+            informationItem(icon: "phone", title: "Phone Number", value: viewModel.phoneNumber)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private func informationItem(icon: String, title: String, value: String) -> some View {
+        HStack(spacing: 8) {
+            RoundedRectangle(cornerRadius: 4).fill(Color.customLightGrayText.opacity(0.4))
+                .frame(width: 36, height: 36)
+                .overlay {
+                    Image(systemName: icon)
+                    .resizable()
+                    .frame(width: 15, height: 15)
+                    .foregroundStyle(Color.customDarkGrayText)
+                }
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .CSFont(.inter(14, weight: .bold), color: .blackText)
+                Text(value)
+                    .CSFont(.inter(12, weight: .regular), color: .darkGrayText)
+            }
+        }
+    }
+
+    private func isOpen() -> some View {
+        Text(viewModel.isOpenNow ? "Open" : "Closed")
+            .CSFont(.inter(10, weight: .bold), color: .customWhite)
+            .textCase(.uppercase)
+            .padding(6)
+            .background(viewModel.isOpenNow ? .greenOpen : .redClosed)
+            .clipShape(Capsule())
     }
 
     private func staticMap() -> some View {
