@@ -68,6 +68,7 @@ struct CoffeeShopDetailsContainerView: View {
             information()
             staticMap()
         }
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
     }
 
     private func image() -> some View {
@@ -75,12 +76,13 @@ struct CoffeeShopDetailsContainerView: View {
             image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(height: 350)
+                .frame(height: 250)
                 .clipped()
         } placeholder: {
-            ProgressView()
+            Color.customLightGrayText
         }
-        .frame(height: 350)
+        .frame(height: 250)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 
     private func information() -> some View {
@@ -96,5 +98,6 @@ struct CoffeeShopDetailsContainerView: View {
         Map(coordinateRegion: $viewModel.coordinate)
             .disabled(true)
             .frame(height: 200)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }
