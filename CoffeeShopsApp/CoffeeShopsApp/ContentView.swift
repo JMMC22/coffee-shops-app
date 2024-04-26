@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @State var splashAnimationEnded: Bool = false
+
     var body: some View {
-        AppCoordinatorView(rootPage: .home)
+        if splashAnimationEnded {
+            AppCoordinatorView(rootPage: .home)
+        } else {
+            SplashView(animationEnded: $splashAnimationEnded)
+        }
     }
 }
 
