@@ -46,6 +46,7 @@ struct CoffeeShopDetailsView: View {
         .foregroundStyle(.whiteCustom)
         .background(.oliveGreen)
         .buttonBorderShape(.capsule)
+        .opacity(viewModel.coffeeURL != nil ? 1 : 0)
     }
     
     private func open(_ url: URL?) {
@@ -68,6 +69,7 @@ struct CoffeeShopDetailsContainerView: View {
             information()
             staticMap()
         }
+        .redacted(reason: viewModel.isLoading ? .placeholder : .invalidated)
         .padding(EdgeInsets(top: 0, leading: 16, bottom: 54, trailing: 16))
     }
 

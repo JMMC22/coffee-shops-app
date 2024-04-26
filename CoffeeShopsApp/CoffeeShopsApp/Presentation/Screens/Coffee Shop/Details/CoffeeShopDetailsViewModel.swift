@@ -17,6 +17,7 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     @Published var coordinate: MKCoordinateRegion = .init()
     @Published var imageURL: URL?
 
+    @Published var isLoading: Bool = true
     @Published var error: RequestError?
 
     // MARK: External
@@ -54,12 +55,14 @@ extension CoffeeShopDetailsViewModel {
             self.imageURL = coffeeShop.photos.first?.getPlacePhotoURL()
             self.coffeeURL = coffeeShop.url
             self.phoneNumber = coffeeShop.phoneNumber
+            self.isLoading = false
         }
     }
 
     private func getCoffeeShopsDetailsDidFail(_ error: RequestError) {
         DispatchQueue.main.async {
             self.error = error
+            self.isLoading = false
         }
     }
 }
