@@ -33,7 +33,7 @@ struct CoffeeShopDetailsView: View {
     @ViewBuilder
     private func openWebsiteButton() -> some View {
         Button(action: { open(viewModel.coffeeURL) }) {
-            Text("Go to website")
+            Text("button.go.website")
                 .CSFont(.inter(14, weight: .bold), color: .whiteCustom)
                 .frame(maxWidth: .infinity)
                 .padding()
@@ -86,10 +86,10 @@ struct CoffeeShopDetailsContainerView: View {
         VStack(alignment: .leading, spacing: 16) {
             name()
             isOpen()
-            informationItem(icon: "location", title: "Address", value: viewModel.address)
-            informationItem(icon: "clock", title: "Hour", value: "viewModel.hour")
-            informationItem(icon: "network", title: "Website", value: viewModel.coffeeURL?.absoluteString ?? "")
-            informationItem(icon: "phone", title: "Phone Number", value: viewModel.phoneNumber)
+            informationItem(icon: "location", title: "coffee.shop.address", value: viewModel.address)
+            informationItem(icon: "clock", title: "coffee.shop.hour", value: "viewModel.hour")
+            informationItem(icon: "network", title: "coffee.shop.website", value: viewModel.coffeeURL?.absoluteString ?? "")
+            informationItem(icon: "phone", title: "coffee.shop.phone.number", value: viewModel.phoneNumber)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -106,7 +106,7 @@ struct CoffeeShopDetailsContainerView: View {
                 }
 
             VStack(alignment: .leading, spacing: 4) {
-                Text(title)
+                Text(LocalizedStringKey(title))
                     .CSFont(.inter(14, weight: .bold), color: .blackText)
                 Text(value)
                     .CSFont(.inter(12, weight: .regular), color: .darkGrayText)
@@ -115,7 +115,7 @@ struct CoffeeShopDetailsContainerView: View {
     }
 
     private func isOpen() -> some View {
-        Text(viewModel.isOpenNow ? "Open" : "Closed")
+        Text(viewModel.isOpenNow ? "coffee.shop.open" : "coffee.shop.closed")
             .CSFont(.inter(10, weight: .bold), color: .customWhite)
             .textCase(.uppercase)
             .padding(6)
