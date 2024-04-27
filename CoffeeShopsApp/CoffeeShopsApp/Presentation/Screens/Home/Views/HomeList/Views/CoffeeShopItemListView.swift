@@ -47,7 +47,7 @@ struct CoffeeShopItemListView: View {
     
     private func info() -> some View {
         VStack {
-            Text(place.isOpen ? "Open" : "Closed")
+            Text(place.isOpen ?  "coffee.shop.open" : "coffee.shop.closed")
                 .CSFont(.inter(10, weight: .bold), color: .customWhite)
                 .textCase(.uppercase)
                 .padding(6)
