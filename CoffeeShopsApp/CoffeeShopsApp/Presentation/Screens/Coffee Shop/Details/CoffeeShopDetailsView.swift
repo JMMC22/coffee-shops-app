@@ -72,7 +72,6 @@ struct CoffeeShopDetailsContainerView: View {
         AsyncImage(url: viewModel.imageURL) { image in
             image
                 .resizable()
-                .aspectRatio(contentMode: .fill)
                 .frame(height: 250)
                 .clipped()
         } placeholder: {
