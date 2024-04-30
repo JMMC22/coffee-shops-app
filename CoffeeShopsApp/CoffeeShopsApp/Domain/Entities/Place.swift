@@ -13,6 +13,7 @@ struct Place: Identifiable {
     let name: String
     let location: PlaceLocation?
     let isOpen: Bool
+    let schedule: [PlaceSchedule]
     let photos: [PlacePhoto]
     let address: String
     let url: URL?
