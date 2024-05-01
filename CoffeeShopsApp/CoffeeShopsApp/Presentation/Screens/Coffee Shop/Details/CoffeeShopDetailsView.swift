@@ -86,7 +86,7 @@ struct CoffeeShopDetailsContainerView: View {
             name()
             isOpen()
             informationItem(icon: "location", title: "coffee.shop.address", value: viewModel.address)
-            informationItem(icon: "clock", title: "coffee.shop.hour", value: "viewModel.hour")
+            informationItem(icon: "clock", title: "coffee.shop.hour", value: viewModel.schedule)
             informationItem(icon: "network", title: "coffee.shop.website", value: viewModel.coffeeURL?.absoluteString ?? "")
             informationItem(icon: "phone", title: "coffee.shop.phone.number", value: viewModel.phoneNumber)
         }
@@ -94,7 +94,7 @@ struct CoffeeShopDetailsContainerView: View {
     }
 
     private func informationItem(icon: String, title: String, value: String) -> some View {
-        HStack(spacing: 8) {
+        HStack(alignment: .top, spacing: 8) {
             RoundedRectangle(cornerRadius: 4).fill(Color.customLightGrayText.opacity(0.4))
                 .frame(width: 36, height: 36)
                 .overlay {
