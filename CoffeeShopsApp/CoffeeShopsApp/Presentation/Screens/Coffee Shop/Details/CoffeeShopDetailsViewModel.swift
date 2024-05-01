@@ -15,7 +15,7 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     @Published var address: String = ""
     @Published var isOpenNow: Bool = false
     @Published var coordinate: MKCoordinateRegion = .init()
-    @Published var imageURL: URL?
+    @Published var imagesURLs: [URL?] = []
     @Published var schedule: String = ""
 
     @Published var isLoading: Bool = true
@@ -53,7 +53,7 @@ extension CoffeeShopDetailsViewModel {
             self.address = coffeeShop.address
             self.isOpenNow = coffeeShop.isOpen
             self.coordinate = self.createCoordinateRegion(coffeeShop.coordinate)
-            self.imageURL = coffeeShop.photos.first?.getPlacePhotoURL()
+            self.imagesURLs = coffeeShop.photos.map({ $0.getPlacePhotoURL() })
             self.coffeeURL = coffeeShop.url
             self.phoneNumber = coffeeShop.phoneNumber
             self.schedule = coffeeShop.formattedSchedule
