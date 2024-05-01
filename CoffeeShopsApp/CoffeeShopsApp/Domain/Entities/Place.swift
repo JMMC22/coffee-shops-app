@@ -36,4 +36,8 @@ extension Place {
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: location?.latitude ?? 0, longitude: location?.longitude ?? 0)
     }
+
+    var formattedSchedule: String {
+        return schedule.map({ $0.toString() }).joined(separator: "\n")
+    }
 }

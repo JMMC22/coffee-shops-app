@@ -12,3 +12,9 @@ struct PlaceSchedule {
     let startHour: String
     let endHour: String
 }
+
+extension PlaceSchedule {
+    func toString() -> String {
+        String(day.loacalized + ": " + startHour + " - " + endHour)
+    }
+}
