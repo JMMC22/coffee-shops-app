@@ -85,6 +85,7 @@ struct CoffeeShopDetailsContainerView: View {
         VStack(alignment: .leading, spacing: 16) {
             name()
             isOpen()
+
             informationItem(icon: "location", title: "coffee.shop.address", value: viewModel.address)
             informationItem(icon: "clock", title: "coffee.shop.hour", value: viewModel.schedule)
             informationItem(icon: "network", title: "coffee.shop.website", value: viewModel.coffeeURL?.absoluteString ?? "")
@@ -93,22 +94,27 @@ struct CoffeeShopDetailsContainerView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
+    @ViewBuilder
     private func informationItem(icon: String, title: String, value: String) -> some View {
-        HStack(alignment: .top, spacing: 8) {
-            RoundedRectangle(cornerRadius: 4).fill(Color.customLightGrayText.opacity(0.4))
-                .frame(width: 36, height: 36)
-                .overlay {
-                    Image(systemName: icon)
-                    .resizable()
-                    .frame(width: 15, height: 15)
-                    .foregroundStyle(Color.customDarkGrayText)
+        if value.isEmpty {
+            EmptyView()
+        } else {
+            HStack(alignment: .top, spacing: 8) {
+                RoundedRectangle(cornerRadius: 4).fill(Color.customLightGrayText.opacity(0.4))
+                    .frame(width: 36, height: 36)
+                    .overlay {
+                        Image(systemName: icon)
+                            .resizable()
+                            .frame(width: 15, height: 15)
+                            .foregroundStyle(Color.customDarkGrayText)
+                    }
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(LocalizedStringKey(title))
+                        .CSFont(.inter(14, weight: .bold), color: .blackText)
+                    Text(value)
+                        .CSFont(.inter(12, weight: .regular), color: .darkGrayText)
                 }
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text(LocalizedStringKey(title))
-                    .CSFont(.inter(14, weight: .bold), color: .blackText)
-                Text(value)
-                    .CSFont(.inter(12, weight: .regular), color: .darkGrayText)
             }
         }
     }
