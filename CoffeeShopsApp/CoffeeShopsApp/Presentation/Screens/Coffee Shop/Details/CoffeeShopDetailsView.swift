@@ -60,7 +60,7 @@ struct CoffeeShopDetailsContainerView: View {
 
     var body: some View {
         VStack(spacing: 24) {
-            image()
+            imageSlider()
             information()
             staticMap()
         }
@@ -68,17 +68,11 @@ struct CoffeeShopDetailsContainerView: View {
         .padding(EdgeInsets(top: 0, leading: 16, bottom: 54, trailing: 16))
     }
 
-    private func image() -> some View {
-        AsyncImage(url: viewModel.imageURL) { image in
-            image
-                .resizable()
-                .frame(height: 250)
-                .clipped()
-        } placeholder: {
-            Color.customLightGrayText
+    @ViewBuilder
+    private func imageSlider() -> some View {
+        if !viewModel.imagesURLs.isEmpty {
+            ImageSliderView(imagesURLs: viewModel.imagesURLs)
         }
-        .frame(height: 250)
-        .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 
     private func information() -> some View {
@@ -96,9 +90,7 @@ struct CoffeeShopDetailsContainerView: View {
 
     @ViewBuilder
     private func informationItem(icon: String, title: String, value: String) -> some View {
-        if value.isEmpty {
-            EmptyView()
-        } else {
+        if !value.isEmpty {
             HStack(alignment: .top, spacing: 8) {
                 RoundedRectangle(cornerRadius: 4).fill(Color.customLightGrayText.opacity(0.4))
                     .frame(width: 36, height: 36)
