@@ -16,6 +16,7 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     @Published var isOpenNow: Bool = false
     @Published var coordinate: MKCoordinateRegion = .init()
     @Published var imageURL: URL?
+    @Published var schedule: String = ""
 
     @Published var isLoading: Bool = true
     @Published var error: RequestError?
@@ -55,6 +56,7 @@ extension CoffeeShopDetailsViewModel {
             self.imageURL = coffeeShop.photos.first?.getPlacePhotoURL()
             self.coffeeURL = coffeeShop.url
             self.phoneNumber = coffeeShop.phoneNumber
+            self.schedule = coffeeShop.formattedSchedule
             self.isLoading = false
         }
     }
