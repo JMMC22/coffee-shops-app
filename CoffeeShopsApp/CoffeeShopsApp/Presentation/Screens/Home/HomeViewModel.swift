@@ -14,15 +14,17 @@ class HomeViewModel: ObservableObject {
     @Published var nextPage: AppCoordinator.Page?
 
     private let getNearbyCoffeeShops: GetNearbyCoffeeShops
+    private let locationManager: LocationManager
 
-    init(getNearbyCoffeeShops: GetNearbyCoffeeShops) {
+    private var cancellables = Set<AnyCancellable>()
+
+    init(getNearbyCoffeeShops: GetNearbyCoffeeShops, locationManager: LocationManager = .shared) {
         self.getNearbyCoffeeShops = getNearbyCoffeeShops
+        self.locationManager = locationManager
     }
 
     func viewDidLoad() {
-        Task {
-            await getNearbyCoffeShops(latitude: 40.4107974, longitude: -3.7122644)
-        }
+        subscribeToLocationStatus()
     }
 }
 
@@ -50,30 +52,31 @@ extension HomeViewModel {
     }
 }
 
-//extension HomeViewModel {
-//    private func subscribeToLocationStatus() {
-//        locationManager.$status.sink { status in
-//            switch status {
-//            case .notDetermined:
-//                self.locationManager.requestLocationPermissions()
-//            case .authorizedAlways, .authorizedWhenInUse:
-//                print("||DEBUG|| Location permissions: APPROVED")
-//                self.locationManager.requestLocation()
-//            default:
-//                print("||DEBUG|| Location permissions: DENIED")
-//            }
-//        }.store(in: &cancellables)
-//    }
-//
-//    private func subscribeToLocation() {
-//        locationManager.$lastLocation.sink { location in
-//            Task {
-//                await self.getNearbyCoffeShops(latitude: location.latitude,
-//                                               longitude: location.longitude)
-//            }
-//        }.store(in: &cancellables)
-//    }
-//}
+extension HomeViewModel {
+    private func subscribeToLocationStatus() {
+        locationManager.statusPublisher.sink { status in
+            switch status {
+            case .notDetermined:
+                self.locationManager.requestLocationPermissions()
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("||DEBUG|| Location permissions: APPROVED")
+                self.subscribeToLocation()
+                self.locationManager.requestLocation()
+            default:
+                print("||DEBUG|| Location permissions: DENIED")
+            }
+        }.store(in: &cancellables)
+    }
+
+    private func subscribeToLocation() {
+        locationManager.lastLocationPublisher.sink { location in
+            Task {
+                await self.getNearbyCoffeShops(latitude: location.latitude,
+                                               longitude: location.longitude)
+            }
+        }.store(in: &cancellables)
+    }
+}
 
 extension HomeViewModel {
 

@@ -882,6 +882,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoffeeShopsApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs access to your location at all times to provide location-based functionalities even when the app is not in use.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs access to your location while you are using it to provide location-based functionalities.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -921,6 +923,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoffeeShopsApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs access to your location at all times to provide location-based functionalities even when the app is not in use.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs access to your location while you are using it to provide location-based functionalities.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
