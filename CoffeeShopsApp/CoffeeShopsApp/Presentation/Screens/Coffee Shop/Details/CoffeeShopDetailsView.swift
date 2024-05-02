@@ -22,23 +22,18 @@ struct CoffeeShopDetailsView: View {
         ScrollView {
             CoffeeShopDetailsContainerView(viewModel: viewModel)
         }
-        .navigationTitle(viewModel.name)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbarRole(.editor)
         .task {
             await viewModel.getCoffeeShopsDetails()
         }
         .overlay(openWebsiteButton(), alignment: .bottom)
-        .toolbar {
-            Button(action: { open(URL(string: "tel://\(viewModel.phoneNumber)")) }) {
-                Image(systemName: "phone.fill")
-            }
-        }
     }
 
     @ViewBuilder
     private func openWebsiteButton() -> some View {
         Button(action: { open(viewModel.coffeeURL) }) {
-            Text("Go to website")
+            Text("button.go.website")
                 .CSFont(.inter(14, weight: .bold), color: .whiteCustom)
                 .frame(maxWidth: .infinity)
                 .padding()
@@ -46,6 +41,7 @@ struct CoffeeShopDetailsView: View {
         .foregroundStyle(.whiteCustom)
         .background(.oliveGreen)
         .buttonBorderShape(.capsule)
+        .opacity(viewModel.coffeeURL != nil ? 1 : 0)
     }
     
     private func open(_ url: URL?) {
@@ -63,38 +59,76 @@ struct CoffeeShopDetailsContainerView: View {
     }
 
     var body: some View {
-        VStack {
-            image()
+        VStack(spacing: 24) {
+            imageSlider()
             information()
             staticMap()
         }
+        .redacted(reason: viewModel.isLoading ? .placeholder : .invalidated)
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 54, trailing: 16))
     }
 
-    private func image() -> some View {
-        AsyncImage(url: viewModel.imageURL) { image in
-            image
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(height: 350)
-                .clipped()
-        } placeholder: {
-            ProgressView()
+    @ViewBuilder
+    private func imageSlider() -> some View {
+        if !viewModel.imagesURLs.isEmpty {
+            ImageSliderView(imagesURLs: viewModel.imagesURLs)
         }
-        .frame(height: 350)
     }
 
     private func information() -> some View {
-        VStack {
-            Text(viewModel.address)
-                .CSFont(.inter(14, weight: .regular), color: .blackText)
-            Text(viewModel.isOpenNow ? "Open Now" : "Closed")
-                .CSFont(.inter(14, weight: .regular), color: viewModel.isOpenNow ? .greenOpen : .redClosed)
+        VStack(alignment: .leading, spacing: 16) {
+            name()
+            isOpen()
+
+            informationItem(icon: "location", title: "coffee.shop.address", value: viewModel.address)
+            informationItem(icon: "clock", title: "coffee.shop.hour", value: viewModel.schedule)
+            informationItem(icon: "network", title: "coffee.shop.website", value: viewModel.coffeeURL?.absoluteString ?? "")
+            informationItem(icon: "phone", title: "coffee.shop.phone.number", value: viewModel.phoneNumber)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    @ViewBuilder
+    private func informationItem(icon: String, title: String, value: String) -> some View {
+        if !value.isEmpty {
+            HStack(alignment: .top, spacing: 8) {
+                RoundedRectangle(cornerRadius: 4).fill(Color.customLightGrayText.opacity(0.4))
+                    .frame(width: 36, height: 36)
+                    .overlay {
+                        Image(systemName: icon)
+                            .resizable()
+                            .frame(width: 15, height: 15)
+                            .foregroundStyle(Color.customDarkGrayText)
+                    }
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(LocalizedStringKey(title))
+                        .CSFont(.inter(14, weight: .bold), color: .blackText)
+                    Text(value)
+                        .CSFont(.inter(12, weight: .regular), color: .darkGrayText)
+                }
+            }
+        }
+    }
+
+    private func isOpen() -> some View {
+        Text(viewModel.isOpenNow ? "coffee.shop.open" : "coffee.shop.closed")
+            .CSFont(.inter(10, weight: .bold), color: .customWhite)
+            .textCase(.uppercase)
+            .padding(6)
+            .background(viewModel.isOpenNow ? .greenOpen : .redClosed)
+            .clipShape(Capsule())
+    }
+
+    private func name() -> some View {
+        Text(viewModel.name)
+            .CSFont(.inter(28, weight: .bold), color: .blackText)
     }
 
     private func staticMap() -> some View {
         Map(coordinateRegion: $viewModel.coordinate)
             .disabled(true)
             .frame(height: 200)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }

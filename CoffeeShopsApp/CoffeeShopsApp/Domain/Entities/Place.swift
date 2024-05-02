@@ -13,6 +13,7 @@ struct Place: Identifiable {
     let name: String
     let location: PlaceLocation?
     let isOpen: Bool
+    let schedule: [PlaceSchedule]
     let photos: [PlacePhoto]
     let address: String
     let url: URL?
@@ -34,5 +35,9 @@ extension Place: Hashable {
 extension Place {
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: location?.latitude ?? 0, longitude: location?.longitude ?? 0)
+    }
+
+    var formattedSchedule: String {
+        return schedule.map({ $0.toString() }).joined(separator: "\n")
     }
 }

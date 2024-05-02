@@ -35,6 +35,7 @@ extension PlaceDTO {
               name: name ?? "",
               location: geometry?.location?.toDomain(),
               isOpen: openingHours?.isOpenNow ?? false,
+              schedule: openingHours?.periods?.compactMap({ $0.toDomain() }) ?? [],
               photos: photos?.compactMap({ $0.toDomain()}) ?? [],
               address: address ?? "",
               url: URL(string: url ?? ""),
