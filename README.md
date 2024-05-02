@@ -11,7 +11,7 @@ An app in Swift using SwiftUI and async/await to find the nearest coffee shops.
 
 ## Installation
 
-1. Clone this repository: `git clone https://github.com/your_username/find-coffee-shops.git`
+1. Clone this repository: `git clone https://github.com/JMMC22/coffee-shops-app`
 2. Open the project in Xcode.
 3. Run the app on an iOS simulator or device.
 
