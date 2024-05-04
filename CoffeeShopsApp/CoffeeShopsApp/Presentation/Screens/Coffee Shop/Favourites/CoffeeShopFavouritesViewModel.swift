@@ -8,6 +8,8 @@
 import Foundation
 
 class CoffeeShopFavouritesViewModel: ObservableObject {
+    
+    @Published var favouritesCoffeeShops: [Place] = []
 
     private let getFavouritesCoffeeShops: GetFavouritesCoffeeShops
 
@@ -22,9 +24,15 @@ extension CoffeeShopFavouritesViewModel {
         
         switch result {
         case .success(let list):
-            print("||DEBUG|| list count: \(list.count)")
+            fetchFavouritesCoffeeShopsDidSuccess(list)
         case .failure(let error):
             print("||DEBUG|| getFavouritesCoffeeShops error: \(error.localizedDescription)")
+        }
+    }
+
+    private func fetchFavouritesCoffeeShopsDidSuccess(_ places: [Place]) {
+        DispatchQueue.main.async {
+            self.favouritesCoffeeShops = places
         }
     }
 }
