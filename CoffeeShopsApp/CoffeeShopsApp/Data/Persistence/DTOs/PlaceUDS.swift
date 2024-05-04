@@ -35,6 +35,7 @@ extension PlaceUDS {
               name: name,
               location: location?.toDomain(),
               isOpen: isOpen,
+              schedule: [], // TODO: Schedule DTO
               photos: [],
               address: address,
               url: url,
