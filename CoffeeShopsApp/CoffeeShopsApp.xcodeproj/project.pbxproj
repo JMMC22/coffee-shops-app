@@ -66,6 +66,7 @@
 		B5990BD42BB980550047C552 /* CoffeeShopDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD32BB980550047C552 /* CoffeeShopDetailsFactory.swift */; };
 		B5990BD62BB9824D0047C552 /* PlaceDetailsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD52BB9824D0047C552 /* PlaceDetailsDTO.swift */; };
 		B5990BDA2BB984090047C552 /* GetCoffeeShopDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD92BB984090047C552 /* GetCoffeeShopDetails.swift */; };
+		B5D7CAD02BE4027600A7FCF5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		B5990BD32BB980550047C552 /* CoffeeShopDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopDetailsFactory.swift; sourceTree = "<group>"; };
 		B5990BD52BB9824D0047C552 /* PlaceDetailsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsDTO.swift; sourceTree = "<group>"; };
 		B5990BD92BB984090047C552 /* GetCoffeeShopDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoffeeShopDetails.swift; sourceTree = "<group>"; };
+		B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +345,7 @@
 		B5990B8E2BB84F100047C552 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B5D7CACE2BE4026600A7FCF5 /* Managers */,
 				B5990B8F2BB84F1A0047C552 /* Network */,
 				B5990BAF2BB850C40047C552 /* Repositories */,
 			);
@@ -517,6 +520,14 @@
 				B5990BD12BB97FF40047C552 /* CoffeeShopDetailsViewModel.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		B5D7CACE2BE4026600A7FCF5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -697,6 +708,7 @@
 				B5990B8D2BB84DF10047C552 /* RequestError.swift in Sources */,
 				B5990BA42BB84FF50047C552 /* PlaceLocation.swift in Sources */,
 				B5990BD42BB980550047C552 /* CoffeeShopDetailsFactory.swift in Sources */,
+				B5D7CAD02BE4027600A7FCF5 /* LocationManager.swift in Sources */,
 				B5990BAB2BB850630047C552 /* GooglePlacesRemoteDatasource.swift in Sources */,
 				B5990B792BB6E2C60047C552 /* CSFont.swift in Sources */,
 				B5990BA22BB84FE70047C552 /* Place.swift in Sources */,
@@ -870,6 +882,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoffeeShopsApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs access to your location at all times to provide location-based functionalities even when the app is not in use.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs access to your location while you are using it to provide location-based functionalities.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -909,6 +923,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoffeeShopsApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs access to your location at all times to provide location-based functionalities even when the app is not in use.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs access to your location while you are using it to provide location-based functionalities.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
