@@ -61,7 +61,6 @@ struct CoffeeShopDetailsContainerView: View {
     var body: some View {
         VStack(spacing: 24) {
             imageSlider()
-            favourite()
             information()
             staticMap()
         }
@@ -79,7 +78,12 @@ struct CoffeeShopDetailsContainerView: View {
     private func information() -> some View {
         VStack(alignment: .leading, spacing: 16) {
             name()
-            isOpen()
+
+            HStack {
+                isOpen()
+                Spacer()
+                favourite()
+            }
 
             informationItem(icon: "location", title: "coffee.shop.address", value: viewModel.address)
             informationItem(icon: "clock", title: "coffee.shop.hour", value: viewModel.schedule)
