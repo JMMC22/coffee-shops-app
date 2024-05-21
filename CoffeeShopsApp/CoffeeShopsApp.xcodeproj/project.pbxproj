@@ -33,7 +33,6 @@
 		B5990B792BB6E2C60047C552 /* CSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B782BB6E2C60047C552 /* CSFont.swift */; };
 		B5990B7D2BB6EB1C0047C552 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B5990B7C2BB6EB1C0047C552 /* Localizable.xcstrings */; };
 		B5990B802BB84AEC0047C552 /* EnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B7F2BB84AEC0047C552 /* EnvironmentConfiguration.swift */; };
-		B5990B822BB84B0A0047C552 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B5990B812BB84B0A0047C552 /* Config.xcconfig */; };
 		B5990B862BB84DBE0047C552 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B852BB84DBE0047C552 /* Endpoint.swift */; };
 		B5990B892BB84DD10047C552 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B882BB84DD10047C552 /* HTTPClient.swift */; };
 		B5990B8B2BB84DE20047C552 /* HTTPMethodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B8A2BB84DE20047C552 /* HTTPMethodType.swift */; };
@@ -92,6 +91,7 @@
 		B54268E42BDD40180073CAAE /* PlaceSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSchedule.swift; sourceTree = "<group>"; };
 		B54268E62BDD41140073CAAE /* WeekDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDay.swift; sourceTree = "<group>"; };
 		B54B167F2BE2F58C00C03B46 /* ImageSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderView.swift; sourceTree = "<group>"; };
+		B58015A52BFC06FE00BEB73F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		B5990B312BB6DE270047C552 /* CoffeeShopsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeShopsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5990B342BB6DE270047C552 /* CoffeeShopsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopsAppApp.swift; sourceTree = "<group>"; };
 		B5990B362BB6DE270047C552 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,7 +118,6 @@
 		B5990B7A2BB6E3460047C552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B5990B7C2BB6EB1C0047C552 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		B5990B7F2BB84AEC0047C552 /* EnvironmentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentConfiguration.swift; sourceTree = "<group>"; };
-		B5990B812BB84B0A0047C552 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		B5990B852BB84DBE0047C552 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		B5990B882BB84DD10047C552 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		B5990B8A2BB84DE20047C552 /* HTTPMethodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodType.swift; sourceTree = "<group>"; };
@@ -318,7 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				B5990B7F2BB84AEC0047C552 /* EnvironmentConfiguration.swift */,
-				B5990B812BB84B0A0047C552 /* Config.xcconfig */,
+				B58015A52BFC06FE00BEB73F /* Config.xcconfig */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -640,7 +639,6 @@
 				B5990B7D2BB6EB1C0047C552 /* Localizable.xcstrings in Resources */,
 				B5990B392BB6DE280047C552 /* Assets.xcassets in Resources */,
 				B5990B6D2BB6E2940047C552 /* Inter-Thin.ttf in Resources */,
-				B5990B822BB84B0A0047C552 /* Config.xcconfig in Resources */,
 				B5990B722BB6E2940047C552 /* Inter-ExtraLight.ttf in Resources */,
 				B5990B6F2BB6E2940047C552 /* Inter-SemiBold.ttf in Resources */,
 				B5990B702BB6E2940047C552 /* Inter-Light.ttf in Resources */,
@@ -754,7 +752,7 @@
 /* Begin XCBuildConfiguration section */
 		B5990B542BB6DE290047C552 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5990B812BB84B0A0047C552 /* Config.xcconfig */;
+			baseConfigurationReference = B58015A52BFC06FE00BEB73F /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -816,7 +814,7 @@
 		};
 		B5990B552BB6DE290047C552 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5990B812BB84B0A0047C552 /* Config.xcconfig */;
+			baseConfigurationReference = B58015A52BFC06FE00BEB73F /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -870,6 +868,7 @@
 		};
 		B5990B572BB6DE290047C552 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B58015A52BFC06FE00BEB73F /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -911,6 +910,7 @@
 		};
 		B5990B582BB6DE290047C552 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B58015A52BFC06FE00BEB73F /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
