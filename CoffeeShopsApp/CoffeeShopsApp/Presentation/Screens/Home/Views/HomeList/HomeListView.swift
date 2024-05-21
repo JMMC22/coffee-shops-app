@@ -19,10 +19,9 @@ struct HomeListView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
                 ForEach(viewModel.nearbyCoffeeShops) { place in
-                    CoffeeShopItemListView(place: place)
-                        .onTapGesture {
-                            viewModel.navigateToPlaceDetails(id: place.id)
-                        }
+                    CoffeeShopItemListView(place: place) { id in
+                        viewModel.navigateToPlaceDetails(id: id)
+                    }
                 }
             }
             .frame(maxWidth: .infinity)

@@ -10,9 +10,11 @@ import SwiftUI
 struct CoffeeShopItemListView: View {
 
     let place: Place
+    let action: (String) -> Void
 
-    init(place: Place) {
+    init(place: Place, action: @escaping (String) -> Void) {
         self.place = place
+        self.action = action
     }
 
     private var statusColor: Color {
@@ -28,6 +30,8 @@ struct CoffeeShopItemListView: View {
                 info()
             }
             Divider()
+        }.onTapGesture {
+            action(place.id)
         }
     }
 

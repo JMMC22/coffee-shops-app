@@ -10,6 +10,7 @@ import Foundation
 class CoffeeShopFavouritesViewModel: ObservableObject {
     
     @Published var favouritesCoffeeShops: [Place] = []
+    @Published var nextPage: AppCoordinator.Page?
 
     private let getFavouritesCoffeeShops: GetFavouritesCoffeeShops
 
@@ -34,5 +35,12 @@ extension CoffeeShopFavouritesViewModel {
         DispatchQueue.main.async {
             self.favouritesCoffeeShops = places
         }
+    }
+}
+
+extension CoffeeShopFavouritesViewModel {
+
+    func navigateToPlaceDetails(id: String) {
+        nextPage = .coffeShopDetails(id: id)
     }
 }
