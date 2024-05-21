@@ -12,5 +12,5 @@ protocol GooglePlacesRepository {
     func getPlaceDetails(id: String) async -> Result<Place, RequestError>
     func fetchFavouritesCoffeeShops() -> Result<[Place], RequestError>
     func isFavouriteCoffeeShop(id: String) -> Bool
-    func saveFavouriteCoffeShop(_ place: Place) -> Result<Place, RequestError>
+    func updateFavouriteCoffeShop(_ place: Place) -> Result<Bool, RequestError>
 }

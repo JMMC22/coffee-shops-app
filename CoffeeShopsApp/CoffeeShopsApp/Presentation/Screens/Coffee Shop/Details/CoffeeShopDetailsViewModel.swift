@@ -27,7 +27,7 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     var phoneNumber: String = ""
 
     private let getCoffeeShopDetails: GetCoffeeShopDetails
-    private let saveFavouriteCoffeeShop: SaveFavouriteCoffeeShop
+    private let updateFavouriteCoffeeShop: UpdateFavouriteCoffeeShop
     private let isFavouriteCoffeeShop: IsFavouriteCoffeeShop
 
     private let id: String
@@ -35,11 +35,11 @@ class CoffeeShopDetailsViewModel: ObservableObject {
 
     init(_ id: String, 
          getCoffeeShopDetails: GetCoffeeShopDetails,
-         saveFavouriteCoffeeShop: SaveFavouriteCoffeeShop,
+         updateFavouriteCoffeeShop: UpdateFavouriteCoffeeShop,
          isFavouriteCoffeeShop: IsFavouriteCoffeeShop) {
         self.id = id
         self.getCoffeeShopDetails = getCoffeeShopDetails
-        self.saveFavouriteCoffeeShop = saveFavouriteCoffeeShop
+        self.updateFavouriteCoffeeShop = updateFavouriteCoffeeShop
         self.isFavouriteCoffeeShop = isFavouriteCoffeeShop
     }
 }
@@ -87,19 +87,19 @@ extension CoffeeShopDetailsViewModel {
 
     func saveAsFavourite() {
         guard let coffeeShop else { return }
-        let result = saveFavouriteCoffeeShop.execute(coffeeShop)
+        let result = updateFavouriteCoffeeShop.execute(coffeeShop)
 
         switch result {
-        case .success:
-            saveAsFavouriteDidSuccess()
+        case .success(let value):
+            saveAsFavouriteDidSuccess(value: value)
         case .failure(let error):
             saveAsFavouriteDidFail(error)
         }
     }
 
-    private func saveAsFavouriteDidSuccess() {
+    private func saveAsFavouriteDidSuccess(value: Bool) {
         DispatchQueue.main.async {
-            self.isFavourite = true
+            self.isFavourite = value
         }
     }
 

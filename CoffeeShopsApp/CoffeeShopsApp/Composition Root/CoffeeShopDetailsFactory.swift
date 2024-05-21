@@ -15,7 +15,7 @@ class CoffeeShopDetailsFactory {
 
     private static func createViewModel(_ id: String) -> CoffeeShopDetailsViewModel {
         return CoffeeShopDetailsViewModel(id, getCoffeeShopDetails: createUseCase(),
-                                          saveFavouriteCoffeeShop: createSaveFavouriteUseCase(),
+                                          updateFavouriteCoffeeShop: createUpdateFavouriteUseCase(),
                                           isFavouriteCoffeeShop: isFavouriteUseCase())
     }
 
@@ -23,8 +23,8 @@ class CoffeeShopDetailsFactory {
         return DefaultGetCoffeeShopDetails(googlePlacesRepository: createRepository())
     }
 
-    private static func createSaveFavouriteUseCase() -> SaveFavouriteCoffeeShop {
-        return DefaultSaveFavouriteCoffeeShop(googlePlacesRepository: createRepository())
+    private static func createUpdateFavouriteUseCase() -> UpdateFavouriteCoffeeShop {
+        return DefaultUpdateFavouriteCoffeeShop(googlePlacesRepository: createRepository())
     }
 
     private static func isFavouriteUseCase() -> IsFavouriteCoffeeShop {

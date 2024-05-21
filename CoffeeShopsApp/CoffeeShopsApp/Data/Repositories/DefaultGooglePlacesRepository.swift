@@ -48,15 +48,17 @@ extension DefaultGooglePlacesRepository: GooglePlacesRepository {
 // MARK: Local Persistence
 extension DefaultGooglePlacesRepository {
 
-    func saveFavouriteCoffeShop(_ place: Place) -> Result<Place, RequestError> {
+    func updateFavouriteCoffeShop(_ place: Place) -> Result<Bool, RequestError> {
         let dto = PlaceUDS(place: place)
-        let result = googlePlacesUserDefaultsDatasource.saveFavouriteCoffeShop(dto)
 
-        switch result {
-        case .success(let response):
-            return .success(response.toDomain())
-        case .failure(let error):
-            return .failure(error)
+        guard let favouritesList = try? fetchFavouritesCoffeeShops().get() else {
+            return .failure(.decode)
+        }
+
+        if favouritesList.contains(where: { $0.id == place.id }) {
+            return googlePlacesUserDefaultsDatasource.removeFavouriteCoffeShop(id: place.id)
+        } else {
+            return googlePlacesUserDefaultsDatasource.saveFavouriteCoffeShop(dto)
         }
     }
 
