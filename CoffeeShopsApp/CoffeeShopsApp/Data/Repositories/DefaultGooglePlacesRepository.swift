@@ -70,4 +70,12 @@ extension DefaultGooglePlacesRepository {
             return .failure(error)
         }
     }
+
+    func isFavouriteCoffeeShop(id: String) -> Bool {
+        guard let favouriteList = try? fetchFavouritesCoffeeShops().get() else {
+            return false
+        }
+
+        return favouriteList.contains(where: { $0.id == id })
+    }
 }

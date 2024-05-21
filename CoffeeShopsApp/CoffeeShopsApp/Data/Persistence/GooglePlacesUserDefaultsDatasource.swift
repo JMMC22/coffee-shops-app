@@ -8,8 +8,8 @@
 import Foundation
 
 protocol GooglePlacesUserDefaultsDatasource {
-    func saveFavouriteCoffeShop(_ place: PlaceUDS) -> Result<PlaceUDS, RequestError>
     func fetchFavouritesCoffeeShops() -> Result<[PlaceUDS], RequestError>
+    func saveFavouriteCoffeShop(_ place: PlaceUDS) -> Result<PlaceUDS, RequestError>
 }
 
 class DefaultGooglePlacesUserDefaultsDatasource {
@@ -22,6 +22,19 @@ class DefaultGooglePlacesUserDefaultsDatasource {
 }
 
 extension DefaultGooglePlacesUserDefaultsDatasource: GooglePlacesUserDefaultsDatasource {
+    
+    func fetchFavouritesCoffeeShops() -> Result<[PlaceUDS], RequestError> {
+        guard let encodedData = userDefaultsManager.object(for: .favouritesCoffeeShops) as? Data else {
+            return .success([])
+        }
+
+        do {
+            let favouritesList = try JSONDecoder().decode([PlaceUDS].self, from: encodedData)
+            return .success(favouritesList)
+        } catch {
+            return .failure(.decode)
+        }
+    }
 
     func saveFavouriteCoffeShop(_ place: PlaceUDS) -> Result<PlaceUDS, RequestError> {
         guard var favouritesList = try? fetchFavouritesCoffeeShops().get() else {
@@ -36,18 +49,5 @@ extension DefaultGooglePlacesUserDefaultsDatasource: GooglePlacesUserDefaultsDat
 
         userDefaultsManager.set(encodedData, for: .favouritesCoffeeShops)
         return .success(place)
-    }
-
-    func fetchFavouritesCoffeeShops() -> Result<[PlaceUDS], RequestError> {
-        guard let encodedData = userDefaultsManager.object(for: .favouritesCoffeeShops) as? Data else {
-            return .success([])
-        }
-
-        do {
-            let favouritesList = try JSONDecoder().decode([PlaceUDS].self, from: encodedData)
-            return .success(favouritesList)
-        } catch {
-            return .failure(.decode)
-        }
     }
 }

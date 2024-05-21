@@ -42,7 +42,7 @@ class CoffeeShopDetailsViewModel: ObservableObject {
 extension CoffeeShopDetailsViewModel {
 
     func getCoffeeShopsDetails() async {
-        let result = await getCoffeeShopDetails.getCoffeeShopDetails(id: id)
+        let result = await getCoffeeShopDetails.execute(id: id)
 
         switch result {
         case .success(let coffeeShop):

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol GetCoffeeShopDetails {
-    func getCoffeeShopDetails(id: String) async -> Result<Place, RequestError>
+    func execute(id: String) async -> Result<Place, RequestError>
 }
 
 class DefaultGetCoffeeShopDetails {
@@ -22,7 +22,7 @@ class DefaultGetCoffeeShopDetails {
 
 extension DefaultGetCoffeeShopDetails: GetCoffeeShopDetails {
 
-    func getCoffeeShopDetails(id: String) async -> Result<Place, RequestError> {
+    func execute(id: String) async -> Result<Place, RequestError> {
         let result = await googlePlacesRepository.getPlaceDetails(id: id)
 
         switch result {
