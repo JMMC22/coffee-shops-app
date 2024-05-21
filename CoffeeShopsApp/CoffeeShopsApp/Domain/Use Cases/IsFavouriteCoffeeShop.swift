@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IsFavouriteCoffeeShop {
-    func execute(id: String) async -> Bool
+    func execute(id: String) -> Bool
 }
 
 class DefaultIsFavouriteCoffeeShop {
@@ -22,7 +22,7 @@ class DefaultIsFavouriteCoffeeShop {
 
 extension DefaultIsFavouriteCoffeeShop: IsFavouriteCoffeeShop {
 
-    func execute(id: String) async -> Bool {
+    func execute(id: String) -> Bool {
         return googlePlacesRepository.isFavouriteCoffeeShop(id: id)
     }
 }

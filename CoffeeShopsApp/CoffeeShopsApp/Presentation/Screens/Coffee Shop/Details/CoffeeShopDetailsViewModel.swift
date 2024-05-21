@@ -28,14 +28,19 @@ class CoffeeShopDetailsViewModel: ObservableObject {
 
     private let getCoffeeShopDetails: GetCoffeeShopDetails
     private let saveFavouriteCoffeeShop: SaveFavouriteCoffeeShop
+    private let isFavouriteCoffeeShop: IsFavouriteCoffeeShop
 
     private let id: String
     private var coffeeShop: Place?
 
-    init(_ id: String, getCoffeeShopDetails: GetCoffeeShopDetails, saveFavouriteCoffeeShop: SaveFavouriteCoffeeShop) {
+    init(_ id: String, 
+         getCoffeeShopDetails: GetCoffeeShopDetails,
+         saveFavouriteCoffeeShop: SaveFavouriteCoffeeShop,
+         isFavouriteCoffeeShop: IsFavouriteCoffeeShop) {
         self.id = id
         self.getCoffeeShopDetails = getCoffeeShopDetails
         self.saveFavouriteCoffeeShop = saveFavouriteCoffeeShop
+        self.isFavouriteCoffeeShop = isFavouriteCoffeeShop
     }
 }
 
@@ -54,6 +59,8 @@ extension CoffeeShopDetailsViewModel {
 
     private func getCoffeeShopsDetailsDidSuccess(_ coffeeShop: Place) {
         self.coffeeShop = coffeeShop
+        let isFavourite = isFavouriteCoffeeShop.execute(id: coffeeShop.id)
+
         DispatchQueue.main.async {
             self.name = coffeeShop.name
             self.address = coffeeShop.address
@@ -63,6 +70,7 @@ extension CoffeeShopDetailsViewModel {
             self.coffeeURL = coffeeShop.url
             self.phoneNumber = coffeeShop.phoneNumber
             self.schedule = coffeeShop.formattedSchedule
+            self.isFavourite = isFavourite
             self.isLoading = false
         }
     }
