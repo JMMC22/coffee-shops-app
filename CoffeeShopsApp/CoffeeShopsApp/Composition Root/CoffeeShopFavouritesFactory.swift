@@ -1,24 +1,24 @@
 //
-//  HomeFactory.swift
+//  CoffeeShopFavouritesFactory.swift
 //  CoffeeShopsApp
 //
-//  Created by José María Márquez Crespo on 30/3/24.
+//  Created by José María Márquez Crespo on 1/4/24.
 //
 
 import Foundation
 
-class HomeFactory {
+class CoffeeShopFavouritesFactory {
 
-    static func create() -> HomeView {
-        return HomeView(viewModel: createViewModel())
+    static func create() -> CoffeeShopFavouritesView {
+        return CoffeeShopFavouritesView(viewModel: createViewModel())
     }
 
-    private static func createViewModel() -> HomeViewModel {
-        return HomeViewModel(getNearbyCoffeeShops: createUseCase())
+    private static func createViewModel() -> CoffeeShopFavouritesViewModel {
+        return CoffeeShopFavouritesViewModel(getFavouritesCoffeeShops: createGetFavouritesUseCase())
     }
 
-    private static func createUseCase() -> GetNearbyCoffeeShops {
-        return DefaultGetNearbyCoffeeShops(googlePlacesRepository: createRepository())
+    private static func createGetFavouritesUseCase() -> GetFavouritesCoffeeShops {
+        return DefaultGetFavouritesCoffeeShops(googlePlacesRepository: createRepository())
     }
 
     private static func createRepository() -> GooglePlacesRepository {

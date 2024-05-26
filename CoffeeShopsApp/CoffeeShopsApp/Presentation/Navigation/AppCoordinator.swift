@@ -54,7 +54,7 @@ extension AppCoordinator {
         case .coffeShopDetails(let id):
             CoffeeShopDetailsFactory.create(id)
         case .favouritesCoffeeShops:
-            Text("Favourites Coffee Shops View")
+            CoffeeShopFavouritesFactory.create()
         }
     }
 }

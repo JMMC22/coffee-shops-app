@@ -78,7 +78,12 @@ struct CoffeeShopDetailsContainerView: View {
     private func information() -> some View {
         VStack(alignment: .leading, spacing: 16) {
             name()
-            isOpen()
+
+            HStack {
+                isOpen()
+                Spacer()
+                favourite()
+            }
 
             informationItem(icon: "location", title: "coffee.shop.address", value: viewModel.address)
             informationItem(icon: "clock", title: "coffee.shop.hour", value: viewModel.schedule)
@@ -123,6 +128,16 @@ struct CoffeeShopDetailsContainerView: View {
     private func name() -> some View {
         Text(viewModel.name)
             .CSFont(.inter(28, weight: .bold), color: .blackText)
+    }
+
+    private func favourite() -> some View {
+        HStack {
+            Spacer()
+            Button(action: viewModel.saveAsFavourite) {
+                Image(systemName: viewModel.isFavourite ? "heart.fill" : "heart")
+                    .frame(width: 25, height: 25)
+            }
+        }
     }
 
     private func staticMap() -> some View {

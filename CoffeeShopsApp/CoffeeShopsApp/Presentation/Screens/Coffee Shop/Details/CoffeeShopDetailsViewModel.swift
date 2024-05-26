@@ -15,6 +15,7 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     @Published var address: String = ""
     @Published var isOpenNow: Bool = false
     @Published var coordinate: MKCoordinateRegion = .init()
+    @Published var isFavourite: Bool = false
     @Published var imagesURLs: [URL?] = []
     @Published var schedule: String = ""
 
@@ -26,18 +27,27 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     var phoneNumber: String = ""
 
     private let getCoffeeShopDetails: GetCoffeeShopDetails
-    private let id: String
+    private let updateFavouriteCoffeeShop: UpdateFavouriteCoffeeShop
+    private let isFavouriteCoffeeShop: IsFavouriteCoffeeShop
 
-    init(_ id: String, getCoffeeShopDetails: GetCoffeeShopDetails) {
+    private let id: String
+    private var coffeeShop: Place?
+
+    init(_ id: String, 
+         getCoffeeShopDetails: GetCoffeeShopDetails,
+         updateFavouriteCoffeeShop: UpdateFavouriteCoffeeShop,
+         isFavouriteCoffeeShop: IsFavouriteCoffeeShop) {
         self.id = id
         self.getCoffeeShopDetails = getCoffeeShopDetails
+        self.updateFavouriteCoffeeShop = updateFavouriteCoffeeShop
+        self.isFavouriteCoffeeShop = isFavouriteCoffeeShop
     }
 }
 
 extension CoffeeShopDetailsViewModel {
 
     func getCoffeeShopsDetails() async {
-        let result = await getCoffeeShopDetails.getCoffeeShopDetails(id: id)
+        let result = await getCoffeeShopDetails.execute(id: id)
 
         switch result {
         case .success(let coffeeShop):
@@ -48,6 +58,9 @@ extension CoffeeShopDetailsViewModel {
     }
 
     private func getCoffeeShopsDetailsDidSuccess(_ coffeeShop: Place) {
+        self.coffeeShop = coffeeShop
+        let isFavourite = isFavouriteCoffeeShop.execute(id: coffeeShop.id)
+
         DispatchQueue.main.async {
             self.name = coffeeShop.name
             self.address = coffeeShop.address
@@ -57,6 +70,7 @@ extension CoffeeShopDetailsViewModel {
             self.coffeeURL = coffeeShop.url
             self.phoneNumber = coffeeShop.phoneNumber
             self.schedule = coffeeShop.formattedSchedule
+            self.isFavourite = isFavourite
             self.isLoading = false
         }
     }
@@ -66,6 +80,31 @@ extension CoffeeShopDetailsViewModel {
             self.error = error
             self.isLoading = false
         }
+    }
+}
+
+extension CoffeeShopDetailsViewModel {
+
+    func saveAsFavourite() {
+        guard let coffeeShop else { return }
+        let result = updateFavouriteCoffeeShop.execute(coffeeShop)
+
+        switch result {
+        case .success(let value):
+            saveAsFavouriteDidSuccess(value: value)
+        case .failure(let error):
+            saveAsFavouriteDidFail(error)
+        }
+    }
+
+    private func saveAsFavouriteDidSuccess(value: Bool) {
+        DispatchQueue.main.async {
+            self.isFavourite = value
+        }
+    }
+
+    private func saveAsFavouriteDidFail(_ error: RequestError) {
+        print("||DEBUG|| saveAsFavouriteDidFail - error: \(error.localizedDescription)")
     }
 }
 

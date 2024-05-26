@@ -31,7 +31,7 @@ class HomeViewModel: ObservableObject {
 extension HomeViewModel {
 
     private func getNearbyCoffeShops(latitude: Double, longitude: Double) async {
-        let result = await getNearbyCoffeeShops.getNearbyPlaces(latitude: latitude, longitude: longitude)
+        let result = await getNearbyCoffeeShops.execute(latitude: latitude, longitude: longitude)
 
         switch result {
         case .success(let places):

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol GetNearbyCoffeeShops {
-    func getNearbyPlaces(latitude: Double, longitude: Double) async -> Result<[Place], RequestError>
+    func execute(latitude: Double, longitude: Double) async -> Result<[Place], RequestError>
 }
 
 class DefaultGetNearbyCoffeeShops {
@@ -24,7 +24,7 @@ class DefaultGetNearbyCoffeeShops {
 }
 
 extension DefaultGetNearbyCoffeeShops: GetNearbyCoffeeShops {
-    func getNearbyPlaces(latitude: Double, longitude: Double) async -> Result<[Place], RequestError> {
+    func execute(latitude: Double, longitude: Double) async -> Result<[Place], RequestError> {
         let location: String = "\(latitude),\(longitude)"
 
         let result = await googlePlacesRepository.getNearbyPlaces(location: location, radius: radius, keyword: keyword)
