@@ -9,29 +9,32 @@ import SwiftUI
 
 struct CoffeeShopItemListView: View {
 
-    let place: Place
+    @StateObject private var viewModel: CoffeeShopItemListViewModel
     let action: (String) -> Void
 
     init(place: Place, action: @escaping (String) -> Void) {
-        self.place = place
+        self._viewModel = StateObject(wrappedValue: CoffeeShopItemListViewModel(place: place))
         self.action = action
     }
 
     private var statusColor: Color {
-        place.isOpen ? .customGreenOpen : .customRedClosed
+        viewModel.place.isOpen ? .customGreenOpen : .customRedClosed
     }
 
     var body: some View {
         VStack(spacing: 0) {
             HStack {
                 icon()
-                name()
-                Spacer()
                 info()
+                Spacer()
+                isOpen()
             }
             Divider()
         }.onTapGesture {
-            action(place.id)
+            action(viewModel.place.id)
+        }
+        .onAppear {
+            viewModel.getDistance()
         }
     }
 
@@ -44,14 +47,18 @@ struct CoffeeShopItemListView: View {
             .clipShape(Circle())
     }
     
-    private func name() -> some View {
-        Text(place.name)
-            .CSFont(.inter(14, weight: .medium), color: .blackText)
+    private func info() -> some View {
+        VStack(alignment: .leading) {
+            Text(viewModel.place.name)
+                .CSFont(.inter(14, weight: .medium), color: .blackText)
+            Text(viewModel.distance)
+                .CSFont(.inter(12, weight: .regular), color: .darkGrayText)
+        }
     }
     
-    private func info() -> some View {
+    private func isOpen() -> some View {
         VStack {
-            Text(place.isOpen ?  "coffee.shop.open" : "coffee.shop.closed")
+            Text(viewModel.place.isOpen ?  "coffee.shop.open" : "coffee.shop.closed")
                 .CSFont(.inter(10, weight: .bold), color: .customWhite)
                 .textCase(.uppercase)
                 .padding(6)
