@@ -14,12 +14,14 @@ protocol GetNearbyCoffeeShops {
 class DefaultGetNearbyCoffeeShops {
 
     private let googlePlacesRepository: GooglePlacesRepository
+    private let locationManager: LocationManager
 
     private let radius = "3500"
     private let keyword = "coffee"
 
-    init(googlePlacesRepository: GooglePlacesRepository) {
+    init(googlePlacesRepository: GooglePlacesRepository, locationManager: LocationManager = .shared) {
         self.googlePlacesRepository = googlePlacesRepository
+        self.locationManager = locationManager
     }
 }
 
@@ -31,9 +33,21 @@ extension DefaultGetNearbyCoffeeShops: GetNearbyCoffeeShops {
 
         switch result {
         case .success(let response):
-            return .success(response.places)
+            let places = response.places
+            let sortedByUserDistance = sortPlacesByDistance(places)
+            return .success(sortedByUserDistance)
         case .failure(let error):
             return .failure(error)
         }
+    }
+}
+
+// TODO: Duplicated
+extension DefaultGetNearbyCoffeeShops {
+    private func sortPlacesByDistance(_ places: [Place]) -> [Place] {
+        return places.sorted(by: {
+            locationManager.getDistance(to: $0.coordinate.latitude, longitude: $0.coordinate.longitude) <
+            locationManager.getDistance(to: $1.coordinate.latitude, longitude: $1.coordinate.longitude)
+        })
     }
 }

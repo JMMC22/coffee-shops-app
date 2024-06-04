@@ -22,6 +22,8 @@ class LocationManager: NSObject, ObservableObject {
         lastLocation.eraseToAnyPublisher()
     }
 
+    private var lastUserLocation: CLLocationCoordinate2D = .init()
+
     static let shared = LocationManager()
 
     private let locationManager = CLLocationManager()
@@ -40,6 +42,13 @@ class LocationManager: NSObject, ObservableObject {
     func requestLocation() {
         locationManager.startUpdatingLocation()
     }
+
+    func getDistance(to latitude: Double, longitude: Double) -> Double {
+        let sourceLocation = CLLocation(latitude: lastUserLocation.latitude, longitude: lastUserLocation.longitude)
+        let destinationLocation = CLLocation(latitude: latitude, longitude: longitude)
+
+        return sourceLocation.distance(from: destinationLocation)
+    }
 }
 
 extension LocationManager: CLLocationManagerDelegate {
@@ -50,6 +59,7 @@ extension LocationManager: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last?.coordinate else { return }
+        lastUserLocation = location
         lastLocation.send(location)
     }
 

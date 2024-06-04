@@ -18,6 +18,7 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     @Published var isFavourite: Bool = false
     @Published var imagesURLs: [URL?] = []
     @Published var schedule: String = ""
+    @Published var distance: String = ""
 
     @Published var isLoading: Bool = true
     @Published var error: RequestError?
@@ -29,6 +30,7 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     private let getCoffeeShopDetails: GetCoffeeShopDetails
     private let updateFavouriteCoffeeShop: UpdateFavouriteCoffeeShop
     private let isFavouriteCoffeeShop: IsFavouriteCoffeeShop
+    private let locationManager: LocationManager
 
     private let id: String
     private var coffeeShop: Place?
@@ -36,11 +38,13 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     init(_ id: String, 
          getCoffeeShopDetails: GetCoffeeShopDetails,
          updateFavouriteCoffeeShop: UpdateFavouriteCoffeeShop,
-         isFavouriteCoffeeShop: IsFavouriteCoffeeShop) {
+         isFavouriteCoffeeShop: IsFavouriteCoffeeShop,
+         locationManager: LocationManager = .shared) {
         self.id = id
         self.getCoffeeShopDetails = getCoffeeShopDetails
         self.updateFavouriteCoffeeShop = updateFavouriteCoffeeShop
         self.isFavouriteCoffeeShop = isFavouriteCoffeeShop
+        self.locationManager = locationManager
     }
 }
 
@@ -71,6 +75,7 @@ extension CoffeeShopDetailsViewModel {
             self.phoneNumber = coffeeShop.phoneNumber
             self.schedule = coffeeShop.formattedSchedule
             self.isFavourite = isFavourite
+            self.distance = self.getDistance(coffeeShop.coordinate)
             self.isLoading = false
         }
     }
@@ -109,6 +114,24 @@ extension CoffeeShopDetailsViewModel {
 }
 
 extension CoffeeShopDetailsViewModel {
+
+    private func getDistance(_ coordinates: CLLocationCoordinate2D) -> String {
+        let distanceToPlace = locationManager.getDistance(to: coordinates.latitude, longitude: coordinates.longitude)
+        return getFormattedDistance(distanceToPlace)
+    }
+
+    private func getFormattedDistance(_ distance: Double) -> String {
+        return distance < 1000 ? getMeters(distance) : getKilometers(distance)
+    }
+
+    private func getMeters(_ distance: Double) -> String {
+        return "\(Int(distance)) m"
+    }
+
+    private func getKilometers(_ distance: Double) -> String {
+        return String(format: "%.1f km", (distance / 1000))
+    }
+
     private func createCoordinateRegion(_ coordinate: CLLocationCoordinate2D) -> MKCoordinateRegion {
         MKCoordinateRegion(center: coordinate,
                            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
