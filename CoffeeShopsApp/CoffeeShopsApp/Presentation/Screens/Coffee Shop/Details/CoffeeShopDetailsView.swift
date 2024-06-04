@@ -117,12 +117,17 @@ struct CoffeeShopDetailsContainerView: View {
     }
 
     private func isOpen() -> some View {
-        Text(viewModel.isOpenNow ? "coffee.shop.open" : "coffee.shop.closed")
-            .CSFont(.inter(10, weight: .bold), color: .customWhite)
-            .textCase(.uppercase)
-            .padding(6)
-            .background(viewModel.isOpenNow ? .greenOpen : .redClosed)
-            .clipShape(Capsule())
+        HStack {
+            Text(viewModel.isOpenNow ? "coffee.shop.open" : "coffee.shop.closed")
+                .CSFont(.inter(10, weight: .bold), color: .customWhite)
+                .textCase(.uppercase)
+                .padding(6)
+                .background(viewModel.isOpenNow ? .greenOpen : .redClosed)
+                .clipShape(Capsule())
+
+            Text(viewModel.distance)
+                .CSFont(.inter(14, weight: .bold), color: .darkGrayText)
+        }
     }
 
     private func name() -> some View {
