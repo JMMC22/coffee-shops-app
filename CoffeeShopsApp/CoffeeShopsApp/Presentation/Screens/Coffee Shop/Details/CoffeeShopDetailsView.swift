@@ -14,6 +14,8 @@ struct CoffeeShopDetailsView: View {
 
     @Environment(\.openURL) private var openURL
 
+    @State private var showAppsSelector: Bool = false
+
     init(viewModel: CoffeeShopDetailsViewModel) {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
@@ -27,13 +29,20 @@ struct CoffeeShopDetailsView: View {
         .task {
             await viewModel.getCoffeeShopsDetails()
         }
-        .overlay(openWebsiteButton(), alignment: .bottom)
+        .overlay(openNavigatorButton(), alignment: .bottom)
+        .actionSheet(isPresented: $showAppsSelector) {
+            ActionSheet(
+                title: Text("action.sheet.open.in"),
+                message: nil,
+                buttons: getDirectionApps()
+            )
+        }
     }
 
     @ViewBuilder
-    private func openWebsiteButton() -> some View {
-        Button(action: { open(viewModel.coffeeURL) }) {
-            Text("button.go.website")
+    private func openNavigatorButton() -> some View {
+        Button(action: { showAppsSelector = true }) {
+            Text("button.go.place")
                 .CSFont(.inter(14, weight: .bold), color: .whiteCustom)
                 .frame(maxWidth: .infinity)
                 .padding()
@@ -43,10 +52,25 @@ struct CoffeeShopDetailsView: View {
         .buttonBorderShape(.capsule)
         .opacity(viewModel.coffeeURL != nil ? 1 : 0)
     }
+
+    private func getDirectionApps() -> [ActionSheet.Button] {
+        let buttons: [ActionSheet.Button] = MapApp.availableApps.map { navigationApp in
+            ActionSheet.Button.default(
+                Text(navigationApp.appName),
+                action: {
+                    navigateToApp(navigationApp)
+                }
+            )
+        }
+        
+        let cancelAction = ActionSheet.Button.cancel(Text("action.sheet.dismiss"))
+
+        return buttons + [cancelAction]
+    }
     
-    private func open(_ url: URL?) {
-        guard let url else { return }
-        openURL(url)
+    private func navigateToApp(_ app: MapApp) {
+        guard let url = viewModel.getMapAppURL(app) else { return }
+        UIApplication.shared.open(url, options: [:])
     }
 }
 
