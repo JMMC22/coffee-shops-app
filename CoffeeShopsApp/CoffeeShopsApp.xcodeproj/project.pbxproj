@@ -77,6 +77,7 @@
 		B5B407012BBAAE0A00ECE46C /* UpdateFavouriteCoffeeShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B407002BBAAE0A00ECE46C /* UpdateFavouriteCoffeeShop.swift */; };
 		B5B407042BBAB20E00ECE46C /* PlaceUDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B407032BBAB20E00ECE46C /* PlaceUDS.swift */; };
 		B5D7CAD02BE4027600A7FCF5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */; };
+		B5F727C52C128D5B00B13709 /* MapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F727C42C128D5B00B13709 /* MapApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		B5B407002BBAAE0A00ECE46C /* UpdateFavouriteCoffeeShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFavouriteCoffeeShop.swift; sourceTree = "<group>"; };
 		B5B407032BBAB20E00ECE46C /* PlaceUDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceUDS.swift; sourceTree = "<group>"; };
 		B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B5F727C42C128D5B00B13709 /* MapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,6 +420,7 @@
 				B5990BA72BB850110047C552 /* PlacesNearbySearch.swift */,
 				B54268E42BDD40180073CAAE /* PlaceSchedule.swift */,
 				B54268E62BDD41140073CAAE /* WeekDay.swift */,
+				B5F727C42C128D5B00B13709 /* MapApp.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				B5990BDA2BB984090047C552 /* GetCoffeeShopDetails.swift in Sources */,
 				B5990BBF2BB8523D0047C552 /* HomeViewModel.swift in Sources */,
 				B5990BD22BB97FF40047C552 /* CoffeeShopDetailsViewModel.swift in Sources */,
+				B5F727C52C128D5B00B13709 /* MapApp.swift in Sources */,
 				B58A65462C0FB1AA0024AD51 /* CoffeeShopItemListViewModel.swift in Sources */,
 				B5990BC22BB853030047C552 /* HomeMapView.swift in Sources */,
 				B5B407042BBAB20E00ECE46C /* PlaceUDS.swift in Sources */,
