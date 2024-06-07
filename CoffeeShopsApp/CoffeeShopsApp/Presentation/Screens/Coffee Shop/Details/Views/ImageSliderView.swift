@@ -33,6 +33,7 @@ struct ImageSliderView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                     }
                 }
+                .padding(.horizontal, 16)
             }
         }
         .frame(height: 200)

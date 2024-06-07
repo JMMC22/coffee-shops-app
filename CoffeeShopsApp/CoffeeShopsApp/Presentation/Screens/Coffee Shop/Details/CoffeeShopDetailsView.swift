@@ -89,7 +89,6 @@ struct CoffeeShopDetailsContainerView: View {
             staticMap()
         }
         .redacted(reason: viewModel.isLoading ? .placeholder : .invalidated)
-        .padding(EdgeInsets(top: 0, leading: 16, bottom: 54, trailing: 16))
     }
 
     @ViewBuilder
@@ -115,6 +114,7 @@ struct CoffeeShopDetailsContainerView: View {
             informationItem(icon: "phone", title: "coffee.shop.phone.number", value: viewModel.phoneNumber)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 54, trailing: 16))
     }
 
     @ViewBuilder
@@ -174,5 +174,6 @@ struct CoffeeShopDetailsContainerView: View {
             .disabled(true)
             .frame(height: 200)
             .clipShape(RoundedRectangle(cornerRadius: 20))
+            .padding(EdgeInsets(top: 0, leading: 16, bottom: 54, trailing: 16))
     }
 }
