@@ -77,6 +77,7 @@ struct CoffeeShopDetailsView: View {
 struct CoffeeShopDetailsContainerView: View {
 
     @ObservedObject private var viewModel: CoffeeShopDetailsViewModel
+    @Environment(\.openURL) private var openURL
 
     init(viewModel: CoffeeShopDetailsViewModel) {
         self.viewModel = viewModel
@@ -109,16 +110,20 @@ struct CoffeeShopDetailsContainerView: View {
                 favourite()
             }
 
-            informationItem(icon: "location", title: "coffee.shop.address", value: viewModel.address)
-            informationItem(icon: "clock", title: "coffee.shop.hour", value: viewModel.schedule)
-            informationItem(icon: "network", title: "coffee.shop.website", value: viewModel.coffeeURL?.absoluteString ?? "")
-            informationItem(icon: "phone", title: "coffee.shop.phone.number", value: viewModel.phoneNumber)
+            informationItem(icon: "location", title: "coffee.shop.address", 
+                            value: viewModel.address)
+            informationItem(icon: "clock", title: "coffee.shop.hour", 
+                            value: viewModel.schedule)
+            informationItem(icon: "network", title: "coffee.shop.website",
+                            value: viewModel.coffeeURL?.absoluteString ?? "", isLink: true)
+            informationItem(icon: "phone", title: "coffee.shop.phone.number", 
+                            value: viewModel.phoneNumber)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     @ViewBuilder
-    private func informationItem(icon: String, title: String, value: String) -> some View {
+    private func informationItem(icon: String, title: String, value: String, isLink: Bool = false) -> some View {
         if !value.isEmpty {
             HStack(alignment: .top, spacing: 8) {
                 RoundedRectangle(cornerRadius: 4).fill(Color.customLightGrayText.opacity(0.4))
@@ -133,8 +138,18 @@ struct CoffeeShopDetailsContainerView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(LocalizedStringKey(title))
                         .CSFont(.inter(14, weight: .bold), color: .blackText)
-                    Text(value)
-                        .CSFont(.inter(12, weight: .regular), color: .darkGrayText)
+
+                    if isLink, let url = URL(string: value) {
+                        Text(url.host() ?? value)
+                            .CSFont(.inter(12, weight: .regular), color: .darkGrayText)
+                            .underline()
+                            .onTapGesture {
+                                open(url)
+                            }
+                    } else {
+                        Text(value)
+                            .CSFont(.inter(12, weight: .regular), color: .darkGrayText)
+                    }
                 }
             }
         }
@@ -174,5 +189,10 @@ struct CoffeeShopDetailsContainerView: View {
             .disabled(true)
             .frame(height: 200)
             .clipShape(RoundedRectangle(cornerRadius: 20))
+    }
+    
+    private func open(_ url: URL?) {
+        guard let url else { return }
+        openURL(url)
     }
 }
