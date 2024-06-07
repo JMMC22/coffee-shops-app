@@ -41,11 +41,23 @@ struct HomeContainerView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading, spacing: 0) {
-                HomeMapView(viewModel: viewModel)
-                HomeListView(viewModel: viewModel)
-                    .frame(height: geometry.size.height / 3)
+                map()
+                list(geometry)
             }
             .frame(maxWidth: .infinity)
         }
+    }
+
+    private func map() -> some View {
+        HomeMapView(viewModel: viewModel)
+    }
+
+    private func list(_ geometry: GeometryProxy) -> some View {
+        HomeListView(viewModel: viewModel)
+            .frame(height: geometry.size.height / 3)
+            .background(Color.white)
+            .cornerRadius(20)
+            .shadow(radius: 4, y: -4)
+            .offset(y: -5)
     }
 }
