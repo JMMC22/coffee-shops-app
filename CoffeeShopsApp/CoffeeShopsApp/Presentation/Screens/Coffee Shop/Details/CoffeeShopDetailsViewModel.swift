@@ -136,4 +136,9 @@ extension CoffeeShopDetailsViewModel {
         MKCoordinateRegion(center: coordinate,
                            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
     }
+
+    func getMapAppURL(_ app: MapApp) -> URL? {
+        return URL(string: app.appUrl(latitude: coffeeShop?.coordinate.latitude,
+                                      longitude: coffeeShop?.coordinate.longitude))
+    }
 }
