@@ -12,10 +12,6 @@ struct CoffeeShopDetailsView: View {
 
     @StateObject private var viewModel: CoffeeShopDetailsViewModel
 
-    @Environment(\.openURL) private var openURL
-
-    @State private var showAppsSelector: Bool = false
-
     init(viewModel: CoffeeShopDetailsViewModel) {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
@@ -29,48 +25,6 @@ struct CoffeeShopDetailsView: View {
         .task {
             await viewModel.getCoffeeShopsDetails()
         }
-        .overlay(openNavigatorButton(), alignment: .bottom)
-        .actionSheet(isPresented: $showAppsSelector) {
-            ActionSheet(
-                title: Text("action.sheet.open.in"),
-                message: nil,
-                buttons: getDirectionApps()
-            )
-        }
-    }
-
-    @ViewBuilder
-    private func openNavigatorButton() -> some View {
-        Button(action: { showAppsSelector = true }) {
-            Text("button.go.place")
-                .CSFont(.inter(14, weight: .bold), color: .whiteCustom)
-                .frame(maxWidth: .infinity)
-                .padding()
-        }
-        .foregroundStyle(.whiteCustom)
-        .background(.oliveGreen)
-        .buttonBorderShape(.capsule)
-        .opacity(viewModel.coffeeURL != nil ? 1 : 0)
-    }
-
-    private func getDirectionApps() -> [ActionSheet.Button] {
-        let buttons: [ActionSheet.Button] = MapApp.availableApps.map { navigationApp in
-            ActionSheet.Button.default(
-                Text(navigationApp.appName),
-                action: {
-                    navigateToApp(navigationApp)
-                }
-            )
-        }
-        
-        let cancelAction = ActionSheet.Button.cancel(Text("action.sheet.dismiss"))
-
-        return buttons + [cancelAction]
-    }
-    
-    private func navigateToApp(_ app: MapApp) {
-        guard let url = viewModel.getMapAppURL(app) else { return }
-        UIApplication.shared.open(url, options: [:])
     }
 }
 
@@ -78,6 +32,8 @@ struct CoffeeShopDetailsContainerView: View {
 
     @ObservedObject private var viewModel: CoffeeShopDetailsViewModel
     @Environment(\.openURL) private var openURL
+
+    @State private var showAppsSelector: Bool = false
 
     init(viewModel: CoffeeShopDetailsViewModel) {
         self.viewModel = viewModel
@@ -88,8 +44,16 @@ struct CoffeeShopDetailsContainerView: View {
             imageSlider()
             information()
             staticMap()
+            openNavigatorButton()
         }
         .redacted(reason: viewModel.isLoading ? .placeholder : .invalidated)
+        .actionSheet(isPresented: $showAppsSelector) {
+            ActionSheet(
+                title: Text("action.sheet.open.in"),
+                message: nil,
+                buttons: getDirectionApps()
+            )
+        }
     }
 
     @ViewBuilder
@@ -189,11 +153,45 @@ struct CoffeeShopDetailsContainerView: View {
             .disabled(true)
             .frame(height: 200)
             .clipShape(RoundedRectangle(cornerRadius: 20))
-            .padding(EdgeInsets(top: 0, leading: 16, bottom: 54, trailing: 16))
+            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
     }
     
     private func open(_ url: URL?) {
         guard let url else { return }
         openURL(url)
+    }
+
+    @ViewBuilder
+    private func openNavigatorButton() -> some View {
+        Button(action: { showAppsSelector = true }) {
+            Text("button.go.place")
+                .CSFont(.inter(14, weight: .bold), color: .whiteCustom)
+                .frame(maxWidth: .infinity)
+                .padding()
+        }
+        .tint(.oliveGreen)
+        .foregroundStyle(.whiteCustom)
+        .buttonStyle(.borderedProminent)
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+    }
+
+    private func getDirectionApps() -> [ActionSheet.Button] {
+        let buttons: [ActionSheet.Button] = MapApp.availableApps.map { navigationApp in
+            ActionSheet.Button.default(
+                Text(navigationApp.appName),
+                action: {
+                    navigateToApp(navigationApp)
+                }
+            )
+        }
+        
+        let cancelAction = ActionSheet.Button.cancel(Text("action.sheet.dismiss"))
+
+        return buttons + [cancelAction]
+    }
+    
+    private func navigateToApp(_ app: MapApp) {
+        guard let url = viewModel.getMapAppURL(app) else { return }
+        UIApplication.shared.open(url, options: [:])
     }
 }
