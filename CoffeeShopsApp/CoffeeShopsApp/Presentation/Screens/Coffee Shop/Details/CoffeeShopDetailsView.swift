@@ -84,12 +84,19 @@ struct CoffeeShopDetailsContainerView: View {
     }
 
     var body: some View {
+        if viewModel.isLoading {
+            ProgressView()
+        } else {
+            content()
+        }
+    }
+
+    private func content() -> some View {
         VStack(spacing: 24) {
             imageSlider()
             information()
             staticMap()
         }
-        .redacted(reason: viewModel.isLoading ? .placeholder : .invalidated)
     }
 
     @ViewBuilder
