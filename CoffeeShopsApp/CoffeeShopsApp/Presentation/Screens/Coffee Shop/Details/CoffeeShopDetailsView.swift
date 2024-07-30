@@ -17,8 +17,14 @@ struct CoffeeShopDetailsView: View {
     }
 
     var body: some View {
-        ScrollView {
-            CoffeeShopDetailsContainerView(viewModel: viewModel)
+        Group {
+            if viewModel.isLoading {
+                ProgressView()
+            } else {
+                ScrollView {
+                    CoffeeShopDetailsContainerView(viewModel: viewModel)
+                }
+            }
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbarRole(.editor)
@@ -40,14 +46,6 @@ struct CoffeeShopDetailsContainerView: View {
     }
 
     var body: some View {
-        if viewModel.isLoading {
-            ProgressView()
-        } else {
-            content()
-        }
-    }
-
-    private func content() -> some View {
         VStack(spacing: 24) {
             imageSlider()
             information()
