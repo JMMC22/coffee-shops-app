@@ -40,13 +40,20 @@ struct CoffeeShopDetailsContainerView: View {
     }
 
     var body: some View {
+        if viewModel.isLoading {
+            ProgressView()
+        } else {
+            content()
+        }
+    }
+
+    private func content() -> some View {
         VStack(spacing: 24) {
             imageSlider()
             information()
             staticMap()
             openNavigatorButton()
         }
-        .redacted(reason: viewModel.isLoading ? .placeholder : .invalidated)
         .actionSheet(isPresented: $showAppsSelector) {
             ActionSheet(
                 title: Text("action.sheet.open.in"),
@@ -70,7 +77,7 @@ struct CoffeeShopDetailsContainerView: View {
             HStack {
                 isOpen()
                 Spacer()
-                favourite()
+                actions()
             }
 
             informationItem(icon: "location", title: "coffee.shop.address", 
@@ -83,7 +90,7 @@ struct CoffeeShopDetailsContainerView: View {
                             value: viewModel.phoneNumber)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(EdgeInsets(top: 0, leading: 16, bottom: 54, trailing: 16))
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 32, trailing: 16))
     }
 
     @ViewBuilder
@@ -138,13 +145,28 @@ struct CoffeeShopDetailsContainerView: View {
             .CSFont(.inter(28, weight: .bold), color: .blackText)
     }
 
-    private func favourite() -> some View {
+    private func actions() -> some View {
         HStack {
             Spacer()
-            Button(action: viewModel.saveAsFavourite) {
-                Image(systemName: viewModel.isFavourite ? "heart.fill" : "heart")
+            call()
+            favourite()
+        }
+    }
+    
+    @ViewBuilder
+    private func call() -> some View {
+        if !viewModel.phoneNumber.isEmpty {
+            Button(action: callPhone) {
+                Image(systemName: "phone")
                     .frame(width: 25, height: 25)
             }
+        }
+    }
+
+    private func favourite() -> some View {
+        Button(action: viewModel.saveAsFavourite) {
+            Image(systemName: viewModel.isFavourite ? "heart.fill" : "heart")
+                .frame(width: 25, height: 25)
         }
     }
 
@@ -154,6 +176,10 @@ struct CoffeeShopDetailsContainerView: View {
             .frame(height: 200)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+    }
+
+    private func callPhone() {
+        open(URL(string: "tel://\(viewModel.phoneNumber)"))
     }
     
     private func open(_ url: URL?) {
