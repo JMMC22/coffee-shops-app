@@ -39,13 +39,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Go"
+            "value" : "Go to address"
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ir"
+            "state" : "needs_review",
+            "value" : "Ir a la dirección"
           }
         }
       }
