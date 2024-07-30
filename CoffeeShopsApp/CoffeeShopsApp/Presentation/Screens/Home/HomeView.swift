@@ -45,6 +45,7 @@ struct HomeContainerView: View {
                 list(geometry)
             }
             .frame(maxWidth: .infinity)
+            .ignoresSafeArea(.all, edges: .bottom)
         }
     }
 
@@ -58,6 +59,5 @@ struct HomeContainerView: View {
             .background(Color.white)
             .cornerRadius(20)
             .shadow(radius: 4, y: -4)
-            .offset(y: -5)
     }
 }
