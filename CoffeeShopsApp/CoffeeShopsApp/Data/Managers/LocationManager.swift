@@ -40,7 +40,7 @@ class LocationManager: NSObject, ObservableObject {
     }
 
     func requestLocation() {
-        locationManager.startUpdatingLocation()
+        locationManager.requestLocation()
     }
 
     func getDistance(to latitude: Double, longitude: Double) -> Double {
