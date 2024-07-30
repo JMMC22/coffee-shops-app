@@ -18,14 +18,19 @@ struct HomeMapView: View {
     }
 
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            Map {
+        ZStack(alignment: .bottomTrailing) {
+            Map(initialPosition: .automatic) {
                 ForEach(viewModel.nearbyCoffeeShops) { location in
                     Annotation(location.name, coordinate: location.coordinate) {
                         markerIcon()
                             .onTapGesture { viewModel.navigateToPlaceDetails(id: location.id) }
                     }
                 }
+
+                UserAnnotation()
+            }
+            .mapControls {
+                MapUserLocationButton()
             }
 
             Button { viewModel.navigateToFavourites() } label: {
