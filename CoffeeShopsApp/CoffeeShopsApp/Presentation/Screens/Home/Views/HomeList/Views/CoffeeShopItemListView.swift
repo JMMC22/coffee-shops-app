@@ -39,7 +39,7 @@ struct CoffeeShopItemListView: View {
     }
 
     private func icon() -> some View {
-        CoffeeShopMarker(id: viewModel.place.id)
+        CoffeeShopMarker(isFavourite: viewModel.place.isFavourite)
     }
     
     private func info() -> some View {

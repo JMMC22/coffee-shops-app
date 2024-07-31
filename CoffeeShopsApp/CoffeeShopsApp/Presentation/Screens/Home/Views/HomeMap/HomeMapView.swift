@@ -22,7 +22,7 @@ struct HomeMapView: View {
             Map(initialPosition: .automatic) {
                 ForEach(viewModel.nearbyCoffeeShops) { location in
                     Annotation(location.name, coordinate: location.coordinate) {
-                        markerIcon(id: location.id)
+                        markerIcon(isFavourite: location.isFavourite)
                             .onTapGesture { viewModel.navigateToPlaceDetails(id: location.id) }
                     }
                 }
@@ -45,7 +45,7 @@ struct HomeMapView: View {
         }
     }
 
-    private func markerIcon(id: String) -> some View {
-        CoffeeShopMarker(id: id)
+    private func markerIcon(isFavourite: Bool) -> some View {
+        CoffeeShopMarker(isFavourite: isFavourite)
     }
 }

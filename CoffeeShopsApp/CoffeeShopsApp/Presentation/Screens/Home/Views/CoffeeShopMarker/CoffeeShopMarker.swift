@@ -9,10 +9,10 @@ import SwiftUI
 
 struct CoffeeShopMarker: View {
 
-    @StateObject private var viewModel: CoffeeShopMarkerViewModel
+    let isFavourite: Bool
 
-    init(id: String) {
-        self._viewModel = StateObject(wrappedValue: CoffeeShopMarkerViewModel(id: id))
+    init(isFavourite: Bool) {
+        self.isFavourite = isFavourite
     }
 
     var body: some View {
@@ -20,7 +20,7 @@ struct CoffeeShopMarker: View {
             .resizable()
             .frame(width: 18, height: 30)
             .padding(12)
-            .background(Color.customOliveGreen)
+            .background(isFavourite ? Color.customCoffee : Color.customOliveGreen)
             .clipShape(Circle())
     }
 }

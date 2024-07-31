@@ -30,14 +30,42 @@ extension DefaultGetNearbyCoffeeShops: GetNearbyCoffeeShops {
         let location: String = "\(latitude),\(longitude)"
 
         let result = await googlePlacesRepository.getNearbyPlaces(location: location, radius: radius, keyword: keyword)
+        let favouritesResult = googlePlacesRepository.fetchFavouritesCoffeeShops()
 
-        switch result {
+        return await processResults(nearbyPlacesResult: result, favouritesResult: favouritesResult)
+    }
+
+    private func processResults(nearbyPlacesResult: Result<PlacesNearbySearch, RequestError>,
+                                favouritesResult: Result<[Place], RequestError>) async -> Result<[Place], RequestError> {
+        switch nearbyPlacesResult {
         case .success(let response):
             let places = response.places
-            let sortedByUserDistance = sortPlacesByDistance(places)
-            return .success(sortedByUserDistance)
+            let favourites = extractFavourites(from: favouritesResult)
+            
+            let matchedPlaces = matchPlaces(places: places, favourites: favourites)
+            let sortedPlaces = sortPlacesByDistance(matchedPlaces)
+            
+            return .success(sortedPlaces)
+            
         case .failure(let error):
             return .failure(error)
+        }
+    }
+
+    private func extractFavourites(from result: Result<[Place], RequestError>) -> [Place] {
+        switch result {
+        case .success(let favourites):
+            return favourites
+        case .failure:
+            return []
+        }
+    }
+
+    private func matchPlaces(places: [Place], favourites: [Place]) -> [Place] {
+        return places.map { place in
+            var newPlace = place
+            newPlace.isFavourite = favourites.contains(where: { $0.id == place.id })
+            return newPlace
         }
     }
 }
