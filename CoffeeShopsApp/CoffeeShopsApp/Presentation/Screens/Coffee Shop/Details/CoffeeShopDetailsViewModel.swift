@@ -91,7 +91,9 @@ extension CoffeeShopDetailsViewModel {
 extension CoffeeShopDetailsViewModel {
 
     func saveAsFavourite() {
-        guard let coffeeShop else { return }
+        guard var coffeeShop else { return }
+
+        coffeeShop.isFavourite = !isFavourite
         let result = updateFavouriteCoffeeShop.execute(coffeeShop)
 
         switch result {

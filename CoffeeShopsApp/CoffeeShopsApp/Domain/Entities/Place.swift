@@ -18,6 +18,8 @@ struct Place: Identifiable {
     let address: String
     let url: URL?
     let phoneNumber: String
+
+    var isFavourite: Bool = false
 }
 
 extension Place: Equatable {

@@ -15,6 +15,7 @@ struct PlaceUDS: Codable {
     let address: String
     let url: URL?
     let phoneNumber: String
+    let isFavourite: Bool
 }
 
 extension PlaceUDS {
@@ -26,6 +27,7 @@ extension PlaceUDS {
         self.isOpen = place.isOpen
         self.url = place.url
         self.phoneNumber = place.phoneNumber
+        self.isFavourite = place.isFavourite
     }
 }
 
@@ -39,7 +41,8 @@ extension PlaceUDS {
               photos: [],
               address: address,
               url: url,
-              phoneNumber: phoneNumber)
+              phoneNumber: phoneNumber,
+              isFavourite: isFavourite)
     }
 }
 
