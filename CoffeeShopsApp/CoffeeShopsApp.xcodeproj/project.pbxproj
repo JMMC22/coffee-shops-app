@@ -78,6 +78,7 @@
 		B5B407042BBAB20E00ECE46C /* PlaceUDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B407032BBAB20E00ECE46C /* PlaceUDS.swift */; };
 		B5B62F6D2C5A160B00AA782E /* CoffeeShopMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F6C2C5A160B00AA782E /* CoffeeShopMarker.swift */; };
 		B5B62F6F2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F6E2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift */; };
+		B5B62F722C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F712C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift */; };
 		B5D7CAD02BE4027600A7FCF5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */; };
 		B5F727C52C128D5B00B13709 /* MapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F727C42C128D5B00B13709 /* MapApp.swift */; };
 /* End PBXBuildFile section */
@@ -177,6 +178,7 @@
 		B5B407032BBAB20E00ECE46C /* PlaceUDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceUDS.swift; sourceTree = "<group>"; };
 		B5B62F6C2C5A160B00AA782E /* CoffeeShopMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopMarker.swift; sourceTree = "<group>"; };
 		B5B62F6E2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopMarkerViewModel.swift; sourceTree = "<group>"; };
+		B5B62F712C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavouritesCoffeeShopsTests.swift; sourceTree = "<group>"; };
 		B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B5F727C42C128D5B00B13709 /* MapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				B5990B462BB6DE290047C552 /* CoffeeShopsAppTests.swift */,
+				B5B62F712C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift */,
 			);
 			path = CoffeeShopsAppTests;
 			sourceTree = "<group>";
@@ -825,6 +828,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5B62F722C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift in Sources */,
 				B5990B472BB6DE290047C552 /* CoffeeShopsAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
