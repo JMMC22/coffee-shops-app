@@ -8,47 +8,6 @@
 import XCTest
 @testable import CoffeeShopsApp
 
-class GooglePlacesRepositoryStub: GooglePlacesRepository {
-
-    var getNearbyPlacesResult: Result<PlacesNearbySearch, RequestError>
-    var getPlaceDetailsResult: Result<Place, RequestError>
-    var fetchFavouritesCoffeeShopsResult: Result<[Place], RequestError>
-    var isFavouriteCoffeeShopResult: Bool
-    var updateFavouriteCoffeShopResult: Result<Bool, RequestError>
-
-    init(getNearbyPlacesResult: Result<PlacesNearbySearch, RequestError> = .failure(.unknown),
-         getPlaceDetailsResult: Result<Place, RequestError> = .failure(.unknown),
-         fetchFavouritesCoffeeShopsResult: Result<[Place], RequestError> = .failure(.unknown),
-         isFavouriteCoffeeShopResult: Bool = false,
-         updateFavouriteCoffeShopResult: Result<Bool, RequestError> = .failure(.unknown)) {
-        self.getNearbyPlacesResult = getNearbyPlacesResult
-        self.getPlaceDetailsResult = getPlaceDetailsResult
-        self.fetchFavouritesCoffeeShopsResult = fetchFavouritesCoffeeShopsResult
-        self.isFavouriteCoffeeShopResult = isFavouriteCoffeeShopResult
-        self.updateFavouriteCoffeShopResult = updateFavouriteCoffeShopResult
-    }
-
-    func getNearbyPlaces(location: String, radius: String, keyword: String) async -> Result<PlacesNearbySearch, RequestError> {
-        getNearbyPlacesResult
-    }
-
-    func getPlaceDetails(id: String) async -> Result<Place, RequestError> {
-        getPlaceDetailsResult
-    }
-
-    func fetchFavouritesCoffeeShops() -> Result<[Place], RequestError> {
-        fetchFavouritesCoffeeShopsResult
-    }
-
-    func isFavouriteCoffeeShop(id: String) -> Bool {
-        isFavouriteCoffeeShopResult
-    }
-
-    func updateFavouriteCoffeShop(_ place: Place) -> Result<Bool, RequestError> {
-        updateFavouriteCoffeShopResult
-    }
-}
-
 final class GetFavouritesCoffeeShopsTests: XCTestCase {
 
     func test_execute_success_return_sorted_array_when_repository_return_nonEmpty_array() throws {
@@ -133,5 +92,19 @@ final class GetFavouritesCoffeeShopsTests: XCTestCase {
         let capturedCoffeeShopsList = try XCTUnwrap(capturedResult.get())
 
         XCTAssertEqual(capturedCoffeeShopsList, mockArray)
+    }
+
+    func test_execute_return_error_when_repository_return_error() throws {
+
+        // GIVEN
+        let result:  Result<[Place], RequestError> = .failure(.decode)
+        let stub = GooglePlacesRepositoryStub(fetchFavouritesCoffeeShopsResult: result)
+        let sut = DefaultGetFavouritesCoffeeShops(googlePlacesRepository: stub)
+
+        // WHEN
+        let capturedResult = sut.execute()
+
+        // THEN
+        XCTAssertEqual(capturedResult, result)
     }
 }

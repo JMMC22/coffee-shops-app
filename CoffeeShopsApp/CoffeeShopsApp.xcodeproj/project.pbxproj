@@ -79,6 +79,8 @@
 		B5B62F6D2C5A160B00AA782E /* CoffeeShopMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F6C2C5A160B00AA782E /* CoffeeShopMarker.swift */; };
 		B5B62F6F2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F6E2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift */; };
 		B5B62F722C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F712C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift */; };
+		B5B62F762C5A54E500AA782E /* GooglePlacesRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F752C5A54E500AA782E /* GooglePlacesRepositoryStub.swift */; };
+		B5B62F782C5A54FD00AA782E /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F772C5A54FD00AA782E /* Equatable.swift */; };
 		B5D7CAD02BE4027600A7FCF5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */; };
 		B5F727C52C128D5B00B13709 /* MapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F727C42C128D5B00B13709 /* MapApp.swift */; };
 /* End PBXBuildFile section */
@@ -179,6 +181,8 @@
 		B5B62F6C2C5A160B00AA782E /* CoffeeShopMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopMarker.swift; sourceTree = "<group>"; };
 		B5B62F6E2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopMarkerViewModel.swift; sourceTree = "<group>"; };
 		B5B62F712C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavouritesCoffeeShopsTests.swift; sourceTree = "<group>"; };
+		B5B62F752C5A54E500AA782E /* GooglePlacesRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesRepositoryStub.swift; sourceTree = "<group>"; };
+		B5B62F772C5A54FD00AA782E /* Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equatable.swift; sourceTree = "<group>"; };
 		B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B5F727C42C128D5B00B13709 /* MapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -282,7 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				B5990B462BB6DE290047C552 /* CoffeeShopsAppTests.swift */,
-				B5B62F712C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift */,
+				B5B62F732C5A54CD00AA782E /* Domain */,
+				B5B62F742C5A54D300AA782E /* Helpers */,
 			);
 			path = CoffeeShopsAppTests;
 			sourceTree = "<group>";
@@ -614,6 +619,23 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		B5B62F732C5A54CD00AA782E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B5B62F712C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B5B62F742C5A54D300AA782E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B5B62F772C5A54FD00AA782E /* Equatable.swift */,
+				B5B62F752C5A54E500AA782E /* GooglePlacesRepositoryStub.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B5D7CACE2BE4026600A7FCF5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -830,6 +852,8 @@
 			files = (
 				B5B62F722C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift in Sources */,
 				B5990B472BB6DE290047C552 /* CoffeeShopsAppTests.swift in Sources */,
+				B5B62F782C5A54FD00AA782E /* Equatable.swift in Sources */,
+				B5B62F762C5A54E500AA782E /* GooglePlacesRepositoryStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
