@@ -296,6 +296,7 @@
 		B5990B5F2BB6DF5D0047C552 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B5B62F702C5A345700AA782E /* Components */,
 				B5990B602BB6DF6C0047C552 /* Design System */,
 				B5990BB52BB8519D0047C552 /* Navigation */,
 				B5990BBA2BB8521C0047C552 /* Screens */,
@@ -497,7 +498,6 @@
 		B5990BC02BB852F50047C552 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B5B62F6B2C5A15DE00AA782E /* CoffeeShopMarker */,
 				B5990BC82BB9757A0047C552 /* HomeList */,
 				B5990BCA2BB975870047C552 /* HomeMap */,
 			);
@@ -601,6 +601,14 @@
 				B5B62F6E2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift */,
 			);
 			path = CoffeeShopMarker;
+			sourceTree = "<group>";
+		};
+		B5B62F702C5A345700AA782E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B5B62F6B2C5A15DE00AA782E /* CoffeeShopMarker */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		B5D7CACE2BE4026600A7FCF5 /* Managers */ = {
