@@ -76,6 +76,8 @@
 		B5B406FF2BBAAD6200ECE46C /* GetFavouritesCoffeeShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406FE2BBAAD6200ECE46C /* GetFavouritesCoffeeShops.swift */; };
 		B5B407012BBAAE0A00ECE46C /* UpdateFavouriteCoffeeShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B407002BBAAE0A00ECE46C /* UpdateFavouriteCoffeeShop.swift */; };
 		B5B407042BBAB20E00ECE46C /* PlaceUDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B407032BBAB20E00ECE46C /* PlaceUDS.swift */; };
+		B5B62F6D2C5A160B00AA782E /* CoffeeShopMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F6C2C5A160B00AA782E /* CoffeeShopMarker.swift */; };
+		B5B62F6F2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F6E2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift */; };
 		B5D7CAD02BE4027600A7FCF5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */; };
 		B5F727C52C128D5B00B13709 /* MapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F727C42C128D5B00B13709 /* MapApp.swift */; };
 /* End PBXBuildFile section */
@@ -173,6 +175,8 @@
 		B5B406FE2BBAAD6200ECE46C /* GetFavouritesCoffeeShops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavouritesCoffeeShops.swift; sourceTree = "<group>"; };
 		B5B407002BBAAE0A00ECE46C /* UpdateFavouriteCoffeeShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFavouriteCoffeeShop.swift; sourceTree = "<group>"; };
 		B5B407032BBAB20E00ECE46C /* PlaceUDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceUDS.swift; sourceTree = "<group>"; };
+		B5B62F6C2C5A160B00AA782E /* CoffeeShopMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopMarker.swift; sourceTree = "<group>"; };
+		B5B62F6E2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopMarkerViewModel.swift; sourceTree = "<group>"; };
 		B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B5F727C42C128D5B00B13709 /* MapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -493,6 +497,7 @@
 		B5990BC02BB852F50047C552 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B5B62F6B2C5A15DE00AA782E /* CoffeeShopMarker */,
 				B5990BC82BB9757A0047C552 /* HomeList */,
 				B5990BCA2BB975870047C552 /* HomeMap */,
 			);
@@ -587,6 +592,15 @@
 				B5B407032BBAB20E00ECE46C /* PlaceUDS.swift */,
 			);
 			path = DTOs;
+			sourceTree = "<group>";
+		};
+		B5B62F6B2C5A15DE00AA782E /* CoffeeShopMarker */ = {
+			isa = PBXGroup;
+			children = (
+				B5B62F6C2C5A160B00AA782E /* CoffeeShopMarker.swift */,
+				B5B62F6E2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift */,
+			);
+			path = CoffeeShopMarker;
 			sourceTree = "<group>";
 		};
 		B5D7CACE2BE4026600A7FCF5 /* Managers */ = {
@@ -756,6 +770,7 @@
 				B5990BA82BB850110047C552 /* PlacesNearbySearch.swift in Sources */,
 				B5B406FA2BBAA8AE00ECE46C /* UserDefaultsKey.swift in Sources */,
 				B5B406FF2BBAAD6200ECE46C /* GetFavouritesCoffeeShops.swift in Sources */,
+				B5B62F6D2C5A160B00AA782E /* CoffeeShopMarker.swift in Sources */,
 				B5990B912BB84F250047C552 /* GooglePlacesAPIEndpoints.swift in Sources */,
 				B5B406F32BBAA5FC00ECE46C /* CoffeeShopFavouritesViewModel.swift in Sources */,
 				B5990B982BB84F940047C552 /* PlaceLocationDTO.swift in Sources */,
@@ -787,6 +802,7 @@
 				B5990BD42BB980550047C552 /* CoffeeShopDetailsFactory.swift in Sources */,
 				B5D7CAD02BE4027600A7FCF5 /* LocationManager.swift in Sources */,
 				B5B406F12BBAA5E400ECE46C /* CoffeeShopFavouritesView.swift in Sources */,
+				B5B62F6F2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift in Sources */,
 				B5990BAB2BB850630047C552 /* GooglePlacesRemoteDatasource.swift in Sources */,
 				B5990B792BB6E2C60047C552 /* CSFont.swift in Sources */,
 				B5990BA22BB84FE70047C552 /* Place.swift in Sources */,

@@ -39,12 +39,7 @@ struct CoffeeShopItemListView: View {
     }
 
     private func icon() -> some View {
-        Image("coffee-cup")
-            .resizable()
-            .frame(width: 18, height: 30)
-            .padding(12)
-            .background(Color.customOliveGreen)
-            .clipShape(Circle())
+        CoffeeShopMarker(id: viewModel.place.id)
     }
     
     private func info() -> some View {
