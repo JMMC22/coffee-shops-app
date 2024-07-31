@@ -169,6 +169,23 @@
         }
       }
     },
+    "favourites" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favourites"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favoritas"
+          }
+        }
+      }
+    },
     "friday" : {
       "extractionState" : "manual",
       "localizations" : {

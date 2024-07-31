@@ -30,6 +30,8 @@ struct CoffeeShopFavouritesView: View {
                 coordinator.push(newPage)
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarRole(.editor)
     }
 }
 
@@ -43,6 +45,7 @@ struct CoffeeShopFavouritesContainer: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
+            title()
             ForEach(viewModel.favouritesCoffeeShops) { place in
                 CoffeeShopItemListView(place: place) { id in
                     viewModel.navigateToPlaceDetails(id: id)
@@ -50,7 +53,12 @@ struct CoffeeShopFavouritesContainer: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(16)
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+    }
+
+    private func title() -> some View {
+        Text("favourites")
+            .CSFont(.inter(28, weight: .bold), color: .blackText)
     }
 }
 
