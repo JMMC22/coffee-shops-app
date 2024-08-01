@@ -13,6 +13,7 @@
 		B54268E72BDD41140073CAAE /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54268E62BDD41140073CAAE /* WeekDay.swift */; };
 		B54B16802BE2F58C00C03B46 /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B167F2BE2F58C00C03B46 /* ImageSliderView.swift */; };
 		B58A65462C0FB1AA0024AD51 /* CoffeeShopItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A65452C0FB1AA0024AD51 /* CoffeeShopItemListViewModel.swift */; };
+		B58B4BE52C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58B4BE42C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift */; };
 		B5990B352BB6DE270047C552 /* CoffeeShopsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B342BB6DE270047C552 /* CoffeeShopsAppApp.swift */; };
 		B5990B372BB6DE270047C552 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B362BB6DE270047C552 /* ContentView.swift */; };
 		B5990B392BB6DE280047C552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5990B382BB6DE280047C552 /* Assets.xcassets */; };
@@ -111,6 +112,7 @@
 		B54B167F2BE2F58C00C03B46 /* ImageSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderView.swift; sourceTree = "<group>"; };
 		B58015A52BFC06FE00BEB73F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		B58A65452C0FB1AA0024AD51 /* CoffeeShopItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopItemListViewModel.swift; sourceTree = "<group>"; };
+		B58B4BE42C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFavouriteCoffeeShopTests.swift; sourceTree = "<group>"; };
 		B5990B312BB6DE270047C552 /* CoffeeShopsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeShopsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5990B342BB6DE270047C552 /* CoffeeShopsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopsAppApp.swift; sourceTree = "<group>"; };
 		B5990B362BB6DE270047C552 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -626,6 +628,7 @@
 			children = (
 				B5B62F712C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift */,
 				B5B62F792C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift */,
+				B58B4BE42C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -855,6 +858,7 @@
 			files = (
 				B5B62F722C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift in Sources */,
 				B5B62F7A2C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift in Sources */,
+				B58B4BE52C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift in Sources */,
 				B5990B472BB6DE290047C552 /* CoffeeShopsAppTests.swift in Sources */,
 				B5B62F782C5A54FD00AA782E /* Equatable.swift in Sources */,
 				B5B62F762C5A54E500AA782E /* GooglePlacesRepositoryStub.swift in Sources */,
