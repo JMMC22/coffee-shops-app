@@ -26,12 +26,69 @@ final class GooglePlacesRepositoryTests: XCTestCase {
         let placesResponse = try XCTUnwrap(capturedResult.get())
         XCTAssertEqual(placesResponse, PlacesNearbySearch.makePlacesNearbySearch())
     }
+    
+    func test_get_nearby_places_error_return_response_when_datasource_return_response() async throws {
+        // GIVEN
+        let result: Result<PlacesNearbySearchDTO, RequestError> = .failure(.decode)
+        let remoteStub = GooglePlacesRemoteDatasourceStub(getNearbyPlacesResult: result)
+        let localStub = GooglePlacesUserDefaultsDatasourceStub()
+
+        let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
+                                                googlePlacesUserDefaultsDatasource: localStub)
+        // WHEN
+        let capturedResult = await sut.getNearbyPlaces(location: "", radius: "", keyword: "")
+
+        // THEN
+        guard case .failure(let error) = capturedResult else {
+            XCTFail("Expected error -> got success")
+            return
+        }
+
+        XCTAssertEqual(error, .decode)
+    }
+    
+    func test_get_place_details_places_success_return_response_when_datasource_return_response() async throws {
+        // GIVEN
+        let mockResponse = PlaceDetailsDTO.makePlaceInfo()
+        let result: Result<PlaceDetailsDTO, RequestError> = .success(mockResponse)
+        let remoteStub = GooglePlacesRemoteDatasourceStub(getPlaceDetailsResult: result)
+        let localStub = GooglePlacesUserDefaultsDatasourceStub()
+
+        let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
+                                                googlePlacesUserDefaultsDatasource: localStub)
+        // WHEN
+        let capturedResult = await sut.getPlaceDetails(id: "")
+
+        // THEN
+        let place = try XCTUnwrap(capturedResult.get())
+        XCTAssertEqual(place, Place.makePlace())
+    }
+    
+    func test_get_place_details_places_error_return_response_when_datasource_return_response() async throws {
+        // GIVEN
+        let result: Result<PlaceDetailsDTO, RequestError> = .failure(.decode)
+        let remoteStub = GooglePlacesRemoteDatasourceStub(getPlaceDetailsResult: result)
+        let localStub = GooglePlacesUserDefaultsDatasourceStub()
+
+        let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
+                                                googlePlacesUserDefaultsDatasource: localStub)
+        // WHEN
+        let capturedResult = await sut.getPlaceDetails(id: "")
+
+        // THEN
+        guard case .failure(let error) = capturedResult else {
+            XCTFail("Expected error -> got success")
+            return
+        }
+
+        XCTAssertEqual(error, .decode)
+    }
 
 }
 
 private extension PlacesNearbySearchDTO {
     static func makePlacesNearbySearch() -> PlacesNearbySearchDTO {
-        var mockArray = [
+        let mockArray = [
             PlaceDTO(id: "1", geometry: PlaceGeometryDTO(location: PlaceLocationDTO(latitude: 37.3318, longitude: -122.0312)),
                 name: "Librería Central", openingHours: nil, photos: [], address: "123 Calle Principal, Ciudad, País",
                 url: "http://libreriacentral.com", phoneNumber: "+123456789"
@@ -68,5 +125,24 @@ private extension PlacesNearbySearch {
         ]
 
         return PlacesNearbySearch(places: mockArray, totalPlaces: mockArray.count)
+    }
+}
+
+private extension PlaceDetailsDTO {
+    static func makePlaceInfo() -> PlaceDetailsDTO {
+        let placeDto = PlaceDTO(id: "1", geometry: PlaceGeometryDTO(location: PlaceLocationDTO(latitude: 37.3318, longitude: -122.0312)),
+                                name: "Librería Central", openingHours: nil, photos: [], address: "123 Calle Principal, Ciudad, País",
+                                url: "http://libreriacentral.com", phoneNumber: "+123456789"
+        )
+
+        return PlaceDetailsDTO(htmlAttributions: nil, result: placeDto, status: nil)
+    }
+}
+
+private extension Place {
+    static func makePlace() -> Place {
+        return Place(id: "1", name: "Librería Central", location: PlaceLocation(latitude: 37.3318, longitude: -122.0312),
+                     isOpen: false, schedule: [], photos: [], address: "123 Calle Principal, Ciudad, País",
+                     url: URL(string: "http://libreriacentral.com"), phoneNumber: "+123456789")
     }
 }
