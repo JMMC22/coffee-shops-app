@@ -15,6 +15,7 @@
 		B58A65462C0FB1AA0024AD51 /* CoffeeShopItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A65452C0FB1AA0024AD51 /* CoffeeShopItemListViewModel.swift */; };
 		B58B4BE52C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58B4BE42C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift */; };
 		B58B4BE72C5BAD4E00154206 /* GetCoffeeShopDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58B4BE62C5BAD4E00154206 /* GetCoffeeShopDetailsTests.swift */; };
+		B58B4BE92C5BAEEC00154206 /* GetNearbyCoffeeShopsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58B4BE82C5BAEEC00154206 /* GetNearbyCoffeeShopsTests.swift */; };
 		B5990B352BB6DE270047C552 /* CoffeeShopsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B342BB6DE270047C552 /* CoffeeShopsAppApp.swift */; };
 		B5990B372BB6DE270047C552 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B362BB6DE270047C552 /* ContentView.swift */; };
 		B5990B392BB6DE280047C552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5990B382BB6DE280047C552 /* Assets.xcassets */; };
@@ -115,6 +116,7 @@
 		B58A65452C0FB1AA0024AD51 /* CoffeeShopItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopItemListViewModel.swift; sourceTree = "<group>"; };
 		B58B4BE42C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFavouriteCoffeeShopTests.swift; sourceTree = "<group>"; };
 		B58B4BE62C5BAD4E00154206 /* GetCoffeeShopDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoffeeShopDetailsTests.swift; sourceTree = "<group>"; };
+		B58B4BE82C5BAEEC00154206 /* GetNearbyCoffeeShopsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNearbyCoffeeShopsTests.swift; sourceTree = "<group>"; };
 		B5990B312BB6DE270047C552 /* CoffeeShopsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeShopsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5990B342BB6DE270047C552 /* CoffeeShopsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopsAppApp.swift; sourceTree = "<group>"; };
 		B5990B362BB6DE270047C552 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -628,10 +630,11 @@
 		B5B62F732C5A54CD00AA782E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				B58B4BE62C5BAD4E00154206 /* GetCoffeeShopDetailsTests.swift */,
 				B5B62F712C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift */,
+				B58B4BE82C5BAEEC00154206 /* GetNearbyCoffeeShopsTests.swift */,
 				B5B62F792C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift */,
 				B58B4BE42C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift */,
-				B58B4BE62C5BAD4E00154206 /* GetCoffeeShopDetailsTests.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -862,6 +865,7 @@
 				B5B62F722C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift in Sources */,
 				B5B62F7A2C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift in Sources */,
 				B58B4BE52C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift in Sources */,
+				B58B4BE92C5BAEEC00154206 /* GetNearbyCoffeeShopsTests.swift in Sources */,
 				B5990B472BB6DE290047C552 /* CoffeeShopsAppTests.swift in Sources */,
 				B5B62F782C5A54FD00AA782E /* Equatable.swift in Sources */,
 				B58B4BE72C5BAD4E00154206 /* GetCoffeeShopDetailsTests.swift in Sources */,
