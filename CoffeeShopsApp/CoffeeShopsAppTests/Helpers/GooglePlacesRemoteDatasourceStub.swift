@@ -13,8 +13,8 @@ class GooglePlacesRemoteDatasourceStub: GooglePlacesRemoteDatasource {
     let getNearbyPlacesResult: Result<PlacesNearbySearchDTO, RequestError>
     let getPlaceDetailsResult: Result<PlaceDetailsDTO, RequestError>
 
-    init(getNearbyPlacesResult: Result<PlacesNearbySearchDTO, RequestError>, 
-         getPlaceDetailsResult: Result<PlaceDetailsDTO, RequestError>) {
+    init(getNearbyPlacesResult: Result<PlacesNearbySearchDTO, RequestError> = .failure(.unknown),
+         getPlaceDetailsResult: Result<PlaceDetailsDTO, RequestError> = .failure(.unknown)) {
         self.getNearbyPlacesResult = getNearbyPlacesResult
         self.getPlaceDetailsResult = getPlaceDetailsResult
     }

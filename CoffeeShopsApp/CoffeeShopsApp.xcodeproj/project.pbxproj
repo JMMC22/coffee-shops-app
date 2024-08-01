@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B514EDE92BDA80950069FE08 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514EDE82BDA80950069FE08 /* SplashView.swift */; };
 		B514EDEC2BDA8EE40069FE08 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514EDEB2BDA8EE40069FE08 /* Wave.swift */; };
+		B52C3E952C5BF1DA003769A5 /* GooglePlacesUserDefaultsDatasourceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C3E942C5BF1DA003769A5 /* GooglePlacesUserDefaultsDatasourceStub.swift */; };
 		B54268E52BDD40180073CAAE /* PlaceSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54268E42BDD40180073CAAE /* PlaceSchedule.swift */; };
 		B54268E72BDD41140073CAAE /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54268E62BDD41140073CAAE /* WeekDay.swift */; };
 		B54B16802BE2F58C00C03B46 /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B167F2BE2F58C00C03B46 /* ImageSliderView.swift */; };
@@ -111,6 +112,7 @@
 /* Begin PBXFileReference section */
 		B514EDE82BDA80950069FE08 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B514EDEB2BDA8EE40069FE08 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
+		B52C3E942C5BF1DA003769A5 /* GooglePlacesUserDefaultsDatasourceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesUserDefaultsDatasourceStub.swift; sourceTree = "<group>"; };
 		B54268E42BDD40180073CAAE /* PlaceSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSchedule.swift; sourceTree = "<group>"; };
 		B54268E62BDD41140073CAAE /* WeekDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDay.swift; sourceTree = "<group>"; };
 		B54B167F2BE2F58C00C03B46 /* ImageSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderView.swift; sourceTree = "<group>"; };
@@ -658,6 +660,7 @@
 				B5B62F772C5A54FD00AA782E /* Equatable.swift */,
 				B5B62F752C5A54E500AA782E /* GooglePlacesRepositoryStub.swift */,
 				B5A0020C2C5BBC5700FB3A50 /* GooglePlacesRemoteDatasourceStub.swift */,
+				B52C3E942C5BF1DA003769A5 /* GooglePlacesUserDefaultsDatasourceStub.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -880,6 +883,7 @@
 				B5B62F7A2C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift in Sources */,
 				B58B4BE52C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift in Sources */,
 				B58B4BE92C5BAEEC00154206 /* GetNearbyCoffeeShopsTests.swift in Sources */,
+				B52C3E952C5BF1DA003769A5 /* GooglePlacesUserDefaultsDatasourceStub.swift in Sources */,
 				B5990B472BB6DE290047C552 /* CoffeeShopsAppTests.swift in Sources */,
 				B5A0020B2C5BBB8700FB3A50 /* GooglePlacesRepositoryTests.swift in Sources */,
 				B5B62F782C5A54FD00AA782E /* Equatable.swift in Sources */,
