@@ -658,8 +658,8 @@
 			isa = PBXGroup;
 			children = (
 				B5B62F772C5A54FD00AA782E /* Equatable.swift */,
-				B5B62F752C5A54E500AA782E /* GooglePlacesRepositoryStub.swift */,
 				B5A0020C2C5BBC5700FB3A50 /* GooglePlacesRemoteDatasourceStub.swift */,
+				B5B62F752C5A54E500AA782E /* GooglePlacesRepositoryStub.swift */,
 				B52C3E942C5BF1DA003769A5 /* GooglePlacesUserDefaultsDatasourceStub.swift */,
 			);
 			path = Helpers;
