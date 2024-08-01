@@ -13,6 +13,9 @@
 		B54268E72BDD41140073CAAE /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54268E62BDD41140073CAAE /* WeekDay.swift */; };
 		B54B16802BE2F58C00C03B46 /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B167F2BE2F58C00C03B46 /* ImageSliderView.swift */; };
 		B58A65462C0FB1AA0024AD51 /* CoffeeShopItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A65452C0FB1AA0024AD51 /* CoffeeShopItemListViewModel.swift */; };
+		B58B4BE52C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58B4BE42C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift */; };
+		B58B4BE72C5BAD4E00154206 /* GetCoffeeShopDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58B4BE62C5BAD4E00154206 /* GetCoffeeShopDetailsTests.swift */; };
+		B58B4BE92C5BAEEC00154206 /* GetNearbyCoffeeShopsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58B4BE82C5BAEEC00154206 /* GetNearbyCoffeeShopsTests.swift */; };
 		B5990B352BB6DE270047C552 /* CoffeeShopsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B342BB6DE270047C552 /* CoffeeShopsAppApp.swift */; };
 		B5990B372BB6DE270047C552 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990B362BB6DE270047C552 /* ContentView.swift */; };
 		B5990B392BB6DE280047C552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5990B382BB6DE280047C552 /* Assets.xcassets */; };
@@ -78,6 +81,10 @@
 		B5B407042BBAB20E00ECE46C /* PlaceUDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B407032BBAB20E00ECE46C /* PlaceUDS.swift */; };
 		B5B62F6D2C5A160B00AA782E /* CoffeeShopMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F6C2C5A160B00AA782E /* CoffeeShopMarker.swift */; };
 		B5B62F6F2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F6E2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift */; };
+		B5B62F722C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F712C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift */; };
+		B5B62F762C5A54E500AA782E /* GooglePlacesRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F752C5A54E500AA782E /* GooglePlacesRepositoryStub.swift */; };
+		B5B62F782C5A54FD00AA782E /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F772C5A54FD00AA782E /* Equatable.swift */; };
+		B5B62F7A2C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F792C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift */; };
 		B5D7CAD02BE4027600A7FCF5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */; };
 		B5F727C52C128D5B00B13709 /* MapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F727C42C128D5B00B13709 /* MapApp.swift */; };
 /* End PBXBuildFile section */
@@ -107,6 +114,9 @@
 		B54B167F2BE2F58C00C03B46 /* ImageSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderView.swift; sourceTree = "<group>"; };
 		B58015A52BFC06FE00BEB73F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		B58A65452C0FB1AA0024AD51 /* CoffeeShopItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopItemListViewModel.swift; sourceTree = "<group>"; };
+		B58B4BE42C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFavouriteCoffeeShopTests.swift; sourceTree = "<group>"; };
+		B58B4BE62C5BAD4E00154206 /* GetCoffeeShopDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoffeeShopDetailsTests.swift; sourceTree = "<group>"; };
+		B58B4BE82C5BAEEC00154206 /* GetNearbyCoffeeShopsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNearbyCoffeeShopsTests.swift; sourceTree = "<group>"; };
 		B5990B312BB6DE270047C552 /* CoffeeShopsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeShopsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5990B342BB6DE270047C552 /* CoffeeShopsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopsAppApp.swift; sourceTree = "<group>"; };
 		B5990B362BB6DE270047C552 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -177,6 +187,10 @@
 		B5B407032BBAB20E00ECE46C /* PlaceUDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceUDS.swift; sourceTree = "<group>"; };
 		B5B62F6C2C5A160B00AA782E /* CoffeeShopMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopMarker.swift; sourceTree = "<group>"; };
 		B5B62F6E2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopMarkerViewModel.swift; sourceTree = "<group>"; };
+		B5B62F712C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavouritesCoffeeShopsTests.swift; sourceTree = "<group>"; };
+		B5B62F752C5A54E500AA782E /* GooglePlacesRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesRepositoryStub.swift; sourceTree = "<group>"; };
+		B5B62F772C5A54FD00AA782E /* Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equatable.swift; sourceTree = "<group>"; };
+		B5B62F792C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavouriteCoffeeShopTests.swift; sourceTree = "<group>"; };
 		B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B5F727C42C128D5B00B13709 /* MapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -280,6 +294,8 @@
 			isa = PBXGroup;
 			children = (
 				B5990B462BB6DE290047C552 /* CoffeeShopsAppTests.swift */,
+				B5B62F732C5A54CD00AA782E /* Domain */,
+				B5B62F742C5A54D300AA782E /* Helpers */,
 			);
 			path = CoffeeShopsAppTests;
 			sourceTree = "<group>";
@@ -611,6 +627,27 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		B5B62F732C5A54CD00AA782E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B58B4BE62C5BAD4E00154206 /* GetCoffeeShopDetailsTests.swift */,
+				B5B62F712C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift */,
+				B58B4BE82C5BAEEC00154206 /* GetNearbyCoffeeShopsTests.swift */,
+				B5B62F792C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift */,
+				B58B4BE42C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B5B62F742C5A54D300AA782E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B5B62F772C5A54FD00AA782E /* Equatable.swift */,
+				B5B62F752C5A54E500AA782E /* GooglePlacesRepositoryStub.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B5D7CACE2BE4026600A7FCF5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -825,7 +862,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5B62F722C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift in Sources */,
+				B5B62F7A2C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift in Sources */,
+				B58B4BE52C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift in Sources */,
+				B58B4BE92C5BAEEC00154206 /* GetNearbyCoffeeShopsTests.swift in Sources */,
 				B5990B472BB6DE290047C552 /* CoffeeShopsAppTests.swift in Sources */,
+				B5B62F782C5A54FD00AA782E /* Equatable.swift in Sources */,
+				B58B4BE72C5BAD4E00154206 /* GetCoffeeShopDetailsTests.swift in Sources */,
+				B5B62F762C5A54E500AA782E /* GooglePlacesRepositoryStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
