@@ -83,7 +83,151 @@ final class GooglePlacesRepositoryTests: XCTestCase {
 
         XCTAssertEqual(error, .decode)
     }
+    
+    func test_get_favourites_places_success_return_nonEmpty_array_when_datasource_return_nonEmpty_array() throws {
+        // GIVEN
+        let mockResponse = PlaceUDS.makePlaces()
+        let result: Result<[PlaceUDS], RequestError> = .success(mockResponse)
+        let localStub = GooglePlacesUserDefaultsDatasourceStub(fetchFavouritesResult: result)
+        let remoteStub = GooglePlacesRemoteDatasourceStub()
 
+        let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
+                                                googlePlacesUserDefaultsDatasource: localStub)
+        // WHEN
+        let capturedResult = sut.fetchFavouritesCoffeeShops()
+
+        // THEN
+        let place = try XCTUnwrap(capturedResult.get())
+        XCTAssertEqual(place, Place.makePlaces())
+    }
+    
+    func test_get_favourites_places_success_return_empty_array_when_datasource_return_empty_array() throws {
+        // GIVEN
+        let result: Result<[PlaceUDS], RequestError> = .success([])
+        let localStub = GooglePlacesUserDefaultsDatasourceStub(fetchFavouritesResult: result)
+        let remoteStub = GooglePlacesRemoteDatasourceStub()
+
+        let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
+                                                googlePlacesUserDefaultsDatasource: localStub)
+        // WHEN
+        let capturedResult = sut.fetchFavouritesCoffeeShops()
+
+        // THEN
+        let place = try XCTUnwrap(capturedResult.get())
+        XCTAssertEqual(place, [])
+    }
+    
+    func test_get_favourites_places_error_return_decode_error_when_datasource_return_decode_error() throws {
+        // GIVEN
+        let result: Result<[PlaceUDS], RequestError> = .failure(.decode)
+        let localStub = GooglePlacesUserDefaultsDatasourceStub(fetchFavouritesResult: result)
+        let remoteStub = GooglePlacesRemoteDatasourceStub()
+
+        let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
+                                                googlePlacesUserDefaultsDatasource: localStub)
+        // WHEN
+        let capturedResult = sut.fetchFavouritesCoffeeShops()
+
+        // THEN
+        guard case .failure(let error) = capturedResult else {
+            XCTFail("Expected error -> got success")
+            return
+        }
+
+        XCTAssertEqual(error, .decode)
+    }
+    
+    func test_is_favourite_place_success_return_true_array_when_datasource_return_true() throws {
+        // GIVEN
+        let mockResponse = PlaceUDS.makePlaces()
+        let result: Result<[PlaceUDS], RequestError> = .success(mockResponse)
+        let localStub = GooglePlacesUserDefaultsDatasourceStub(fetchFavouritesResult: result)
+        let remoteStub = GooglePlacesRemoteDatasourceStub()
+
+        let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
+                                                googlePlacesUserDefaultsDatasource: localStub)
+        // WHEN
+        let capturedResult = sut.isFavouriteCoffeeShop(id: "2")
+
+        // THEN
+        XCTAssertTrue(capturedResult)
+    }
+    
+    func test_is_favourite_place_success_return_false_array_when_datasource_return_false() throws {
+        // GIVEN
+        let mockResponse = PlaceUDS.makePlaces()
+        let result: Result<[PlaceUDS], RequestError> = .success(mockResponse)
+        let localStub = GooglePlacesUserDefaultsDatasourceStub(fetchFavouritesResult: result)
+        let remoteStub = GooglePlacesRemoteDatasourceStub()
+
+        let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
+                                                googlePlacesUserDefaultsDatasource: localStub)
+        // WHEN
+        let capturedResult = sut.isFavouriteCoffeeShop(id: "3")
+
+        // THEN
+        XCTAssertFalse(capturedResult)
+    }
+    
+    func test_update_favourite_place_success_return_updated_array_when_datasource_return_updated() throws {
+        // GIVEN
+        let mockPlace = Place(id: "4", name: "Librería Central 3", location: PlaceLocation(latitude: 37.3318, longitude: -122.0312),
+                              isOpen: false, schedule: [], photos: [], address: "123 Calle Principal, Ciudad, País",
+                              url: URL(string: "http://libreriacentral.com"), phoneNumber: "+123456789")
+        let mockResponse = PlaceUDS.makePlaces()
+        let result: Result<[PlaceUDS], RequestError> = .success(mockResponse)
+        let updateResult: Result<Bool, RequestError> = .success(true)
+        let localStub = GooglePlacesUserDefaultsDatasourceStub(fetchFavouritesResult: result, saveFavouriteResult: updateResult)
+        let remoteStub = GooglePlacesRemoteDatasourceStub()
+
+        let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
+                                                googlePlacesUserDefaultsDatasource: localStub)
+        // WHEN
+        let capturedResult = sut.updateFavouriteCoffeShop(mockPlace)
+
+        // THEN
+        let updated = try XCTUnwrap(capturedResult.get())
+        XCTAssertTrue(updated)
+    }
+
+    func test_update_favourite_place_success_return_removed_array_when_datasource_return_removed() throws {
+        // GIVEN
+        let mockResponse = PlaceUDS.makePlaces()
+        let result: Result<[PlaceUDS], RequestError> = .success(mockResponse)
+        let removeResult: Result<Bool, RequestError> = .success(false)
+        let localStub = GooglePlacesUserDefaultsDatasourceStub(fetchFavouritesResult: result, removeFavouriteResult: removeResult)
+        let remoteStub = GooglePlacesRemoteDatasourceStub()
+
+        let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
+                                                googlePlacesUserDefaultsDatasource: localStub)
+        // WHEN
+        let capturedResult = sut.updateFavouriteCoffeShop(Place.makePlace())
+
+        // THEN
+        let removed = try XCTUnwrap(capturedResult.get())
+        XCTAssertFalse(removed)
+    }
+    
+    func test_update_favourite_place_error_return_decode_error_when_datasource_return_error() throws {
+        // GIVEN
+        let result: Result<[PlaceUDS], RequestError> = .failure(.decode)
+        let removeResult: Result<Bool, RequestError> = .success(false)
+        let localStub = GooglePlacesUserDefaultsDatasourceStub(fetchFavouritesResult: result, removeFavouriteResult: removeResult)
+        let remoteStub = GooglePlacesRemoteDatasourceStub()
+
+        let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
+                                                googlePlacesUserDefaultsDatasource: localStub)
+        // WHEN
+        let capturedResult = sut.updateFavouriteCoffeShop(Place.makePlace())
+
+        // THEN
+        guard case .failure(let error) = capturedResult else {
+            XCTFail("Expected error -> got success")
+            return
+        }
+
+        XCTAssertEqual(error, .decode)
+    }
 }
 
 private extension PlacesNearbySearchDTO {
@@ -144,5 +288,29 @@ private extension Place {
         return Place(id: "1", name: "Librería Central", location: PlaceLocation(latitude: 37.3318, longitude: -122.0312),
                      isOpen: false, schedule: [], photos: [], address: "123 Calle Principal, Ciudad, País",
                      url: URL(string: "http://libreriacentral.com"), phoneNumber: "+123456789")
+    }
+
+    static func makePlaces() -> [Place] {
+        return [
+            Place(id: "1", name: "Librería Central", location: PlaceLocation(latitude: 37.3318, longitude: -122.0312),
+                  isOpen: false, schedule: [], photos: [], address: "123 Calle Principal, Ciudad, País",
+                  url: URL(string: "http://libreriacentral.com"), phoneNumber: "+123456789", isFavourite: true),
+            Place(id: "2", name: "Cafetería de la Esquina", location: PlaceLocation(latitude: 37.3358, longitude: -122.0312),
+                  isOpen: false, schedule: [], photos: [], address: "123 Calle Principal, Ciudad, País",
+                  url: URL(string: "http://cafeteriadelesquina.com"), phoneNumber: "+123456789", isFavourite: true)
+        ]
+    }
+}
+
+private extension PlaceUDS {
+    static func makePlaces() -> [PlaceUDS] {
+        return [
+            PlaceUDS(id: "1", name: "Librería Central", location: PlaceLocationUDS(latitude: 37.3318, longitude: -122.0312),
+                     isOpen: false, address: "123 Calle Principal, Ciudad, País", url: URL(string: "http://libreriacentral.com"),
+                     phoneNumber: "+123456789", isFavourite: true),
+            PlaceUDS(id: "2", name: "Cafetería de la Esquina", location: PlaceLocationUDS(latitude: 37.3358, longitude: -122.0312),
+                     isOpen: false, address: "456 Avenida Secundaria, Ciudad, País", url: URL(string: "http://cafeteriadelesquina.com"),
+                     phoneNumber: "+123456789", isFavourite: true)
+        ]
     }
 }
