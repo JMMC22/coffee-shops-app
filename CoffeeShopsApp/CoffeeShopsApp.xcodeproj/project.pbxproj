@@ -88,6 +88,7 @@
 		B5B62F762C5A54E500AA782E /* GooglePlacesRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F752C5A54E500AA782E /* GooglePlacesRepositoryStub.swift */; };
 		B5B62F782C5A54FD00AA782E /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F772C5A54FD00AA782E /* Equatable.swift */; };
 		B5B62F7A2C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F792C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift */; };
+		B5C8CF792C5D6A9A00305F2C /* LocationManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8CF782C5D6A9A00305F2C /* LocationManagerStub.swift */; };
 		B5D7CAD02BE4027600A7FCF5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */; };
 		B5F727C52C128D5B00B13709 /* MapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F727C42C128D5B00B13709 /* MapApp.swift */; };
 /* End PBXBuildFile section */
@@ -197,6 +198,7 @@
 		B5B62F752C5A54E500AA782E /* GooglePlacesRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesRepositoryStub.swift; sourceTree = "<group>"; };
 		B5B62F772C5A54FD00AA782E /* Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equatable.swift; sourceTree = "<group>"; };
 		B5B62F792C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavouriteCoffeeShopTests.swift; sourceTree = "<group>"; };
+		B5C8CF782C5D6A9A00305F2C /* LocationManagerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerStub.swift; sourceTree = "<group>"; };
 		B5D7CACF2BE4027600A7FCF5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B5F727C42C128D5B00B13709 /* MapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -661,6 +663,7 @@
 				B5A0020C2C5BBC5700FB3A50 /* GooglePlacesRemoteDatasourceStub.swift */,
 				B5B62F752C5A54E500AA782E /* GooglePlacesRepositoryStub.swift */,
 				B52C3E942C5BF1DA003769A5 /* GooglePlacesUserDefaultsDatasourceStub.swift */,
+				B5C8CF782C5D6A9A00305F2C /* LocationManagerStub.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -881,6 +884,7 @@
 			files = (
 				B5B62F722C5A3C6100AA782E /* GetFavouritesCoffeeShopsTests.swift in Sources */,
 				B5B62F7A2C5A55E500AA782E /* IsFavouriteCoffeeShopTests.swift in Sources */,
+				B5C8CF792C5D6A9A00305F2C /* LocationManagerStub.swift in Sources */,
 				B58B4BE52C5BA9B600154206 /* UpdateFavouriteCoffeeShopTests.swift in Sources */,
 				B58B4BE92C5BAEEC00154206 /* GetNearbyCoffeeShopsTests.swift in Sources */,
 				B52C3E952C5BF1DA003769A5 /* GooglePlacesUserDefaultsDatasourceStub.swift in Sources */,
