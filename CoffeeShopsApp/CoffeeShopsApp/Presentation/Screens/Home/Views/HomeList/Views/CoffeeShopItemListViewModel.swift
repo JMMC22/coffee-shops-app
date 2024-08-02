@@ -14,7 +14,7 @@ class CoffeeShopItemListViewModel: ObservableObject {
 
     private let locationManager: LocationManager
 
-    init(place: Place, locationManager: LocationManager = .shared) {
+    init(place: Place, locationManager: LocationManager = DefaultLocationManager.shared) {
         self.place = place
         self.locationManager = locationManager
     }

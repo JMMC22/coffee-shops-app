@@ -39,7 +39,7 @@ class CoffeeShopDetailsViewModel: ObservableObject {
          getCoffeeShopDetails: GetCoffeeShopDetails,
          updateFavouriteCoffeeShop: UpdateFavouriteCoffeeShop,
          isFavouriteCoffeeShop: IsFavouriteCoffeeShop,
-         locationManager: LocationManager = .shared) {
+         locationManager: LocationManager = DefaultLocationManager.shared) {
         self.id = id
         self.getCoffeeShopDetails = getCoffeeShopDetails
         self.updateFavouriteCoffeeShop = updateFavouriteCoffeeShop

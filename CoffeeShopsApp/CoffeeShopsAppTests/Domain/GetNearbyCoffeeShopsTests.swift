@@ -31,7 +31,8 @@ final class GetNearbyCoffeeShopsTests: XCTestCase {
 
         let result: Result<PlacesNearbySearch, RequestError> = .success(mockResponse)
         let stub = GooglePlacesRepositoryStub(getNearbyPlacesResult: result)
-        let sut = DefaultGetNearbyCoffeeShops(googlePlacesRepository: stub)
+        let locationStub = LocationManagerStub()
+        let sut = DefaultGetNearbyCoffeeShops(googlePlacesRepository: stub, locationManager: locationStub)
 
         // WHEN
         let capturedResult = await sut.execute(latitude: 0, longitude: 0)

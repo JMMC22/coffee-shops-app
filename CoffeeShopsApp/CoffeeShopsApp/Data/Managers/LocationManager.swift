@@ -9,10 +9,21 @@ import Foundation
 import CoreLocation
 import Combine
 
-class LocationManager: NSObject, ObservableObject {
+protocol LocationManager {
+    var status: PassthroughSubject<CLAuthorizationStatus, Never> { get }
+    var lastLocation: PassthroughSubject<CLLocationCoordinate2D, Never> { get }
+    var statusPublisher: AnyPublisher<CLAuthorizationStatus, Never> { get }
+    var lastLocationPublisher: AnyPublisher<CLLocationCoordinate2D, Never> { get }
 
-    private let status = PassthroughSubject<CLAuthorizationStatus, Never>()
-    private let lastLocation = PassthroughSubject<CLLocationCoordinate2D, Never>()
+    func requestLocationPermissions()
+    func requestLocation()
+    func getDistance(to latitude: Double, longitude: Double) -> Double
+}
+
+class DefaultLocationManager: NSObject, ObservableObject, LocationManager {
+
+    internal let status = PassthroughSubject<CLAuthorizationStatus, Never>()
+    internal let lastLocation = PassthroughSubject<CLLocationCoordinate2D, Never>()
 
     var statusPublisher: AnyPublisher<CLAuthorizationStatus, Never> {
         status.eraseToAnyPublisher()
@@ -24,7 +35,7 @@ class LocationManager: NSObject, ObservableObject {
 
     private var lastUserLocation: CLLocationCoordinate2D = .init()
 
-    static let shared = LocationManager()
+    static let shared = DefaultLocationManager()
 
     private let locationManager = CLLocationManager()
 
@@ -51,7 +62,7 @@ class LocationManager: NSObject, ObservableObject {
     }
 }
 
-extension LocationManager: CLLocationManagerDelegate {
+extension DefaultLocationManager: CLLocationManagerDelegate {
 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         status.send(manager.authorizationStatus)

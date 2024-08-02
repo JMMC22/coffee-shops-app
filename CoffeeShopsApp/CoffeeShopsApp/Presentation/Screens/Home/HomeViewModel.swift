@@ -18,7 +18,7 @@ class HomeViewModel: ObservableObject {
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(getNearbyCoffeeShops: GetNearbyCoffeeShops, locationManager: LocationManager = .shared) {
+    init(getNearbyCoffeeShops: GetNearbyCoffeeShops, locationManager: LocationManager = DefaultLocationManager.shared) {
         self.getNearbyCoffeeShops = getNearbyCoffeeShops
         self.locationManager = locationManager
     }
