@@ -52,7 +52,7 @@ struct CoworkingSpacesFavouritesContainer: View {
                 }
             }
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
     }
 
