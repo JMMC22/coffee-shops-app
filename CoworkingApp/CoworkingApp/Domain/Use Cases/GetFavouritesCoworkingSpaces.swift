@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol GetFavouritesCoffeeShops {
+protocol GetFavouritesCoworkingSpaces {
     func execute() -> Result<[Place], RequestError>
 }
 
-class DefaultGetFavouritesCoffeeShops {
+class DefaultGetFavouritesCoworkingSpaces {
 
     private let googlePlacesRepository: GooglePlacesRepository
     private let locationManager: LocationManager
@@ -23,7 +23,7 @@ class DefaultGetFavouritesCoffeeShops {
     }
 }
 
-extension DefaultGetFavouritesCoffeeShops: GetFavouritesCoffeeShops {
+extension DefaultGetFavouritesCoworkingSpaces: GetFavouritesCoworkingSpaces {
     func execute() -> Result<[Place], RequestError> {
         let result = googlePlacesRepository.fetchFavouritesCoffeeShops()
 
@@ -39,7 +39,7 @@ extension DefaultGetFavouritesCoffeeShops: GetFavouritesCoffeeShops {
 }
 
 // TODO: Duplicated
-extension DefaultGetFavouritesCoffeeShops {
+extension DefaultGetFavouritesCoworkingSpaces {
     private func sortPlacesByDistance(_ places: [Place]) -> [Place] {
         return places.sorted(by: {
             locationManager.getDistance(to: $0.coordinate.latitude, longitude: $0.coordinate.longitude) <

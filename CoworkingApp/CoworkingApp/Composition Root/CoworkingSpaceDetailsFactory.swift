@@ -19,16 +19,16 @@ class CoworkingSpaceDetailsFactory {
                                           isFavouriteCoffeeShop: isFavouriteUseCase())
     }
 
-    private static func createUseCase() -> GetCoffeeShopDetails {
-        return DefaultGetCoffeeShopDetails(googlePlacesRepository: createRepository())
+    private static func createUseCase() -> GetCoworkingSpaceDetails {
+        return DefaultGetCoworkingSpaceDetails(googlePlacesRepository: createRepository())
     }
 
-    private static func createUpdateFavouriteUseCase() -> UpdateFavouriteCoffeeShop {
-        return DefaultUpdateFavouriteCoffeeShop(googlePlacesRepository: createRepository())
+    private static func createUpdateFavouriteUseCase() -> UpdateFavouriteCoworkingSpace {
+        return DefaultUpdateFavouriteCoworkingSpace(googlePlacesRepository: createRepository())
     }
 
-    private static func isFavouriteUseCase() -> IsFavouriteCoffeeShop {
-        return DefaultIsFavouriteCoffeeShop(googlePlacesRepository: createRepository())
+    private static func isFavouriteUseCase() -> IsFavouriteCoworkingSpace {
+        return DefaultIsFavouriteCoworkingSpace(googlePlacesRepository: createRepository())
     }
 
     private static func createRepository() -> GooglePlacesRepository {

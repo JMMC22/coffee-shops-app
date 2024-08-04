@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol UpdateFavouriteCoffeeShop {
+protocol UpdateFavouriteCoworkingSpace {
     func execute(_ place: Place) -> Result<Bool, RequestError>
 }
 
-class DefaultUpdateFavouriteCoffeeShop {
+class DefaultUpdateFavouriteCoworkingSpace {
 
     private let googlePlacesRepository: GooglePlacesRepository
 
@@ -20,7 +20,7 @@ class DefaultUpdateFavouriteCoffeeShop {
     }
 }
 
-extension DefaultUpdateFavouriteCoffeeShop: UpdateFavouriteCoffeeShop {
+extension DefaultUpdateFavouriteCoworkingSpace: UpdateFavouriteCoworkingSpace {
     func execute(_ place: Place) -> Result<Bool, RequestError> {
         return googlePlacesRepository.updateFavouriteCoffeShop(place)
     }

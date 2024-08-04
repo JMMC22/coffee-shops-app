@@ -17,8 +17,8 @@ class CoworkingSpacesFavouritesFactory {
         return CoworkingSpacesFavouritesViewModel(getFavouritesCoffeeShops: createGetFavouritesUseCase())
     }
 
-    private static func createGetFavouritesUseCase() -> GetFavouritesCoffeeShops {
-        return DefaultGetFavouritesCoffeeShops(googlePlacesRepository: createRepository())
+    private static func createGetFavouritesUseCase() -> GetFavouritesCoworkingSpaces {
+        return DefaultGetFavouritesCoworkingSpaces(googlePlacesRepository: createRepository())
     }
 
     private static func createRepository() -> GooglePlacesRepository {

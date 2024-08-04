@@ -12,9 +12,9 @@ class CoworkingSpacesFavouritesViewModel: ObservableObject {
     @Published var favouritesCoffeeShops: [Place] = []
     @Published var nextPage: AppCoordinator.Page?
 
-    private let getFavouritesCoffeeShops: GetFavouritesCoffeeShops
+    private let getFavouritesCoffeeShops: GetFavouritesCoworkingSpaces
 
-    init(getFavouritesCoffeeShops: GetFavouritesCoffeeShops) {
+    init(getFavouritesCoffeeShops: GetFavouritesCoworkingSpaces) {
         self.getFavouritesCoffeeShops = getFavouritesCoffeeShops
     }
 }

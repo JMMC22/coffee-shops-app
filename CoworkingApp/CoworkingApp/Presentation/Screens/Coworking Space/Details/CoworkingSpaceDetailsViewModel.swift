@@ -27,18 +27,18 @@ class CoworkingSpaceDetailsViewModel: ObservableObject {
     var coffeeURL: URL?
     var phoneNumber: String = ""
 
-    private let getCoffeeShopDetails: GetCoffeeShopDetails
-    private let updateFavouriteCoffeeShop: UpdateFavouriteCoffeeShop
-    private let isFavouriteCoffeeShop: IsFavouriteCoffeeShop
+    private let getCoffeeShopDetails: GetCoworkingSpaceDetails
+    private let updateFavouriteCoffeeShop: UpdateFavouriteCoworkingSpace
+    private let isFavouriteCoffeeShop: IsFavouriteCoworkingSpace
     private let locationManager: LocationManager
 
     private let id: String
     private var coffeeShop: Place?
 
     init(_ id: String, 
-         getCoffeeShopDetails: GetCoffeeShopDetails,
-         updateFavouriteCoffeeShop: UpdateFavouriteCoffeeShop,
-         isFavouriteCoffeeShop: IsFavouriteCoffeeShop,
+         getCoffeeShopDetails: GetCoworkingSpaceDetails,
+         updateFavouriteCoffeeShop: UpdateFavouriteCoworkingSpace,
+         isFavouriteCoffeeShop: IsFavouriteCoworkingSpace,
          locationManager: LocationManager = DefaultLocationManager.shared) {
         self.id = id
         self.getCoffeeShopDetails = getCoffeeShopDetails

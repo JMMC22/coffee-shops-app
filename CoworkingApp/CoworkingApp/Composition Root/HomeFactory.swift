@@ -17,8 +17,8 @@ class HomeFactory {
         return HomeViewModel(getNearbyCoffeeShops: createUseCase())
     }
 
-    private static func createUseCase() -> GetNearbyCoffeeShops {
-        return DefaultGetNearbyCoffeeShops(googlePlacesRepository: createRepository())
+    private static func createUseCase() -> GetNearbyCoworkingSpaces {
+        return DefaultGetNearbyCoworkingSpaces(googlePlacesRepository: createRepository())
     }
 
     private static func createRepository() -> GooglePlacesRepository {

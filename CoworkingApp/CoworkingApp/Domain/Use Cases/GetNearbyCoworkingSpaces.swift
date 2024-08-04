@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol GetNearbyCoffeeShops {
+protocol GetNearbyCoworkingSpaces {
     func execute(latitude: Double, longitude: Double) async -> Result<[Place], RequestError>
 }
 
-class DefaultGetNearbyCoffeeShops {
+class DefaultGetNearbyCoworkingSpaces {
 
     private let googlePlacesRepository: GooglePlacesRepository
     private let locationManager: LocationManager
@@ -25,7 +25,7 @@ class DefaultGetNearbyCoffeeShops {
     }
 }
 
-extension DefaultGetNearbyCoffeeShops: GetNearbyCoffeeShops {
+extension DefaultGetNearbyCoworkingSpaces: GetNearbyCoworkingSpaces {
     func execute(latitude: Double, longitude: Double) async -> Result<[Place], RequestError> {
         let location: String = "\(latitude),\(longitude)"
 
@@ -71,7 +71,7 @@ extension DefaultGetNearbyCoffeeShops: GetNearbyCoffeeShops {
 }
 
 // TODO: Duplicated
-extension DefaultGetNearbyCoffeeShops {
+extension DefaultGetNearbyCoworkingSpaces {
     private func sortPlacesByDistance(_ places: [Place]) -> [Place] {
         return places.sorted(by: {
             locationManager.getDistance(to: $0.coordinate.latitude, longitude: $0.coordinate.longitude) <

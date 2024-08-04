@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol IsFavouriteCoffeeShop {
+protocol IsFavouriteCoworkingSpace {
     func execute(id: String) -> Bool
 }
 
-class DefaultIsFavouriteCoffeeShop {
+class DefaultIsFavouriteCoworkingSpace {
 
     private let googlePlacesRepository: GooglePlacesRepository
 
@@ -20,7 +20,7 @@ class DefaultIsFavouriteCoffeeShop {
     }
 }
 
-extension DefaultIsFavouriteCoffeeShop: IsFavouriteCoffeeShop {
+extension DefaultIsFavouriteCoworkingSpace: IsFavouriteCoworkingSpace {
 
     func execute(id: String) -> Bool {
         return googlePlacesRepository.isFavouriteCoffeeShop(id: id)

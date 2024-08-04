@@ -56,7 +56,7 @@
 		B5990BAB2BB850630047C552 /* GooglePlacesRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BAA2BB850630047C552 /* GooglePlacesRemoteDatasource.swift */; };
 		B5990BAE2BB850B70047C552 /* GooglePlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BAD2BB850B70047C552 /* GooglePlacesRepository.swift */; };
 		B5990BB12BB850D80047C552 /* DefaultGooglePlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BB02BB850D80047C552 /* DefaultGooglePlacesRepository.swift */; };
-		B5990BB42BB8515A0047C552 /* GetNearbyCoffeeShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BB32BB8515A0047C552 /* GetNearbyCoffeeShops.swift */; };
+		B5990BB42BB8515A0047C552 /* GetNearbyCoworkingSpaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BB32BB8515A0047C552 /* GetNearbyCoworkingSpaces.swift */; };
 		B5990BB72BB851AB0047C552 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BB62BB851AB0047C552 /* AppCoordinator.swift */; };
 		B5990BB92BB851CC0047C552 /* AppCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BB82BB851CC0047C552 /* AppCoordinatorView.swift */; };
 		B5990BBD2BB852280047C552 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BBC2BB852280047C552 /* HomeView.swift */; };
@@ -69,18 +69,18 @@
 		B5990BD22BB97FF40047C552 /* CoworkingSpaceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD12BB97FF40047C552 /* CoworkingSpaceDetailsViewModel.swift */; };
 		B5990BD42BB980550047C552 /* CoworkingSpaceDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD32BB980550047C552 /* CoworkingSpaceDetailsFactory.swift */; };
 		B5990BD62BB9824D0047C552 /* PlaceDetailsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD52BB9824D0047C552 /* PlaceDetailsDTO.swift */; };
-		B5990BDA2BB984090047C552 /* GetCoffeeShopDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD92BB984090047C552 /* GetCoffeeShopDetails.swift */; };
+		B5990BDA2BB984090047C552 /* GetCoworkingSpaceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990BD92BB984090047C552 /* GetCoworkingSpaceDetails.swift */; };
 		B5A0020B2C5BBB8700FB3A50 /* GooglePlacesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A0020A2C5BBB8700FB3A50 /* GooglePlacesRepositoryTests.swift */; };
 		B5A0020D2C5BBC5700FB3A50 /* GooglePlacesRemoteDatasourceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A0020C2C5BBC5700FB3A50 /* GooglePlacesRemoteDatasourceStub.swift */; };
-		B5A31E462BFD07BE007C751A /* IsFavouriteCoffeeShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A31E452BFD07BE007C751A /* IsFavouriteCoffeeShop.swift */; };
+		B5A31E462BFD07BE007C751A /* IsFavouriteCoworkingSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A31E452BFD07BE007C751A /* IsFavouriteCoworkingSpace.swift */; };
 		B5B406F12BBAA5E400ECE46C /* CoworkingSpacesFavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406F02BBAA5E400ECE46C /* CoworkingSpacesFavouritesView.swift */; };
 		B5B406F32BBAA5FC00ECE46C /* CoworkingSpacesFavouritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406F22BBAA5FC00ECE46C /* CoworkingSpacesFavouritesViewModel.swift */; };
 		B5B406F52BBAA64500ECE46C /* CoworkingSpacesFavouritesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406F42BBAA64500ECE46C /* CoworkingSpacesFavouritesFactory.swift */; };
 		B5B406F82BBAA88D00ECE46C /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406F72BBAA88D00ECE46C /* UserDefaultManager.swift */; };
 		B5B406FA2BBAA8AE00ECE46C /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406F92BBAA8AE00ECE46C /* UserDefaultsKey.swift */; };
 		B5B406FD2BBAA97E00ECE46C /* GooglePlacesUserDefaultsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406FC2BBAA97E00ECE46C /* GooglePlacesUserDefaultsDatasource.swift */; };
-		B5B406FF2BBAAD6200ECE46C /* GetFavouritesCoffeeShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406FE2BBAAD6200ECE46C /* GetFavouritesCoffeeShops.swift */; };
-		B5B407012BBAAE0A00ECE46C /* UpdateFavouriteCoffeeShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B407002BBAAE0A00ECE46C /* UpdateFavouriteCoffeeShop.swift */; };
+		B5B406FF2BBAAD6200ECE46C /* GetFavouritesCoworkingSpaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B406FE2BBAAD6200ECE46C /* GetFavouritesCoworkingSpaces.swift */; };
+		B5B407012BBAAE0A00ECE46C /* UpdateFavouriteCoworkingSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B407002BBAAE0A00ECE46C /* UpdateFavouriteCoworkingSpace.swift */; };
 		B5B407042BBAB20E00ECE46C /* PlaceUDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B407032BBAB20E00ECE46C /* PlaceUDS.swift */; };
 		B5B62F6D2C5A160B00AA782E /* CoffeeShopMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F6C2C5A160B00AA782E /* CoffeeShopMarker.swift */; };
 		B5B62F6F2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62F6E2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift */; };
@@ -166,7 +166,7 @@
 		B5990BAA2BB850630047C552 /* GooglePlacesRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesRemoteDatasource.swift; sourceTree = "<group>"; };
 		B5990BAD2BB850B70047C552 /* GooglePlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesRepository.swift; sourceTree = "<group>"; };
 		B5990BB02BB850D80047C552 /* DefaultGooglePlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGooglePlacesRepository.swift; sourceTree = "<group>"; };
-		B5990BB32BB8515A0047C552 /* GetNearbyCoffeeShops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNearbyCoffeeShops.swift; sourceTree = "<group>"; };
+		B5990BB32BB8515A0047C552 /* GetNearbyCoworkingSpaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNearbyCoworkingSpaces.swift; sourceTree = "<group>"; };
 		B5990BB62BB851AB0047C552 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		B5990BB82BB851CC0047C552 /* AppCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorView.swift; sourceTree = "<group>"; };
 		B5990BBC2BB852280047C552 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -179,18 +179,18 @@
 		B5990BD12BB97FF40047C552 /* CoworkingSpaceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoworkingSpaceDetailsViewModel.swift; sourceTree = "<group>"; };
 		B5990BD32BB980550047C552 /* CoworkingSpaceDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoworkingSpaceDetailsFactory.swift; sourceTree = "<group>"; };
 		B5990BD52BB9824D0047C552 /* PlaceDetailsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsDTO.swift; sourceTree = "<group>"; };
-		B5990BD92BB984090047C552 /* GetCoffeeShopDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoffeeShopDetails.swift; sourceTree = "<group>"; };
+		B5990BD92BB984090047C552 /* GetCoworkingSpaceDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoworkingSpaceDetails.swift; sourceTree = "<group>"; };
 		B5A0020A2C5BBB8700FB3A50 /* GooglePlacesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesRepositoryTests.swift; sourceTree = "<group>"; };
 		B5A0020C2C5BBC5700FB3A50 /* GooglePlacesRemoteDatasourceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesRemoteDatasourceStub.swift; sourceTree = "<group>"; };
-		B5A31E452BFD07BE007C751A /* IsFavouriteCoffeeShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavouriteCoffeeShop.swift; sourceTree = "<group>"; };
+		B5A31E452BFD07BE007C751A /* IsFavouriteCoworkingSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavouriteCoworkingSpace.swift; sourceTree = "<group>"; };
 		B5B406F02BBAA5E400ECE46C /* CoworkingSpacesFavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoworkingSpacesFavouritesView.swift; sourceTree = "<group>"; };
 		B5B406F22BBAA5FC00ECE46C /* CoworkingSpacesFavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoworkingSpacesFavouritesViewModel.swift; sourceTree = "<group>"; };
 		B5B406F42BBAA64500ECE46C /* CoworkingSpacesFavouritesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoworkingSpacesFavouritesFactory.swift; sourceTree = "<group>"; };
 		B5B406F72BBAA88D00ECE46C /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		B5B406F92BBAA8AE00ECE46C /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		B5B406FC2BBAA97E00ECE46C /* GooglePlacesUserDefaultsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesUserDefaultsDatasource.swift; sourceTree = "<group>"; };
-		B5B406FE2BBAAD6200ECE46C /* GetFavouritesCoffeeShops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavouritesCoffeeShops.swift; sourceTree = "<group>"; };
-		B5B407002BBAAE0A00ECE46C /* UpdateFavouriteCoffeeShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFavouriteCoffeeShop.swift; sourceTree = "<group>"; };
+		B5B406FE2BBAAD6200ECE46C /* GetFavouritesCoworkingSpaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavouritesCoworkingSpaces.swift; sourceTree = "<group>"; };
+		B5B407002BBAAE0A00ECE46C /* UpdateFavouriteCoworkingSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFavouriteCoworkingSpace.swift; sourceTree = "<group>"; };
 		B5B407032BBAB20E00ECE46C /* PlaceUDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceUDS.swift; sourceTree = "<group>"; };
 		B5B62F6C2C5A160B00AA782E /* CoffeeShopMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopMarker.swift; sourceTree = "<group>"; };
 		B5B62F6E2C5A161700AA782E /* CoffeeShopMarkerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopMarkerViewModel.swift; sourceTree = "<group>"; };
@@ -482,11 +482,11 @@
 		B5990BB22BB851460047C552 /* Use Cases */ = {
 			isa = PBXGroup;
 			children = (
-				B5990BD92BB984090047C552 /* GetCoffeeShopDetails.swift */,
-				B5B406FE2BBAAD6200ECE46C /* GetFavouritesCoffeeShops.swift */,
-				B5990BB32BB8515A0047C552 /* GetNearbyCoffeeShops.swift */,
-				B5A31E452BFD07BE007C751A /* IsFavouriteCoffeeShop.swift */,
-				B5B407002BBAAE0A00ECE46C /* UpdateFavouriteCoffeeShop.swift */,
+				B5990BD92BB984090047C552 /* GetCoworkingSpaceDetails.swift */,
+				B5B406FE2BBAAD6200ECE46C /* GetFavouritesCoworkingSpaces.swift */,
+				B5990BB32BB8515A0047C552 /* GetNearbyCoworkingSpaces.swift */,
+				B5A31E452BFD07BE007C751A /* IsFavouriteCoworkingSpace.swift */,
+				B5B407002BBAAE0A00ECE46C /* UpdateFavouriteCoworkingSpace.swift */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -826,7 +826,7 @@
 				B5990BB72BB851AB0047C552 /* AppCoordinator.swift in Sources */,
 				B54268E52BDD40180073CAAE /* PlaceSchedule.swift in Sources */,
 				B5B406F82BBAA88D00ECE46C /* UserDefaultManager.swift in Sources */,
-				B5A31E462BFD07BE007C751A /* IsFavouriteCoffeeShop.swift in Sources */,
+				B5A31E462BFD07BE007C751A /* IsFavouriteCoworkingSpace.swift in Sources */,
 				B5990BA62BB850040047C552 /* PlacePhoto.swift in Sources */,
 				B5990B892BB84DD10047C552 /* HTTPClient.swift in Sources */,
 				B514EDE92BDA80950069FE08 /* SplashView.swift in Sources */,
@@ -834,18 +834,18 @@
 				B5990B9C2BB84FB10047C552 /* PlacePhotoDTO.swift in Sources */,
 				B5990BA82BB850110047C552 /* PlacesNearbySearch.swift in Sources */,
 				B5B406FA2BBAA8AE00ECE46C /* UserDefaultsKey.swift in Sources */,
-				B5B406FF2BBAAD6200ECE46C /* GetFavouritesCoffeeShops.swift in Sources */,
+				B5B406FF2BBAAD6200ECE46C /* GetFavouritesCoworkingSpaces.swift in Sources */,
 				B5B62F6D2C5A160B00AA782E /* CoffeeShopMarker.swift in Sources */,
 				B5990B912BB84F250047C552 /* GooglePlacesAPIEndpoints.swift in Sources */,
 				B5B406F32BBAA5FC00ECE46C /* CoworkingSpacesFavouritesViewModel.swift in Sources */,
 				B5990B982BB84F940047C552 /* PlaceLocationDTO.swift in Sources */,
 				B5B406F52BBAA64500ECE46C /* CoworkingSpacesFavouritesFactory.swift in Sources */,
-				B5990BB42BB8515A0047C552 /* GetNearbyCoffeeShops.swift in Sources */,
+				B5990BB42BB8515A0047C552 /* GetNearbyCoworkingSpaces.swift in Sources */,
 				B5990BC72BB9743F0047C552 /* HomeListView.swift in Sources */,
 				B514EDEC2BDA8EE40069FE08 /* Wave.swift in Sources */,
 				B5990B8B2BB84DE20047C552 /* HTTPMethodType.swift in Sources */,
 				B5990BAE2BB850B70047C552 /* GooglePlacesRepository.swift in Sources */,
-				B5990BDA2BB984090047C552 /* GetCoffeeShopDetails.swift in Sources */,
+				B5990BDA2BB984090047C552 /* GetCoworkingSpaceDetails.swift in Sources */,
 				B5990BBF2BB8523D0047C552 /* HomeViewModel.swift in Sources */,
 				B5990BD22BB97FF40047C552 /* CoworkingSpaceDetailsViewModel.swift in Sources */,
 				B5F727C52C128D5B00B13709 /* MapApp.swift in Sources */,
@@ -859,7 +859,7 @@
 				B5990B9E2BB84FBF0047C552 /* PlacesNearbySearchDTO.swift in Sources */,
 				B5990B802BB84AEC0047C552 /* EnvironmentConfiguration.swift in Sources */,
 				B5990B962BB84F6D0047C552 /* PlaceGeometryDTO.swift in Sources */,
-				B5B407012BBAAE0A00ECE46C /* UpdateFavouriteCoffeeShop.swift in Sources */,
+				B5B407012BBAAE0A00ECE46C /* UpdateFavouriteCoworkingSpace.swift in Sources */,
 				B5990BB12BB850D80047C552 /* DefaultGooglePlacesRepository.swift in Sources */,
 				B5990BD02BB97FED0047C552 /* CoworkingSpaceDetailsView.swift in Sources */,
 				B5990B8D2BB84DF10047C552 /* RequestError.swift in Sources */,

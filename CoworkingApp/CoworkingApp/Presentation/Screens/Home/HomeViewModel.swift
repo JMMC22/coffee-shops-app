@@ -13,12 +13,12 @@ class HomeViewModel: ObservableObject {
     @Published var nearbyCoffeeShops: [Place] = []
     @Published var nextPage: AppCoordinator.Page?
 
-    private let getNearbyCoffeeShops: GetNearbyCoffeeShops
+    private let getNearbyCoffeeShops: GetNearbyCoworkingSpaces
     private let locationManager: LocationManager
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(getNearbyCoffeeShops: GetNearbyCoffeeShops, locationManager: LocationManager = DefaultLocationManager.shared) {
+    init(getNearbyCoffeeShops: GetNearbyCoworkingSpaces, locationManager: LocationManager = DefaultLocationManager.shared) {
         self.getNearbyCoffeeShops = getNearbyCoffeeShops
         self.locationManager = locationManager
     }

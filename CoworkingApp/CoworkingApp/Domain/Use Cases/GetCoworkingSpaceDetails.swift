@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol GetCoffeeShopDetails {
+protocol GetCoworkingSpaceDetails {
     func execute(id: String) async -> Result<Place, RequestError>
 }
 
-class DefaultGetCoffeeShopDetails {
+class DefaultGetCoworkingSpaceDetails {
 
     private let googlePlacesRepository: GooglePlacesRepository
 
@@ -20,7 +20,7 @@ class DefaultGetCoffeeShopDetails {
     }
 }
 
-extension DefaultGetCoffeeShopDetails: GetCoffeeShopDetails {
+extension DefaultGetCoworkingSpaceDetails: GetCoworkingSpaceDetails {
 
     func execute(id: String) async -> Result<Place, RequestError> {
         let result = await googlePlacesRepository.getPlaceDetails(id: id)
