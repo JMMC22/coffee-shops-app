@@ -19,6 +19,7 @@ class CoworkingSpaceDetailsViewModel: ObservableObject {
     @Published var imagesURLs: [URL?] = []
     @Published var schedule: String = ""
     @Published var distance: String = ""
+    @Published var rating: Double = 0.0
 
     @Published var isLoading: Bool = true
     @Published var error: RequestError?
@@ -76,6 +77,7 @@ extension CoworkingSpaceDetailsViewModel {
             self.schedule = coworkingSpace.formattedSchedule
             self.isFavourite = isFavourite
             self.distance = self.getDistance(coworkingSpace.coordinate)
+            self.rating = coworkingSpace.rating
             self.isLoading = false
         }
     }

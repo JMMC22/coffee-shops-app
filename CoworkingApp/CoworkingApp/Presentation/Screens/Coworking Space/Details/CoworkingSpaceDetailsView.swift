@@ -135,6 +135,8 @@ struct CoworkingSpaceDetailsContainerView: View {
 
             Text(viewModel.distance)
                 .CSFont(.inter(14, weight: .bold), color: .darkGrayText)
+            
+            rating()
         }
     }
 
@@ -156,7 +158,8 @@ struct CoworkingSpaceDetailsContainerView: View {
         if !viewModel.phoneNumber.isEmpty {
             Button(action: callPhone) {
                 Image(systemName: "phone")
-                    .frame(width: 25, height: 25)
+                    .resizable()
+                    .frame(width: 14, height: 14)
             }
         }
     }
@@ -164,8 +167,20 @@ struct CoworkingSpaceDetailsContainerView: View {
     private func favourite() -> some View {
         Button(action: viewModel.saveAsFavourite) {
             Image(systemName: viewModel.isFavourite ? "heart.fill" : "heart")
-                .frame(width: 25, height: 25)
+                .resizable()
+                .frame(width: 14, height: 14)
         }
+    }
+
+    private func rating() -> some View {
+        HStack(alignment: .center, spacing: 2) {
+            Image(systemName: "star")
+                .resizable()
+                .frame(width: 14, height: 14)
+
+            Text(String(viewModel.rating))
+        }
+        .CSFont(.inter(14, weight: .regular), color: .darkGrayText)
     }
 
     private func staticMap() -> some View {
