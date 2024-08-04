@@ -17,7 +17,7 @@ class DefaultGetFavouritesCoffeeShops {
     private let locationManager: LocationManager
 
     init(googlePlacesRepository: GooglePlacesRepository,
-         locationManager: LocationManager = .shared) {
+         locationManager: LocationManager = DefaultLocationManager.shared) {
         self.googlePlacesRepository = googlePlacesRepository
         self.locationManager = locationManager
     }

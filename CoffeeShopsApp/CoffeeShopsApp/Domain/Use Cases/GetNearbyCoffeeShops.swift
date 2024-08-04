@@ -19,7 +19,7 @@ class DefaultGetNearbyCoffeeShops {
     private let radius = "3500"
     private let keyword = "coffee"
 
-    init(googlePlacesRepository: GooglePlacesRepository, locationManager: LocationManager = .shared) {
+    init(googlePlacesRepository: GooglePlacesRepository, locationManager: LocationManager = DefaultLocationManager.shared) {
         self.googlePlacesRepository = googlePlacesRepository
         self.locationManager = locationManager
     }

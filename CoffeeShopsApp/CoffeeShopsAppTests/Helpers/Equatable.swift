@@ -10,7 +10,7 @@ import Foundation
 
 extension RequestError: Equatable {
 
-    static public func == (lhs: RequestError, rhs: RequestError) -> Bool {
+    public static func == (lhs: RequestError, rhs: RequestError) -> Bool {
         switch (lhs, rhs) {
         case (.error(let lhsStatusCode, let lhsData), .error(let rhsStatusCode, let rhsData)):
             return lhsStatusCode == rhsStatusCode && lhsData == rhsData
@@ -27,5 +27,11 @@ extension RequestError: Equatable {
         default:
             return false
         }
+    }
+}
+
+extension PlacesNearbySearch: Equatable {
+    public static func == (lhs: PlacesNearbySearch, rhs: PlacesNearbySearch) -> Bool {
+        return lhs.places == rhs.places && lhs.totalPlaces == rhs.totalPlaces
     }
 }

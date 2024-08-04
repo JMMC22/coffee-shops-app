@@ -31,7 +31,8 @@ final class GetFavouritesCoffeeShopsTests: XCTestCase {
 
         let result:  Result<[Place], RequestError> = .success(mockArray)
         let stub = GooglePlacesRepositoryStub(fetchFavouritesCoffeeShopsResult: result)
-        let sut = DefaultGetFavouritesCoffeeShops(googlePlacesRepository: stub)
+        let locationStub = LocationManagerStub()
+        let sut = DefaultGetFavouritesCoffeeShops(googlePlacesRepository: stub, locationManager: locationStub)
 
         // WHEN
         let capturedResult = sut.execute()
@@ -65,7 +66,8 @@ final class GetFavouritesCoffeeShopsTests: XCTestCase {
 
         let result:  Result<[Place], RequestError> = .success(mockArray)
         let stub = GooglePlacesRepositoryStub(fetchFavouritesCoffeeShopsResult: result)
-        let sut = DefaultGetFavouritesCoffeeShops(googlePlacesRepository: stub)
+        let locationStub = LocationManagerStub()
+        let sut = DefaultGetFavouritesCoffeeShops(googlePlacesRepository: stub, locationManager: locationStub)
 
         // WHEN
         let capturedResult = sut.execute()
