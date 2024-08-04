@@ -43,13 +43,12 @@ struct CoworkingSpaceItemListView: View {
     }
     
     private func info() -> some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 4) {
             Text(viewModel.place.name)
                 .CSFont(.inter(14, weight: .medium), color: .blackText)
             HStack {
                 Text(viewModel.distance)
                     .CSFont(.inter(12, weight: .regular), color: .darkGrayText)
-                Divider()
                 rating()
             }
         }
