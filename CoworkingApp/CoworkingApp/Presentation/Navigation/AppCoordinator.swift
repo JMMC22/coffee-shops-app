@@ -16,8 +16,8 @@ class AppCoordinator: ObservableObject {
 extension AppCoordinator {
     enum Page: Hashable, Identifiable {
         case home
-        case coffeShopDetails(id: String)
-        case favouritesCoffeeShops
+        case coworkingSpaceDetails(id: String)
+        case favouritesCoworkingSpaces
 
         var id: String {
             String(describing: self)
@@ -51,10 +51,10 @@ extension AppCoordinator {
         switch page {
         case .home:
             HomeFactory.create()
-        case .coffeShopDetails(let id):
-            CoffeeShopDetailsFactory.create(id)
-        case .favouritesCoffeeShops:
-            CoffeeShopFavouritesFactory.create()
+        case .coworkingSpaceDetails(let id):
+            CoworkingSpaceDetailsFactory.create(id)
+        case .favouritesCoworkingSpaces:
+            CoworkingSpacesFavouritesFactory.create()
         }
     }
 }

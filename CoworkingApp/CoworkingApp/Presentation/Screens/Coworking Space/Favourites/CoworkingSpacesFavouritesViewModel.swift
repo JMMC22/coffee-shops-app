@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CoffeeShopFavouritesViewModel: ObservableObject {
+class CoworkingSpacesFavouritesViewModel: ObservableObject {
     
     @Published var favouritesCoffeeShops: [Place] = []
     @Published var nextPage: AppCoordinator.Page?
@@ -19,7 +19,7 @@ class CoffeeShopFavouritesViewModel: ObservableObject {
     }
 }
 
-extension CoffeeShopFavouritesViewModel {
+extension CoworkingSpacesFavouritesViewModel {
     func fetchFavouritesCoffeeShops() {
         let result = getFavouritesCoffeeShops.execute()
         
@@ -38,9 +38,9 @@ extension CoffeeShopFavouritesViewModel {
     }
 }
 
-extension CoffeeShopFavouritesViewModel {
+extension CoworkingSpacesFavouritesViewModel {
 
     func navigateToPlaceDetails(id: String) {
-        nextPage = .coffeShopDetails(id: id)
+        nextPage = .coworkingSpaceDetails(id: id)
     }
 }

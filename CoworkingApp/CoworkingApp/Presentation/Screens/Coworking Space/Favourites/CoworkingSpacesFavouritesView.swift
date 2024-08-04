@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct CoffeeShopFavouritesView: View {
+struct CoworkingSpacesFavouritesView: View {
 
-    @StateObject private var viewModel: CoffeeShopFavouritesViewModel
+    @StateObject private var viewModel: CoworkingSpacesFavouritesViewModel
     @EnvironmentObject private var coordinator: AppCoordinator
 
-    init(viewModel: CoffeeShopFavouritesViewModel) {
+    init(viewModel: CoworkingSpacesFavouritesViewModel) {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
 
     var body: some View {
         ScrollView {
-            CoffeeShopFavouritesContainer(viewModel: viewModel)
+            CoworkingSpacesFavouritesContainer(viewModel: viewModel)
         }
         .scrollIndicators(.hidden)
         .navigationBarTitleDisplayMode(.inline)
@@ -35,11 +35,11 @@ struct CoffeeShopFavouritesView: View {
     }
 }
 
-struct CoffeeShopFavouritesContainer: View {
+struct CoworkingSpacesFavouritesContainer: View {
 
-    @ObservedObject private var viewModel: CoffeeShopFavouritesViewModel
+    @ObservedObject private var viewModel: CoworkingSpacesFavouritesViewModel
 
-    init(viewModel: CoffeeShopFavouritesViewModel) {
+    init(viewModel: CoworkingSpacesFavouritesViewModel) {
         self._viewModel = ObservedObject(wrappedValue: viewModel)
     }
 

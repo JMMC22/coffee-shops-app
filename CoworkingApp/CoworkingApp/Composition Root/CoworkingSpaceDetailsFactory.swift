@@ -7,14 +7,14 @@
 
 import Foundation
 
-class CoffeeShopDetailsFactory {
+class CoworkingSpaceDetailsFactory {
 
-    static func create(_ id: String) -> CoffeeShopDetailsView {
-        return CoffeeShopDetailsView(viewModel: createViewModel(id))
+    static func create(_ id: String) -> CoworkingSpaceDetailsView {
+        return CoworkingSpaceDetailsView(viewModel: createViewModel(id))
     }
 
-    private static func createViewModel(_ id: String) -> CoffeeShopDetailsViewModel {
-        return CoffeeShopDetailsViewModel(id, getCoffeeShopDetails: createUseCase(),
+    private static func createViewModel(_ id: String) -> CoworkingSpaceDetailsViewModel {
+        return CoworkingSpaceDetailsViewModel(id, getCoffeeShopDetails: createUseCase(),
                                           updateFavouriteCoffeeShop: createUpdateFavouriteUseCase(),
                                           isFavouriteCoffeeShop: isFavouriteUseCase())
     }

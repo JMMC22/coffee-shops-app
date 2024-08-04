@@ -8,11 +8,11 @@
 import SwiftUI
 import MapKit
 
-struct CoffeeShopDetailsView: View {
+struct CoworkingSpaceDetailsView: View {
 
-    @StateObject private var viewModel: CoffeeShopDetailsViewModel
+    @StateObject private var viewModel: CoworkingSpaceDetailsViewModel
 
-    init(viewModel: CoffeeShopDetailsViewModel) {
+    init(viewModel: CoworkingSpaceDetailsViewModel) {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
 
@@ -22,7 +22,7 @@ struct CoffeeShopDetailsView: View {
                 ProgressView()
             } else {
                 ScrollView {
-                    CoffeeShopDetailsContainerView(viewModel: viewModel)
+                    CoworkingSpaceDetailsContainerView(viewModel: viewModel)
                 }
             }
         }
@@ -34,14 +34,14 @@ struct CoffeeShopDetailsView: View {
     }
 }
 
-struct CoffeeShopDetailsContainerView: View {
+struct CoworkingSpaceDetailsContainerView: View {
 
-    @ObservedObject private var viewModel: CoffeeShopDetailsViewModel
+    @ObservedObject private var viewModel: CoworkingSpaceDetailsViewModel
     @Environment(\.openURL) private var openURL
 
     @State private var showAppsSelector: Bool = false
 
-    init(viewModel: CoffeeShopDetailsViewModel) {
+    init(viewModel: CoworkingSpaceDetailsViewModel) {
         self.viewModel = viewModel
     }
 

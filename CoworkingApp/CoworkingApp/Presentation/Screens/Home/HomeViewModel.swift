@@ -81,10 +81,10 @@ extension HomeViewModel {
 extension HomeViewModel {
 
     func navigateToPlaceDetails(id: String) {
-        nextPage = .coffeShopDetails(id: id)
+        nextPage = .coworkingSpaceDetails(id: id)
     }
 
     func navigateToFavourites() {
-        nextPage = .favouritesCoffeeShops
+        nextPage = .favouritesCoworkingSpaces
     }
 }

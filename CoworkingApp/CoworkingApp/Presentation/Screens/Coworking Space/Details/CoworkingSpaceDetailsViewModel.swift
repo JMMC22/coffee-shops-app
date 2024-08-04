@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 import MapKit
 
-class CoffeeShopDetailsViewModel: ObservableObject {
+class CoworkingSpaceDetailsViewModel: ObservableObject {
 
     @Published var name: String = ""
     @Published var address: String = ""
@@ -48,7 +48,7 @@ class CoffeeShopDetailsViewModel: ObservableObject {
     }
 }
 
-extension CoffeeShopDetailsViewModel {
+extension CoworkingSpaceDetailsViewModel {
 
     func getCoffeeShopsDetails() async {
         let result = await getCoffeeShopDetails.execute(id: id)
@@ -88,7 +88,7 @@ extension CoffeeShopDetailsViewModel {
     }
 }
 
-extension CoffeeShopDetailsViewModel {
+extension CoworkingSpaceDetailsViewModel {
 
     func saveAsFavourite() {
         guard var coffeeShop else { return }
@@ -115,7 +115,7 @@ extension CoffeeShopDetailsViewModel {
     }
 }
 
-extension CoffeeShopDetailsViewModel {
+extension CoworkingSpaceDetailsViewModel {
 
     private func getDistance(_ coordinates: CLLocationCoordinate2D) -> String {
         let distanceToPlace = locationManager.getDistance(to: coordinates.latitude, longitude: coordinates.longitude)
