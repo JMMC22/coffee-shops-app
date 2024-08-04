@@ -18,6 +18,8 @@ struct Place: Identifiable {
     let address: String
     let url: URL?
     let phoneNumber: String
+    let rating: Double
+    let totalRatings: Int
 
     var isFavourite: Bool = false
 }

@@ -15,6 +15,8 @@ struct PlaceUDS: Codable {
     let address: String
     let url: URL?
     let phoneNumber: String
+    let rating: Double
+    let totalRatings: Int
     let isFavourite: Bool
 }
 
@@ -28,6 +30,8 @@ extension PlaceUDS {
         self.url = place.url
         self.phoneNumber = place.phoneNumber
         self.isFavourite = place.isFavourite
+        self.rating = place.rating
+        self.totalRatings = place.totalRatings
     }
 }
 
@@ -42,6 +46,8 @@ extension PlaceUDS {
               address: address,
               url: url,
               phoneNumber: phoneNumber,
+              rating: rating,
+              totalRatings: totalRatings,
               isFavourite: isFavourite)
     }
 }

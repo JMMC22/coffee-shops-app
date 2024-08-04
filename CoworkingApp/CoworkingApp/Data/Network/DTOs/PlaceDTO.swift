@@ -16,6 +16,8 @@ struct PlaceDTO: Decodable {
     let address: String?
     let url: String?
     let phoneNumber: String?
+    let rating: Double?
+    let totalRatings: Int?
 
     enum CodingKeys: String, CodingKey {
         case id = "place_id"
@@ -26,6 +28,8 @@ struct PlaceDTO: Decodable {
         case address = "vicinity"
         case url = "website"
         case phoneNumber = "international_phone_number"
+        case rating
+        case totalRatings = "user_ratings_total"
     }
 }
 
@@ -39,6 +43,8 @@ extension PlaceDTO {
               photos: photos?.compactMap({ $0.toDomain()}) ?? [],
               address: address ?? "",
               url: URL(string: url ?? ""),
-              phoneNumber: phoneNumber?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
+              phoneNumber: phoneNumber?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+              rating: rating ?? 0.0,
+              totalRatings: totalRatings ?? 0)
     }
 }
