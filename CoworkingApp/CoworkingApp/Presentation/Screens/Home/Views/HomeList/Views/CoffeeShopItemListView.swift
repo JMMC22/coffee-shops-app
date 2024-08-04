@@ -46,9 +46,24 @@ struct CoworkingSpaceItemListView: View {
         VStack(alignment: .leading) {
             Text(viewModel.place.name)
                 .CSFont(.inter(14, weight: .medium), color: .blackText)
-            Text(viewModel.distance)
-                .CSFont(.inter(12, weight: .regular), color: .darkGrayText)
+            HStack {
+                Text(viewModel.distance)
+                    .CSFont(.inter(12, weight: .regular), color: .darkGrayText)
+                Divider()
+                rating()
+            }
         }
+    }
+    
+    private func rating() -> some View {
+        HStack(alignment: .center, spacing: 2) {
+            Image(systemName: "star")
+                .resizable()
+                .frame(width: 12, height: 12)
+
+            Text(String(viewModel.place.rating))
+        }
+        .CSFont(.inter(12, weight: .regular), color: .darkGrayText)
     }
     
     private func isOpen() -> some View {
