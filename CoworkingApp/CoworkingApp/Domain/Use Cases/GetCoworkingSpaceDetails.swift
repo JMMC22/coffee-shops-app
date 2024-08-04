@@ -1,5 +1,5 @@
 //
-//  GetCoffeeShopDetails.swift
+//  GetCoworkingSpaceDetails.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 31/3/24.

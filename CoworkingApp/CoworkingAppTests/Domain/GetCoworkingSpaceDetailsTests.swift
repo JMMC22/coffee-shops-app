@@ -1,5 +1,5 @@
 //
-//  GetCoffeeShopDetailsTests.swift
+//  GetCoworkingSpaceDetailsTests.swift
 //  CoworkingAppTests
 //
 //  Created by José María Márquez Crespo on 1/8/24.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import CoworkingApp
 
-final class GetCoffeeShopDetailsTests: XCTestCase {
+final class GetCoworkingSpaceDetailsTests: XCTestCase {
 
     func test_execute_success_return_place_when_repository_return_place() async throws {
         // GIVEN
@@ -17,7 +17,7 @@ final class GetCoffeeShopDetailsTests: XCTestCase {
                               url: URL(string: "https://example.com/place1"), phoneNumber: "123-456-7890")
         let result: Result<Place, RequestError> = .success(mockPlace)
         let stub = GooglePlacesRepositoryStub(getPlaceDetailsResult: result)
-        let sut = DefaultGetCoffeeShopDetails(googlePlacesRepository: stub)
+        let sut = DefaultGetCoworkingSpaceDetails(googlePlacesRepository: stub)
 
         // WHEN
         let capturedResult = await sut.execute(id: "")
@@ -31,7 +31,7 @@ final class GetCoffeeShopDetailsTests: XCTestCase {
         // GIVEN
         let result: Result<Place, RequestError> = .failure(.decode)
         let stub = GooglePlacesRepositoryStub(getPlaceDetailsResult: result)
-        let sut = DefaultGetCoffeeShopDetails(googlePlacesRepository: stub)
+        let sut = DefaultGetCoworkingSpaceDetails(googlePlacesRepository: stub)
 
         // WHEN
         let capturedResult = await sut.execute(id: "")

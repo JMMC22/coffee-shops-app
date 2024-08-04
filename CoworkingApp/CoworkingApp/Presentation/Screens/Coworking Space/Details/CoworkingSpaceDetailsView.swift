@@ -1,5 +1,5 @@
 //
-//  CoffeeShopDetailsView.swift
+//  CoworkingSpaceDetailsView.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 31/3/24.
@@ -29,7 +29,7 @@ struct CoworkingSpaceDetailsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbarRole(.editor)
         .task {
-            await viewModel.getCoffeeShopsDetails()
+            await viewModel.getCoworkingSpaceDetails()
         }
     }
 }

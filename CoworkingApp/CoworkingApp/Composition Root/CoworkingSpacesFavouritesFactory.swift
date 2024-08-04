@@ -1,5 +1,5 @@
 //
-//  CoffeeShopFavouritesFactory.swift
+//  CoworkingSpaceFavouritesFactory.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 1/4/24.
@@ -14,7 +14,7 @@ class CoworkingSpacesFavouritesFactory {
     }
 
     private static func createViewModel() -> CoworkingSpacesFavouritesViewModel {
-        return CoworkingSpacesFavouritesViewModel(getFavouritesCoffeeShops: createGetFavouritesUseCase())
+        return CoworkingSpacesFavouritesViewModel(getFavouritesCoworkingSpaces: createGetFavouritesUseCase())
     }
 
     private static func createGetFavouritesUseCase() -> GetFavouritesCoworkingSpaces {

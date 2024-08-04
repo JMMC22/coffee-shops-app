@@ -1,5 +1,5 @@
 //
-//  CoffeeShopItemListView.swift
+//  CoworkingSpaceItemListView.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 31/3/24.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct CoffeeShopItemListView: View {
+struct CoworkingSpaceItemListView: View {
 
-    @StateObject private var viewModel: CoffeeShopItemListViewModel
+    @StateObject private var viewModel: CoworkingSpaceItemListViewModel
     let action: (String) -> Void
 
     init(place: Place, action: @escaping (String) -> Void) {
-        self._viewModel = StateObject(wrappedValue: CoffeeShopItemListViewModel(place: place))
+        self._viewModel = StateObject(wrappedValue: CoworkingSpaceItemListViewModel(place: place))
         self.action = action
     }
 
@@ -39,7 +39,7 @@ struct CoffeeShopItemListView: View {
     }
 
     private func icon() -> some View {
-        CoffeeShopMarker(isFavourite: viewModel.place.isFavourite)
+        CoworkingSpaceMarker(isFavourite: viewModel.place.isFavourite)
     }
     
     private func info() -> some View {

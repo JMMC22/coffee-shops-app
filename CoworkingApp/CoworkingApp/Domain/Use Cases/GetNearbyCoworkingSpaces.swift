@@ -1,5 +1,5 @@
 //
-//  GetNearbyCoffeeShops.swift
+//  GetNearbyCoworkingSpaces.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 30/3/24.

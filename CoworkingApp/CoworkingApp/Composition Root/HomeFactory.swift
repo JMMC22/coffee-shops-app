@@ -14,7 +14,7 @@ class HomeFactory {
     }
 
     private static func createViewModel() -> HomeViewModel {
-        return HomeViewModel(getNearbyCoffeeShops: createUseCase())
+        return HomeViewModel(getNearbyCoworkingSpaces: createUseCase())
     }
 
     private static func createUseCase() -> GetNearbyCoworkingSpaces {

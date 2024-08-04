@@ -1,5 +1,5 @@
 //
-//  IsFavouriteCoffeeShop.swift
+//  IsFavouriteCoworkingSpace.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 21/5/24.

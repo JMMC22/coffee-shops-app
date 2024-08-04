@@ -10,16 +10,16 @@ import Combine
 
 class HomeViewModel: ObservableObject {
 
-    @Published var nearbyCoffeeShops: [Place] = []
+    @Published var nearbyCoworkingSpaces: [Place] = []
     @Published var nextPage: AppCoordinator.Page?
 
-    private let getNearbyCoffeeShops: GetNearbyCoworkingSpaces
+    private let getNearbyCoworkingSpaces: GetNearbyCoworkingSpaces
     private let locationManager: LocationManager
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(getNearbyCoffeeShops: GetNearbyCoworkingSpaces, locationManager: LocationManager = DefaultLocationManager.shared) {
-        self.getNearbyCoffeeShops = getNearbyCoffeeShops
+    init(getNearbyCoworkingSpaces: GetNearbyCoworkingSpaces, locationManager: LocationManager = DefaultLocationManager.shared) {
+        self.getNearbyCoworkingSpaces = getNearbyCoworkingSpaces
         self.locationManager = locationManager
     }
 
@@ -30,24 +30,24 @@ class HomeViewModel: ObservableObject {
 
 extension HomeViewModel {
 
-    private func getNearbyCoffeShops(latitude: Double, longitude: Double) async {
-        let result = await getNearbyCoffeeShops.execute(latitude: latitude, longitude: longitude)
+    private func getNearbyCoworkingSpaces(latitude: Double, longitude: Double) async {
+        let result = await getNearbyCoworkingSpaces.execute(latitude: latitude, longitude: longitude)
 
         switch result {
         case .success(let places):
-            getNearbyCoffeShopsDidSuccess(places)
+            getNearbyCoworkingSpacesDidSuccess(places)
         case .failure(let error):
-            getNearbyCoffeShopsDidFail(error)
+            getNearbyCoworkingSpacesDidFail(error)
         }
     }
 
-    private func getNearbyCoffeShopsDidSuccess(_ places: [Place]) {
+    private func getNearbyCoworkingSpacesDidSuccess(_ places: [Place]) {
         DispatchQueue.main.async {
-            self.nearbyCoffeeShops = places
+            self.nearbyCoworkingSpaces = places
         }
     }
 
-    private func getNearbyCoffeShopsDidFail(_ error: RequestError) {
+    private func getNearbyCoworkingSpacesDidFail(_ error: RequestError) {
         print("||DEBUG|| getNearbyCoffeShops - Fail: \(error.localizedDescription)")
     }
 }
@@ -71,8 +71,8 @@ extension HomeViewModel {
     private func subscribeToLocation() {
         locationManager.lastLocationPublisher.sink { location in
             Task {
-                await self.getNearbyCoffeShops(latitude: location.latitude,
-                                               longitude: location.longitude)
+                await self.getNearbyCoworkingSpaces(latitude: location.latitude,
+                                                    longitude: location.longitude)
             }
         }.store(in: &cancellables)
     }

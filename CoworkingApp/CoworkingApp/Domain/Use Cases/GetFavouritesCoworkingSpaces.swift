@@ -1,5 +1,5 @@
 //
-//  GetFavouritesCoffeeShops.swift
+//  GetFavouritesCoworkingSpaces.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 1/4/24.

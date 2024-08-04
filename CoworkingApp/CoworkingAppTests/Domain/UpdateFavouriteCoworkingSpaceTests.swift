@@ -1,5 +1,5 @@
 //
-//  UpdateFavouriteCoffeeShopTests.swift
+//  UpdateFavouriteCoworkingSpaceTests.swift
 //  CoworkingAppTests
 //
 //  Created by José María Márquez Crespo on 1/8/24.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import CoworkingApp
 
-final class UpdateFavouriteCoffeeShopTests: XCTestCase {
+final class UpdateFavouriteCoworkingSpaceTests: XCTestCase {
 
     func test_execute_success_return_true_when_repository_return_true() throws {
         // GIVEN
@@ -18,7 +18,7 @@ final class UpdateFavouriteCoffeeShopTests: XCTestCase {
                           )
         let result: Result<Bool, RequestError> = .success(true)
         let stub = GooglePlacesRepositoryStub(updateFavouriteCoffeShopResult: result)
-        let sut = DefaultUpdateFavouriteCoffeeShop(googlePlacesRepository: stub)
+        let sut = DefaultUpdateFavouriteCoworkingSpace(googlePlacesRepository: stub)
 
         // WHEN
         let capturedResult = sut.execute(mockPlace)
@@ -36,7 +36,7 @@ final class UpdateFavouriteCoffeeShopTests: XCTestCase {
                           )
         let result: Result<Bool, RequestError> = .success(false)
         let stub = GooglePlacesRepositoryStub(updateFavouriteCoffeShopResult: result)
-        let sut = DefaultUpdateFavouriteCoffeeShop(googlePlacesRepository: stub)
+        let sut = DefaultUpdateFavouriteCoworkingSpace(googlePlacesRepository: stub)
 
         // WHEN
         let capturedResult = sut.execute(mockPlace)
@@ -54,7 +54,7 @@ final class UpdateFavouriteCoffeeShopTests: XCTestCase {
                           )
         let result: Result<Bool, RequestError> = .failure(.decode)
         let stub = GooglePlacesRepositoryStub(updateFavouriteCoffeShopResult: result)
-        let sut = DefaultUpdateFavouriteCoffeeShop(googlePlacesRepository: stub)
+        let sut = DefaultUpdateFavouriteCoworkingSpace(googlePlacesRepository: stub)
 
         // WHEN
         let capturedResult = sut.execute(mockPlace)
@@ -71,7 +71,7 @@ final class UpdateFavouriteCoffeeShopTests: XCTestCase {
                           )
         let result: Result<Bool, RequestError> = .failure(.unknown)
         let stub = GooglePlacesRepositoryStub(updateFavouriteCoffeShopResult: result)
-        let sut = DefaultUpdateFavouriteCoffeeShop(googlePlacesRepository: stub)
+        let sut = DefaultUpdateFavouriteCoworkingSpace(googlePlacesRepository: stub)
 
         // WHEN
         let capturedResult = sut.execute(mockPlace)

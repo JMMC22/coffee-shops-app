@@ -1,5 +1,5 @@
 //
-//  GetNearbyCoffeeShopsTests.swift
+//  GetNearbyCoworkingSpacesTests.swift
 //  CoworkingAppTests
 //
 //  Created by José María Márquez Crespo on 1/8/24.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import CoworkingApp
 
-final class GetNearbyCoffeeShopsTests: XCTestCase {
+final class GetNearbyCoworkingSpacesTests: XCTestCase {
 
     func test_execute_success_return_nonEmpty_sorted_array_when_repository_return_nonEmpty_array() async throws {
         // GIVEN
@@ -32,7 +32,7 @@ final class GetNearbyCoffeeShopsTests: XCTestCase {
         let result: Result<PlacesNearbySearch, RequestError> = .success(mockResponse)
         let stub = GooglePlacesRepositoryStub(getNearbyPlacesResult: result)
         let locationStub = LocationManagerStub()
-        let sut = DefaultGetNearbyCoffeeShops(googlePlacesRepository: stub, locationManager: locationStub)
+        let sut = DefaultGetNearbyCoworkingSpaces(googlePlacesRepository: stub, locationManager: locationStub)
 
         // WHEN
         let capturedResult = await sut.execute(latitude: 0, longitude: 0)
@@ -51,7 +51,7 @@ final class GetNearbyCoffeeShopsTests: XCTestCase {
 
         let result: Result<PlacesNearbySearch, RequestError> = .success(mockResponse)
         let stub = GooglePlacesRepositoryStub(getNearbyPlacesResult: result)
-        let sut = DefaultGetNearbyCoffeeShops(googlePlacesRepository: stub)
+        let sut = DefaultGetNearbyCoworkingSpaces(googlePlacesRepository: stub)
 
         // WHEN
         let capturedResult = await sut.execute(latitude: 0, longitude: 0)
@@ -86,8 +86,8 @@ final class GetNearbyCoffeeShopsTests: XCTestCase {
         let nearbyResult: Result<PlacesNearbySearch, RequestError> = .success(mockNearbyResponse)
         let favouritesResult: Result<[Place], RequestError> = .success(mockFavouritesArray)
 
-        let stub = GooglePlacesRepositoryStub(getNearbyPlacesResult: nearbyResult, fetchFavouritesCoffeeShopsResult: favouritesResult)
-        let sut = DefaultGetNearbyCoffeeShops(googlePlacesRepository: stub)
+        let stub = GooglePlacesRepositoryStub(getNearbyPlacesResult: nearbyResult, fetchFavouritesPlacesResult: favouritesResult)
+        let sut = DefaultGetNearbyCoworkingSpaces(googlePlacesRepository: stub)
 
         // WHEN
         let capturedResult = await sut.execute(latitude: 0, longitude: 0)

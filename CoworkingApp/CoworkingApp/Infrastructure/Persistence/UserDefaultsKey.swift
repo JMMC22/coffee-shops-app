@@ -9,7 +9,7 @@ import Foundation
 
 enum UserDefaultsKey: String, CaseIterable {
 
-    case favouritesCoffeeShops = "favouritesCoffeeShops"
+    case favouritesCoworkingSpaces = "favouritesCoworkingSpaces"
 
     static var excludedCases: [UserDefaultsKey] = []
 

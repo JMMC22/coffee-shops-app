@@ -10,27 +10,27 @@ import Foundation
 
 class GooglePlacesUserDefaultsDatasourceStub: GooglePlacesUserDefaultsDatasource {
 
-    let fetchFavouritesResult: Result<[PlaceUDS], RequestError>
-    let saveFavouriteResult: Result<Bool, RequestError>
-    let removeFavouriteResult: Result<Bool, RequestError>
+    let fetchFavouritesPlacesResult: Result<[PlaceUDS], RequestError>
+    let saveFavouritePlaceResult: Result<Bool, RequestError>
+    let removeFavouritePlaceResult: Result<Bool, RequestError>
 
-    init(fetchFavouritesResult: Result<[PlaceUDS], RequestError> = .failure(.unknown),
-         saveFavouriteResult: Result<Bool, RequestError> = .failure(.unknown),
-         removeFavouriteResult: Result<Bool, RequestError> = .failure(.unknown)) {
-        self.fetchFavouritesResult = fetchFavouritesResult
-        self.saveFavouriteResult = saveFavouriteResult
-        self.removeFavouriteResult = removeFavouriteResult
+    init(fetchFavouritesPlacesResult: Result<[PlaceUDS], RequestError> = .failure(.unknown),
+         saveFavouritePlaceResult: Result<Bool, RequestError> = .failure(.unknown),
+         removeFavouritePlaceResult: Result<Bool, RequestError> = .failure(.unknown)) {
+        self.fetchFavouritesPlacesResult = fetchFavouritesPlacesResult
+        self.saveFavouritePlaceResult = saveFavouritePlaceResult
+        self.removeFavouritePlaceResult = removeFavouritePlaceResult
     }
 
-    func fetchFavouritesCoffeeShops() -> Result<[PlaceUDS], RequestError> {
-        return fetchFavouritesResult
+    func fetchFavouritesPlaces() -> Result<[PlaceUDS], RequestError> {
+        return fetchFavouritesPlacesResult
     }
 
-    func saveFavouriteCoffeShop(_ place: PlaceUDS) -> Result<Bool, RequestError> {
-        return saveFavouriteResult
+    func saveFavouritePlace(_ place: PlaceUDS) -> Result<Bool, RequestError> {
+        return saveFavouritePlaceResult
     }
 
-    func removeFavouriteCoffeShop(id: String) -> Result<Bool, RequestError> {
-        return removeFavouriteResult
+    func removeFavouritePlace(id: String) -> Result<Bool, RequestError> {
+        return removeFavouritePlaceResult
     }
 }

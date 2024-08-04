@@ -18,8 +18,8 @@ struct HomeListView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
-                ForEach(viewModel.nearbyCoffeeShops) { place in
-                    CoffeeShopItemListView(place: place) { id in
+                ForEach(viewModel.nearbyCoworkingSpaces) { place in
+                    CoworkingSpaceItemListView(place: place) { id in
                         viewModel.navigateToPlaceDetails(id: id)
                     }
                 }

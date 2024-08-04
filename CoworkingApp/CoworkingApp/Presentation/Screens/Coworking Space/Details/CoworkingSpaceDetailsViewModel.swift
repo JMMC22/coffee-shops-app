@@ -1,5 +1,5 @@
 //
-//  CoffeeShopDetailsViewModel.swift
+//  CoworkingSpaceDetailsViewModel.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 31/3/24.
@@ -27,60 +27,60 @@ class CoworkingSpaceDetailsViewModel: ObservableObject {
     var coffeeURL: URL?
     var phoneNumber: String = ""
 
-    private let getCoffeeShopDetails: GetCoworkingSpaceDetails
-    private let updateFavouriteCoffeeShop: UpdateFavouriteCoworkingSpace
-    private let isFavouriteCoffeeShop: IsFavouriteCoworkingSpace
+    private let getCoworkingSpaceDetails: GetCoworkingSpaceDetails
+    private let updateFavouriteCoworkingSpace: UpdateFavouriteCoworkingSpace
+    private let isFavouriteCoworkingSpace: IsFavouriteCoworkingSpace
     private let locationManager: LocationManager
 
     private let id: String
-    private var coffeeShop: Place?
+    private var coworkingSpace: Place?
 
     init(_ id: String, 
-         getCoffeeShopDetails: GetCoworkingSpaceDetails,
-         updateFavouriteCoffeeShop: UpdateFavouriteCoworkingSpace,
-         isFavouriteCoffeeShop: IsFavouriteCoworkingSpace,
+         getCoworkingSpaceDetails: GetCoworkingSpaceDetails,
+         updateFavouriteCoworkingSpace: UpdateFavouriteCoworkingSpace,
+         isFavouriteCoworkingSpace: IsFavouriteCoworkingSpace,
          locationManager: LocationManager = DefaultLocationManager.shared) {
         self.id = id
-        self.getCoffeeShopDetails = getCoffeeShopDetails
-        self.updateFavouriteCoffeeShop = updateFavouriteCoffeeShop
-        self.isFavouriteCoffeeShop = isFavouriteCoffeeShop
+        self.getCoworkingSpaceDetails = getCoworkingSpaceDetails
+        self.updateFavouriteCoworkingSpace = updateFavouriteCoworkingSpace
+        self.isFavouriteCoworkingSpace = isFavouriteCoworkingSpace
         self.locationManager = locationManager
     }
 }
 
 extension CoworkingSpaceDetailsViewModel {
 
-    func getCoffeeShopsDetails() async {
-        let result = await getCoffeeShopDetails.execute(id: id)
+    func getCoworkingSpaceDetails() async {
+        let result = await getCoworkingSpaceDetails.execute(id: id)
 
         switch result {
-        case .success(let coffeeShop):
-            getCoffeeShopsDetailsDidSuccess(coffeeShop)
+        case .success(let coworkingSpace):
+            getCoworkingSpaceDetailsDidSuccess(coworkingSpace)
         case .failure(let error):
-            getCoffeeShopsDetailsDidFail(error)
+            getCoworkingSpaceDetailsDidFail(error)
         }
     }
 
-    private func getCoffeeShopsDetailsDidSuccess(_ coffeeShop: Place) {
-        self.coffeeShop = coffeeShop
-        let isFavourite = isFavouriteCoffeeShop.execute(id: coffeeShop.id)
+    private func getCoworkingSpaceDetailsDidSuccess(_ coworkingSpace: Place) {
+        self.coworkingSpace = coworkingSpace
+        let isFavourite = isFavouriteCoworkingSpace.execute(id: coworkingSpace.id)
 
         DispatchQueue.main.async {
-            self.name = coffeeShop.name
-            self.address = coffeeShop.address
-            self.isOpenNow = coffeeShop.isOpen
-            self.coordinate = self.createCoordinateRegion(coffeeShop.coordinate)
-            self.imagesURLs = coffeeShop.photos.map({ $0.getPlacePhotoURL() })
-            self.coffeeURL = coffeeShop.url
-            self.phoneNumber = coffeeShop.phoneNumber
-            self.schedule = coffeeShop.formattedSchedule
+            self.name = coworkingSpace.name
+            self.address = coworkingSpace.address
+            self.isOpenNow = coworkingSpace.isOpen
+            self.coordinate = self.createCoordinateRegion(coworkingSpace.coordinate)
+            self.imagesURLs = coworkingSpace.photos.map({ $0.getPlacePhotoURL() })
+            self.coffeeURL = coworkingSpace.url
+            self.phoneNumber = coworkingSpace.phoneNumber
+            self.schedule = coworkingSpace.formattedSchedule
             self.isFavourite = isFavourite
-            self.distance = self.getDistance(coffeeShop.coordinate)
+            self.distance = self.getDistance(coworkingSpace.coordinate)
             self.isLoading = false
         }
     }
 
-    private func getCoffeeShopsDetailsDidFail(_ error: RequestError) {
+    private func getCoworkingSpaceDetailsDidFail(_ error: RequestError) {
         DispatchQueue.main.async {
             self.error = error
             self.isLoading = false
@@ -91,10 +91,10 @@ extension CoworkingSpaceDetailsViewModel {
 extension CoworkingSpaceDetailsViewModel {
 
     func saveAsFavourite() {
-        guard var coffeeShop else { return }
+        guard var coworkingSpace else { return }
 
-        coffeeShop.isFavourite = !isFavourite
-        let result = updateFavouriteCoffeeShop.execute(coffeeShop)
+        coworkingSpace.isFavourite = !isFavourite
+        let result = updateFavouriteCoworkingSpace.execute(coworkingSpace)
 
         switch result {
         case .success(let value):
@@ -140,7 +140,7 @@ extension CoworkingSpaceDetailsViewModel {
     }
 
     func getMapAppURL(_ app: MapApp) -> URL? {
-        return URL(string: app.appUrl(latitude: coffeeShop?.coordinate.latitude,
-                                      longitude: coffeeShop?.coordinate.longitude))
+        return URL(string: app.appUrl(latitude: coworkingSpace?.coordinate.latitude,
+                                      longitude: coworkingSpace?.coordinate.longitude))
     }
 }

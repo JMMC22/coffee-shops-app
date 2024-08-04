@@ -94,7 +94,7 @@ final class GooglePlacesRepositoryTests: XCTestCase {
         let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
                                                 googlePlacesUserDefaultsDatasource: localStub)
         // WHEN
-        let capturedResult = sut.fetchFavouritesCoffeeShops()
+        let capturedResult = sut.fetchFavouritesPlaces()
 
         // THEN
         let place = try XCTUnwrap(capturedResult.get())
@@ -110,7 +110,7 @@ final class GooglePlacesRepositoryTests: XCTestCase {
         let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
                                                 googlePlacesUserDefaultsDatasource: localStub)
         // WHEN
-        let capturedResult = sut.fetchFavouritesCoffeeShops()
+        let capturedResult = sut.fetchFavouritesPlaces()
 
         // THEN
         let place = try XCTUnwrap(capturedResult.get())
@@ -126,7 +126,7 @@ final class GooglePlacesRepositoryTests: XCTestCase {
         let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
                                                 googlePlacesUserDefaultsDatasource: localStub)
         // WHEN
-        let capturedResult = sut.fetchFavouritesCoffeeShops()
+        let capturedResult = sut.fetchFavouritesPlaces()
 
         // THEN
         guard case .failure(let error) = capturedResult else {
@@ -147,7 +147,7 @@ final class GooglePlacesRepositoryTests: XCTestCase {
         let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
                                                 googlePlacesUserDefaultsDatasource: localStub)
         // WHEN
-        let capturedResult = sut.isFavouriteCoffeeShop(id: "2")
+        let capturedResult = sut.isFavouritePlace(id: "2")
 
         // THEN
         XCTAssertTrue(capturedResult)
@@ -163,7 +163,7 @@ final class GooglePlacesRepositoryTests: XCTestCase {
         let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
                                                 googlePlacesUserDefaultsDatasource: localStub)
         // WHEN
-        let capturedResult = sut.isFavouriteCoffeeShop(id: "3")
+        let capturedResult = sut.isFavouritePlace(id: "3")
 
         // THEN
         XCTAssertFalse(capturedResult)
@@ -183,7 +183,7 @@ final class GooglePlacesRepositoryTests: XCTestCase {
         let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
                                                 googlePlacesUserDefaultsDatasource: localStub)
         // WHEN
-        let capturedResult = sut.updateFavouriteCoffeShop(mockPlace)
+        let capturedResult = sut.updateFavouritePlace(mockPlace)
 
         // THEN
         let updated = try XCTUnwrap(capturedResult.get())
@@ -201,7 +201,7 @@ final class GooglePlacesRepositoryTests: XCTestCase {
         let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
                                                 googlePlacesUserDefaultsDatasource: localStub)
         // WHEN
-        let capturedResult = sut.updateFavouriteCoffeShop(Place.makePlace())
+        let capturedResult = sut.updateFavouritePlace(Place.makePlace())
 
         // THEN
         let removed = try XCTUnwrap(capturedResult.get())
@@ -218,7 +218,7 @@ final class GooglePlacesRepositoryTests: XCTestCase {
         let sut = DefaultGooglePlacesRepository(googlePlacesRemoteDatasource: remoteStub,
                                                 googlePlacesUserDefaultsDatasource: localStub)
         // WHEN
-        let capturedResult = sut.updateFavouriteCoffeShop(Place.makePlace())
+        let capturedResult = sut.updateFavouritePlace(Place.makePlace())
 
         // THEN
         guard case .failure(let error) = capturedResult else {

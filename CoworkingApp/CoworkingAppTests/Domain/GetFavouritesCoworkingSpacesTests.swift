@@ -1,5 +1,5 @@
 //
-//  GetFavouritesCoffeeShopsTests.swift
+//  GetFavouritesCoworkingSpacesTests.swift
 //  CoworkingAppTests
 //
 //  Created by José María Márquez Crespo on 31/7/24.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import CoworkingApp
 
-final class GetFavouritesCoffeeShopsTests: XCTestCase {
+final class GetFavouritesCoworkingSpacesTests: XCTestCase {
 
     func test_execute_success_return_sorted_array_when_repository_return_nonEmpty_array() throws {
 
@@ -30,19 +30,19 @@ final class GetFavouritesCoffeeShopsTests: XCTestCase {
         ]
 
         let result:  Result<[Place], RequestError> = .success(mockArray)
-        let stub = GooglePlacesRepositoryStub(fetchFavouritesCoffeeShopsResult: result)
+        let stub = GooglePlacesRepositoryStub(fetchFavouritesPlacesResult: result)
         let locationStub = LocationManagerStub()
-        let sut = DefaultGetFavouritesCoffeeShops(googlePlacesRepository: stub, locationManager: locationStub)
+        let sut = DefaultGetFavouritesCoworkingSpaces(googlePlacesRepository: stub, locationManager: locationStub)
 
         // WHEN
         let capturedResult = sut.execute()
 
         // THEN
-        let capturedCoffeeShopsList = try XCTUnwrap(capturedResult.get())
+        let capturedSpacesList = try XCTUnwrap(capturedResult.get())
 
-        XCTAssertEqual(capturedCoffeeShopsList[0], mockArray[2])
-        XCTAssertEqual(capturedCoffeeShopsList[1], mockArray[0])
-        XCTAssertEqual(capturedCoffeeShopsList[2], mockArray[1])
+        XCTAssertEqual(capturedSpacesList[0], mockArray[2])
+        XCTAssertEqual(capturedSpacesList[1], mockArray[0])
+        XCTAssertEqual(capturedSpacesList[2], mockArray[1])
     }
 
     func test_execute_success_return_sorted_array_when_repository_return_nonEmpty_sorted_array() throws {
@@ -65,17 +65,17 @@ final class GetFavouritesCoffeeShopsTests: XCTestCase {
         ]
 
         let result:  Result<[Place], RequestError> = .success(mockArray)
-        let stub = GooglePlacesRepositoryStub(fetchFavouritesCoffeeShopsResult: result)
+        let stub = GooglePlacesRepositoryStub(fetchFavouritesPlacesResult: result)
         let locationStub = LocationManagerStub()
-        let sut = DefaultGetFavouritesCoffeeShops(googlePlacesRepository: stub, locationManager: locationStub)
+        let sut = DefaultGetFavouritesCoworkingSpaces(googlePlacesRepository: stub, locationManager: locationStub)
 
         // WHEN
         let capturedResult = sut.execute()
 
         // THEN
-        let capturedCoffeeShopsList = try XCTUnwrap(capturedResult.get())
+        let capturedPlacesList = try XCTUnwrap(capturedResult.get())
 
-        XCTAssertEqual(capturedCoffeeShopsList, mockArray)
+        XCTAssertEqual(capturedPlacesList, mockArray)
     }
 
     func test_execute_success_return_empty_array_when_repository_return_empty_array() throws {
@@ -84,24 +84,24 @@ final class GetFavouritesCoffeeShopsTests: XCTestCase {
         let mockArray: [Place] = []
 
         let result:  Result<[Place], RequestError> = .success(mockArray)
-        let stub = GooglePlacesRepositoryStub(fetchFavouritesCoffeeShopsResult: result)
-        let sut = DefaultGetFavouritesCoffeeShops(googlePlacesRepository: stub)
+        let stub = GooglePlacesRepositoryStub(fetchFavouritesPlacesResult: result)
+        let sut = DefaultGetFavouritesCoworkingSpaces(googlePlacesRepository: stub)
 
         // WHEN
         let capturedResult = sut.execute()
 
         // THEN
-        let capturedCoffeeShopsList = try XCTUnwrap(capturedResult.get())
+        let capturedPlacesList = try XCTUnwrap(capturedResult.get())
 
-        XCTAssertEqual(capturedCoffeeShopsList, mockArray)
+        XCTAssertEqual(capturedPlacesList, mockArray)
     }
 
     func test_execute_return_error_when_repository_return_error() throws {
 
         // GIVEN
         let result:  Result<[Place], RequestError> = .failure(.decode)
-        let stub = GooglePlacesRepositoryStub(fetchFavouritesCoffeeShopsResult: result)
-        let sut = DefaultGetFavouritesCoffeeShops(googlePlacesRepository: stub)
+        let stub = GooglePlacesRepositoryStub(fetchFavouritesPlacesResult: result)
+        let sut = DefaultGetFavouritesCoworkingSpaces(googlePlacesRepository: stub)
 
         // WHEN
         let capturedResult = sut.execute()

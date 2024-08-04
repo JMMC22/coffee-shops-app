@@ -20,7 +20,7 @@ struct HomeMapView: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             Map(initialPosition: .automatic) {
-                ForEach(viewModel.nearbyCoffeeShops) { location in
+                ForEach(viewModel.nearbyCoworkingSpaces) { location in
                     Annotation(location.name, coordinate: location.coordinate) {
                         markerIcon(isFavourite: location.isFavourite)
                             .onTapGesture { viewModel.navigateToPlaceDetails(id: location.id) }
@@ -46,6 +46,6 @@ struct HomeMapView: View {
     }
 
     private func markerIcon(isFavourite: Bool) -> some View {
-        CoffeeShopMarker(isFavourite: isFavourite)
+        CoworkingSpaceMarker(isFavourite: isFavourite)
     }
 }

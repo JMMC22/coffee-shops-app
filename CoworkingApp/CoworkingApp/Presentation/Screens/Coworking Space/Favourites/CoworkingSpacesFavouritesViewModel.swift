@@ -1,5 +1,5 @@
 //
-//  CoffeeShopFavouritesViewModel.swift
+//  CoworkingSpaceFavouritesViewModel.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 1/4/24.
@@ -9,31 +9,31 @@ import Foundation
 
 class CoworkingSpacesFavouritesViewModel: ObservableObject {
     
-    @Published var favouritesCoffeeShops: [Place] = []
+    @Published var favouritesCoworkingSpaces: [Place] = []
     @Published var nextPage: AppCoordinator.Page?
 
-    private let getFavouritesCoffeeShops: GetFavouritesCoworkingSpaces
+    private let getFavouritesCoworkingSpaces: GetFavouritesCoworkingSpaces
 
-    init(getFavouritesCoffeeShops: GetFavouritesCoworkingSpaces) {
-        self.getFavouritesCoffeeShops = getFavouritesCoffeeShops
+    init(getFavouritesCoworkingSpaces: GetFavouritesCoworkingSpaces) {
+        self.getFavouritesCoworkingSpaces = getFavouritesCoworkingSpaces
     }
 }
 
 extension CoworkingSpacesFavouritesViewModel {
-    func fetchFavouritesCoffeeShops() {
-        let result = getFavouritesCoffeeShops.execute()
+    func fetchFavouritesCoworkingSpaces() {
+        let result = getFavouritesCoworkingSpaces.execute()
         
         switch result {
         case .success(let list):
-            fetchFavouritesCoffeeShopsDidSuccess(list)
+            fetchFavouritesCoworkingSpacesDidSuccess(list)
         case .failure(let error):
-            print("||DEBUG|| getFavouritesCoffeeShops error: \(error.localizedDescription)")
+            print("||DEBUG|| fetchFavouritesCoworkingSpaces error: \(error.localizedDescription)")
         }
     }
 
-    private func fetchFavouritesCoffeeShopsDidSuccess(_ places: [Place]) {
+    private func fetchFavouritesCoworkingSpacesDidSuccess(_ places: [Place]) {
         DispatchQueue.main.async {
-            self.favouritesCoffeeShops = places
+            self.favouritesCoworkingSpaces = places
         }
     }
 }

@@ -8,9 +8,9 @@
 import Foundation
 
 protocol GooglePlacesUserDefaultsDatasource {
-    func fetchFavouritesCoffeeShops() -> Result<[PlaceUDS], RequestError>
-    func saveFavouriteCoffeShop(_ place: PlaceUDS) -> Result<Bool, RequestError>
-    func removeFavouriteCoffeShop(id: String) -> Result<Bool, RequestError>
+    func fetchFavouritesPlaces() -> Result<[PlaceUDS], RequestError>
+    func saveFavouritePlace(_ place: PlaceUDS) -> Result<Bool, RequestError>
+    func removeFavouritePlace(id: String) -> Result<Bool, RequestError>
 }
 
 class DefaultGooglePlacesUserDefaultsDatasource {
@@ -24,8 +24,8 @@ class DefaultGooglePlacesUserDefaultsDatasource {
 
 extension DefaultGooglePlacesUserDefaultsDatasource: GooglePlacesUserDefaultsDatasource {
     
-    func fetchFavouritesCoffeeShops() -> Result<[PlaceUDS], RequestError> {
-        guard let encodedData = userDefaultsManager.object(for: .favouritesCoffeeShops) as? Data else {
+    func fetchFavouritesPlaces() -> Result<[PlaceUDS], RequestError> {
+        guard let encodedData = userDefaultsManager.object(for: .favouritesCoworkingSpaces) as? Data else {
             return .success([])
         }
 
@@ -37,8 +37,8 @@ extension DefaultGooglePlacesUserDefaultsDatasource: GooglePlacesUserDefaultsDat
         }
     }
 
-    func saveFavouriteCoffeShop(_ place: PlaceUDS) -> Result<Bool, RequestError> {
-        guard var favouritesList = try? fetchFavouritesCoffeeShops().get() else {
+    func saveFavouritePlace(_ place: PlaceUDS) -> Result<Bool, RequestError> {
+        guard var favouritesList = try? fetchFavouritesPlaces().get() else {
             return .failure(.decode)
         }
 
@@ -48,12 +48,12 @@ extension DefaultGooglePlacesUserDefaultsDatasource: GooglePlacesUserDefaultsDat
             return .failure(.decode)
         }
 
-        userDefaultsManager.set(encodedData, for: .favouritesCoffeeShops)
+        userDefaultsManager.set(encodedData, for: .favouritesCoworkingSpaces)
         return .success(true)
     }
 
-    func removeFavouriteCoffeShop(id: String) -> Result<Bool, RequestError> {
-        guard var favouritesList = try? fetchFavouritesCoffeeShops().get() else {
+    func removeFavouritePlace(id: String) -> Result<Bool, RequestError> {
+        guard var favouritesList = try? fetchFavouritesPlaces().get() else {
             return .failure(.decode)
         }
 
@@ -67,7 +67,7 @@ extension DefaultGooglePlacesUserDefaultsDatasource: GooglePlacesUserDefaultsDat
             return .failure(.decode)
         }
 
-        userDefaultsManager.set(encodedData, for: .favouritesCoffeeShops)
+        userDefaultsManager.set(encodedData, for: .favouritesCoworkingSpaces)
         return .success(false)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  CoffeeShopDetailsFactory.swift
+//  CoworkingSpaceDetailsFactory.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 31/3/24.
@@ -14,9 +14,10 @@ class CoworkingSpaceDetailsFactory {
     }
 
     private static func createViewModel(_ id: String) -> CoworkingSpaceDetailsViewModel {
-        return CoworkingSpaceDetailsViewModel(id, getCoffeeShopDetails: createUseCase(),
-                                          updateFavouriteCoffeeShop: createUpdateFavouriteUseCase(),
-                                          isFavouriteCoffeeShop: isFavouriteUseCase())
+        return CoworkingSpaceDetailsViewModel(id, 
+                                              getCoworkingSpaceDetails: createUseCase(),
+                                              updateFavouriteCoworkingSpace: createUpdateFavouriteUseCase(),
+                                              isFavouriteCoworkingSpace: isFavouriteUseCase())
     }
 
     private static func createUseCase() -> GetCoworkingSpaceDetails {

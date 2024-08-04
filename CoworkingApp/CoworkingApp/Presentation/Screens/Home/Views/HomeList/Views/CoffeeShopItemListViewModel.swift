@@ -1,5 +1,5 @@
 //
-//  CoffeeShopItemListViewModel.swift
+//  CoworkingSpaceItemListViewModel.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 4/6/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CoffeeShopItemListViewModel: ObservableObject {
+class CoworkingSpaceItemListViewModel: ObservableObject {
     
     @Published var place: Place
     @Published var distance: String = ""
@@ -20,7 +20,7 @@ class CoffeeShopItemListViewModel: ObservableObject {
     }
 }
 
-extension CoffeeShopItemListViewModel {
+extension CoworkingSpaceItemListViewModel {
     func getDistance() {
         let distanceToPlace = locationManager.getDistance(to: place.coordinate.latitude, longitude: place.coordinate.longitude)
         distance = getFormattedDistance(distanceToPlace)

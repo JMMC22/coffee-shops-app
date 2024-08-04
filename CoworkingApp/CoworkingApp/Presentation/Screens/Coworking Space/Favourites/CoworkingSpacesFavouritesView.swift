@@ -1,5 +1,5 @@
 //
-//  CoffeeShopFavouritesView.swift
+//  CoworkingSpaceFavouritesView.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 1/4/24.
@@ -23,7 +23,7 @@ struct CoworkingSpacesFavouritesView: View {
         .scrollIndicators(.hidden)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            viewModel.fetchFavouritesCoffeeShops()
+            viewModel.fetchFavouritesCoworkingSpaces()
         }
         .onReceive(viewModel.$nextPage) { newPage in
             if let newPage {
@@ -46,8 +46,8 @@ struct CoworkingSpacesFavouritesContainer: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             title()
-            ForEach(viewModel.favouritesCoffeeShops) { place in
-                CoffeeShopItemListView(place: place) { id in
+            ForEach(viewModel.favouritesCoworkingSpaces) { place in
+                CoworkingSpaceItemListView(place: place) { id in
                     viewModel.navigateToPlaceDetails(id: id)
                 }
             }

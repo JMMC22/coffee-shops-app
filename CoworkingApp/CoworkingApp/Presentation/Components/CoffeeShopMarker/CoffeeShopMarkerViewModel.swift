@@ -1,5 +1,5 @@
 //
-//  CoffeeShopMarkerViewModel.swift
+//  CoworkingSpaceMarkerViewModel.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 31/7/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CoffeeShopMarkerViewModel: ObservableObject {
+class CoworkingSpaceMarkerViewModel: ObservableObject {
 
     private let id: String
 

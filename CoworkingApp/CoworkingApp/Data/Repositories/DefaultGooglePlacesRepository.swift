@@ -49,7 +49,7 @@ extension DefaultGooglePlacesRepository: GooglePlacesRepository {
 extension DefaultGooglePlacesRepository {
 
     func fetchFavouritesPlaces() -> Result<[Place], RequestError> {
-        let result = googlePlacesUserDefaultsDatasource.fetchFavouritesCoffeeShops()
+        let result = googlePlacesUserDefaultsDatasource.fetchFavouritesPlaces()
 
         switch result {
         case .success(let response):
@@ -67,9 +67,9 @@ extension DefaultGooglePlacesRepository {
         }
 
         if favouritesList.contains(where: { $0.id == place.id }) {
-            return googlePlacesUserDefaultsDatasource.removeFavouriteCoffeShop(id: place.id)
+            return googlePlacesUserDefaultsDatasource.removeFavouritePlace(id: place.id)
         } else {
-            return googlePlacesUserDefaultsDatasource.saveFavouriteCoffeShop(dto)
+            return googlePlacesUserDefaultsDatasource.saveFavouritePlace(dto)
         }
     }
 

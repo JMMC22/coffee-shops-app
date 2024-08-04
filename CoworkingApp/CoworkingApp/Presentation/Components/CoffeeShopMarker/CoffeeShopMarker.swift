@@ -1,5 +1,5 @@
 //
-//  CoffeeShopMarker.swift
+//  CoworkingSpaceMarker.swift
 //  CoworkingApp
 //
 //  Created by José María Márquez Crespo on 31/7/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CoffeeShopMarker: View {
+struct CoworkingSpaceMarker: View {
 
     let isFavourite: Bool
 

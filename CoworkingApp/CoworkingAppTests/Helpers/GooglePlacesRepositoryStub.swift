@@ -12,20 +12,20 @@ class GooglePlacesRepositoryStub: GooglePlacesRepository {
 
     var getNearbyPlacesResult: Result<PlacesNearbySearch, RequestError>
     var getPlaceDetailsResult: Result<Place, RequestError>
-    var fetchFavouritesCoffeeShopsResult: Result<[Place], RequestError>
-    var isFavouriteCoffeeShopResult: Bool
-    var updateFavouriteCoffeShopResult: Result<Bool, RequestError>
+    var fetchFavouritesPlacesResult: Result<[Place], RequestError>
+    var isFavouritePlaceResult: Bool
+    var updateFavouritePlaceResult: Result<Bool, RequestError>
 
     init(getNearbyPlacesResult: Result<PlacesNearbySearch, RequestError> = .failure(.unknown),
          getPlaceDetailsResult: Result<Place, RequestError> = .failure(.unknown),
-         fetchFavouritesCoffeeShopsResult: Result<[Place], RequestError> = .failure(.unknown),
-         isFavouriteCoffeeShopResult: Bool = false,
-         updateFavouriteCoffeShopResult: Result<Bool, RequestError> = .failure(.unknown)) {
+         fetchFavouritesPlacesResult: Result<[Place], RequestError> = .failure(.unknown),
+         isFavouritePlaceResult: Bool = false,
+         updateFavouritePlaceResult: Result<Bool, RequestError> = .failure(.unknown)) {
         self.getNearbyPlacesResult = getNearbyPlacesResult
         self.getPlaceDetailsResult = getPlaceDetailsResult
-        self.fetchFavouritesCoffeeShopsResult = fetchFavouritesCoffeeShopsResult
-        self.isFavouriteCoffeeShopResult = isFavouriteCoffeeShopResult
-        self.updateFavouriteCoffeShopResult = updateFavouriteCoffeShopResult
+        self.fetchFavouritesPlacesResult = fetchFavouritesPlacesResult
+        self.isFavouritePlaceResult = isFavouritePlaceResult
+        self.updateFavouritePlaceResult = updateFavouritePlaceResult
     }
 
     func getNearbyPlaces(location: String, radius: String, keyword: String) async -> Result<PlacesNearbySearch, RequestError> {
@@ -36,15 +36,15 @@ class GooglePlacesRepositoryStub: GooglePlacesRepository {
         getPlaceDetailsResult
     }
 
-    func fetchFavouritesCoffeeShops() -> Result<[Place], RequestError> {
-        fetchFavouritesCoffeeShopsResult
+    func fetchFavouritesPlaces() -> Result<[Place], RequestError> {
+        fetchFavouritesPlacesResult
     }
 
-    func isFavouriteCoffeeShop(id: String) -> Bool {
-        isFavouriteCoffeeShopResult
+    func isFavouritePlace(id: String) -> Bool {
+        isFavouritePlaceResult
     }
 
-    func updateFavouriteCoffeShop(_ place: Place) -> Result<Bool, RequestError> {
-        updateFavouriteCoffeShopResult
+    func updateFavouritePlace(_ place: Place) -> Result<Bool, RequestError> {
+        updateFavouritePlaceResult
     }
 }
