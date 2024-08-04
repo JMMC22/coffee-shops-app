@@ -48,21 +48,7 @@ extension DefaultGooglePlacesRepository: GooglePlacesRepository {
 // MARK: Local Persistence
 extension DefaultGooglePlacesRepository {
 
-    func updateFavouriteCoffeShop(_ place: Place) -> Result<Bool, RequestError> {
-        let dto = PlaceUDS(place: place)
-
-        guard let favouritesList = try? fetchFavouritesCoffeeShops().get() else {
-            return .failure(.decode)
-        }
-
-        if favouritesList.contains(where: { $0.id == place.id }) {
-            return googlePlacesUserDefaultsDatasource.removeFavouriteCoffeShop(id: place.id)
-        } else {
-            return googlePlacesUserDefaultsDatasource.saveFavouriteCoffeShop(dto)
-        }
-    }
-
-    func fetchFavouritesCoffeeShops() -> Result<[Place], RequestError> {
+    func fetchFavouritesPlaces() -> Result<[Place], RequestError> {
         let result = googlePlacesUserDefaultsDatasource.fetchFavouritesCoffeeShops()
 
         switch result {
@@ -73,8 +59,22 @@ extension DefaultGooglePlacesRepository {
         }
     }
 
-    func isFavouriteCoffeeShop(id: String) -> Bool {
-        guard let favouriteList = try? fetchFavouritesCoffeeShops().get() else {
+    func updateFavouritePlace(_ place: Place) -> Result<Bool, RequestError> {
+        let dto = PlaceUDS(place: place)
+
+        guard let favouritesList = try? fetchFavouritesPlaces().get() else {
+            return .failure(.decode)
+        }
+
+        if favouritesList.contains(where: { $0.id == place.id }) {
+            return googlePlacesUserDefaultsDatasource.removeFavouriteCoffeShop(id: place.id)
+        } else {
+            return googlePlacesUserDefaultsDatasource.saveFavouriteCoffeShop(dto)
+        }
+    }
+
+    func isFavouritePlace(id: String) -> Bool {
+        guard let favouriteList = try? fetchFavouritesPlaces().get() else {
             return false
         }
 

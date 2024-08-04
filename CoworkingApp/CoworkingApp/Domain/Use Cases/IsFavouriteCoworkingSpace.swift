@@ -23,6 +23,6 @@ class DefaultIsFavouriteCoworkingSpace {
 extension DefaultIsFavouriteCoworkingSpace: IsFavouriteCoworkingSpace {
 
     func execute(id: String) -> Bool {
-        return googlePlacesRepository.isFavouriteCoffeeShop(id: id)
+        return googlePlacesRepository.isFavouritePlace(id: id)
     }
 }

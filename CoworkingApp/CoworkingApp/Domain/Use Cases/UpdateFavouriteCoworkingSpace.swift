@@ -22,6 +22,6 @@ class DefaultUpdateFavouriteCoworkingSpace {
 
 extension DefaultUpdateFavouriteCoworkingSpace: UpdateFavouriteCoworkingSpace {
     func execute(_ place: Place) -> Result<Bool, RequestError> {
-        return googlePlacesRepository.updateFavouriteCoffeShop(place)
+        return googlePlacesRepository.updateFavouritePlace(place)
     }
 }

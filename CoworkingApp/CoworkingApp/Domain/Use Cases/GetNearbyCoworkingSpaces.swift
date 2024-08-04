@@ -30,7 +30,7 @@ extension DefaultGetNearbyCoworkingSpaces: GetNearbyCoworkingSpaces {
         let location: String = "\(latitude),\(longitude)"
 
         let result = await googlePlacesRepository.getNearbyPlaces(location: location, radius: radius, keyword: keyword)
-        let favouritesResult = googlePlacesRepository.fetchFavouritesCoffeeShops()
+        let favouritesResult = googlePlacesRepository.fetchFavouritesPlaces()
 
         return await processResults(nearbyPlacesResult: result, favouritesResult: favouritesResult)
     }

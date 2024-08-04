@@ -25,7 +25,7 @@ class DefaultGetFavouritesCoworkingSpaces {
 
 extension DefaultGetFavouritesCoworkingSpaces: GetFavouritesCoworkingSpaces {
     func execute() -> Result<[Place], RequestError> {
-        let result = googlePlacesRepository.fetchFavouritesCoffeeShops()
+        let result = googlePlacesRepository.fetchFavouritesPlaces()
 
         switch result {
         case .success(let response):
