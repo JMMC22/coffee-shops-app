@@ -39,9 +39,9 @@ final class GetNearbyCoffeeShopsTests: XCTestCase {
 
         // THEN
         let captureUpdated = try XCTUnwrap(capturedResult.get())
+        XCTAssertEqual(captureUpdated[0], mockArray[2])
         XCTAssertEqual(captureUpdated[1], mockArray[0])
         XCTAssertEqual(captureUpdated[2], mockArray[1])
-        XCTAssertEqual(captureUpdated[0], mockArray[2])
     }
 
     func test_execute_success_return_empty_array_when_repository_return_empty_array() async throws {

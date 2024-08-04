@@ -24,7 +24,8 @@ class LocationManagerStub: LocationManager {
 
     let predefinedStatus: CLAuthorizationStatus?
     let predefinedLocation: CLLocationCoordinate2D?
-    let distanceToReturn: Double = 0.0
+
+    private var lastUserLocation: CLLocationCoordinate2D = .init(latitude: 40.416, longitude: -3.70)
 
     init(predefinedStatus: CLAuthorizationStatus? = .authorizedAlways,
          predefinedLocation: CLLocationCoordinate2D? = CLLocationCoordinate2D(latitude: 40.416, longitude: -3.70)) {
@@ -45,6 +46,9 @@ class LocationManagerStub: LocationManager {
     }
 
     func getDistance(to latitude: Double, longitude: Double) -> Double {
-        distanceToReturn
+        let sourceLocation = CLLocation(latitude: lastUserLocation.latitude, longitude: lastUserLocation.longitude)
+        let destinationLocation = CLLocation(latitude: latitude, longitude: longitude)
+
+        return sourceLocation.distance(from: destinationLocation)
     }
 }
