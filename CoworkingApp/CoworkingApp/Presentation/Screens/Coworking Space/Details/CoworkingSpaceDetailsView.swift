@@ -169,7 +169,7 @@ struct CoworkingSpaceDetailsContainerView: View {
     }
 
     private func staticMap() -> some View {
-        Map(coordinateRegion: $viewModel.coordinate)
+        Map(initialPosition: MapCameraPosition.region(viewModel.coordinate))
             .disabled(true)
             .frame(height: 200)
             .clipShape(RoundedRectangle(cornerRadius: 20))
